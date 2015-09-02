@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>JobsHub</title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <div class="navbar custom-navbar navbar-fixed-top" role="navigation">	
+      <div class="navbar-header">
+        <div class="navbar-header"><a class="navbar-brand" href="#">JOBS-HUB</a></div>
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        </button>
+      </div>
+      
+      <div class="collapse navbar-collapse">
+        <ul class="nav navbar-nav pull-right">
+          <li><a href="#">Link 1</a></li>
+          <li><a href="#">Link 2</a></li>
+          <li><a href="#">Link 3</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Action</a></li>
+              <li><a href="#">Another action</a></li>
+              <li class="divider"></li>
+              <li><a href="#">Separated link</a></li>
+              <li class="divider"></li>
+              <li><a href="#">One more separated link</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="navbar menu-navbar" role="navigation">	
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        </button>
+      </div>
+      <div class="collapse navbar-collapse">
+        <ul class="nav navbar-nav menu-bar-menu-style">
+          <li><a href="javascript:void(0);"><span>Home&nbsp;</span></a></li>
+          <% @job_types.each do | job_type | %>
+            <% if job_type.name === "State Govt job"%>
+              <li class="dropdown">
+                <a data-toggle="dropdown" class="dropdown-toggle" href="#" aria-expanded="false">
+                  <%= job_type.name %>&nbsp;<b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu">
+                  <% @states.each do | state | %>
+                    <li class="lst-devider"><a href="#"><%= state.name %></a></li>
+                  <% end %>
+                </ul>
+              </li>
+            <% else %>
+              <li><a href="javascript:void(0);"><span><%= job_type.name %>&nbsp;</span></a></li>
+            <% end %>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10 bdr-lft-rght">
+          <%= yield %>
+        </div>
+        <div class="col-md-1"></div>
+      </div>
+    </div><!-- /.container -->
+  </body>
+</html>

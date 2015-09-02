@@ -1,0 +1,50 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+.starter-template {
+  padding: 40px 15px;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.custom-navbar{
+  border-bottom: 1px solid #ddd;
+  padding: 0px 40px;
+  background-color: #555555;
+  div ul li a {
+   background-color: #555555 !important;
+   color: #FFF !important;
+  }
+}
+.navbar-header > a{
+  color: #FFF !important;
+  font-weight: bold;
+}
+
+.menu-navbar{
+ margin-top: -20px;
+ border-bottom: 1px solid #ddd;
+ min-height: 40px !important;
+}
+.menu-navbar {
+  margin-top: 50px !important;
+  .menu-bar-menu-style {
+    margin-left: 25px !important;
+  }
+}
+.navbar-nav > li > a {
+  background-color: #FFF !important;
+  padding-bottom: 10px;
+  padding-top: 10px
+}
+
+.bdr-lft-rght{
+  #border-left: 1px solid lightgray;
+  #border-right: 1px solid lightgray;
+}
+
+.lst-devider{
+  border-bottom: 1px solid lightgray;
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
