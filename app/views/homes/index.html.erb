@@ -1,32 +1,36 @@
-<div class="text-center">
-  <h1>Bootstrap Template</h1>
-  <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
-</div>
-<div class="text-center">
-  <h1>Bootstrap Template</h1>
-  <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
-</div>
-<div class="text-center">
-  <h1>Bootstrap Template</h1>
-  <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
-</div>
-<div class="text-center">
-  <h1>Bootstrap Template</h1>
-  <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
-</div>
-<div class="text-center">
-  <h1>Bootstrap Template</h1>
-  <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
-</div>
-<div class="text-center">
-  <h1>Bootstrap Template</h1>
-  <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
-</div>
-<div class="text-center">
-  <h1>Bootstrap Template</h1>
-  <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
-</div>
-<div class="text-center">
-  <h1>Bootstrap Template</h1>
-  <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
+<div class="row job-list-block">
+  <div class="content">
+    <div class="table-responsive">
+      <div id="datatable_wrapper" class="dataTables_wrapper form-inline" role="grid">
+        <table aria-describedby="datatable_info" class="table table-bordered dataTable" id="datatable">
+          <thead>
+            <tr role="row">
+              <!--
+              <th style="width: 172px;" class="sorting_asc">Job Title</th>
+              <th style="width: 249px;" class="sorting">From Date</th>
+              <th style="width: 237px;" class="sorting">To Date</th>
+              <th style="width: 147px;" class="sorting">Job Details</th>
+              <th style="width: 137px;" class="sorting">Apply Online</th>-->
+              <th class="col-md-4 center">Job Title</th>
+              <th class="col-md-2 center">From Date</th>
+              <th class="col-md-2 center">To Date</th>
+              <th class="col-md-2 center">Job Details</th>
+              <th class="col-md-2 center">Apply Online</th>
+            </tr>
+          </thead>
+          <tbody aria-relevant="all" aria-live="polite" role="alert">
+            <% @jobs.each do | job |%>
+              <tr class="gradeA odd">
+                <td class=""><%= job.title %></td>
+                <td class="center"><%= job.start_date.strftime("%d/%b/%Y") %></td>
+                <td class="center"><%= job.end_date.blank? ? '--' : job.end_date.strftime("%d/%b/%Y") %></td>
+                <td class="center"><a href="javascript:void(0);">View More</a></td>
+                <td class="center"><a href="javascript:void(0);">Apply Online</a></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
 </div>
