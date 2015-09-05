@@ -1,9 +1,8 @@
-JobType.create!(name: "Central Govt job") if JobType.where(name: "Central Govt job").blank?
-JobType.create!(name: "State Govt job") if JobType.where(name: "State Govt job").blank?
-JobType.create!(name: "Banking job") if JobType.where(name: "Banking job").blank?
-JobType.create!(name: "Teaching job") if JobType.where(name: "Teaching job").blank?
-JobType.create!(name: "Technical job") if JobType.where(name: "Technical job").blank?
-JobType.create!(name: "IT Walkins") if JobType.where(name: "IT Walkins").blank?
+JobType.create!(name: "Central Govt jobs") if JobType.where(name: "Central Govt job").blank?
+JobType.create!(name: "State Govt jobs") if JobType.where(name: "State Govt job").blank?
+JobType.create!(name: "Banking jobs") if JobType.where(name: "Banking job").blank?
+JobType.create!(name: "Teaching jobs") if JobType.where(name: "Teaching job").blank?
+JobType.create!(name: "Technical jobs") if JobType.where(name: "Technical job").blank?
 JobType.create!(name: "Railway Jobs") if JobType.where(name: "Railway Jobs").blank?
 JobType.create!(name: "Police/Defence Jobs") if JobType.where(name: "Police/Defence Jobs").blank?
 

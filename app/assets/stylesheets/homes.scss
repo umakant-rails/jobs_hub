@@ -1,3 +1,165 @@
-// Place all the styles related to the Homes controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.panel-block{
+  border: 1px solid lightgray;
+  padding: 4px 0px !important;
+  margin-bottom: 20px;
+  .panel-block-hdr{
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    padding: 4px;
+  }
+  .panel-block-body{
+    padding: 4px;
+    a { padding: 5px; font-size:13px;}
+  }
+}
+.starter-template {
+  padding: 40px 15px;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.job-list-block{
+  background-color: #FFF;
+  padding: 10px 20px;
+  margin-top: -20px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  font-size: 12px;
+}
+
+
+/*Subscribe group inputs related css*/
+.logo-outer{border:1px solid #fff;background: #ffffff; /* Old browsers */
+background: -moz-linear-gradient(top,  #ffffff 0%, #efeded 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#efeded)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #ffffff 0%,#efeded 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #ffffff 0%,#efeded 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #ffffff 0%,#efeded 100%); /* IE10+ */
+background: linear-gradient(to bottom,  #ffffff 0%,#efeded 100%); /* W3C */
+}
+
+.subscription-outer{ 
+  -moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
+  -webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
+  background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #fdfdfc), color-stop(1, #f5ddca) );
+  background:-moz-linear-gradient( center top, #fdfdfc 5%, #f5ddca 100% );
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#fdfdfc', endColorstr='#f5ddca');
+  background-color:#fdfdfc;
+  -moz-border-radius:3px;
+  -webkit-border-radius:3px;
+  border-radius:3px;
+  border:1px solid #f7c7c2;
+  padding: 10px 2px;
+  margin-right:7px; 
+  margin-top:10px;
+  margin-bottom:10px;
+  width: 415px;
+  font-size: 12px;
+}
+.subscription-box{
+  float: left;
+  font-weight: bold;
+  width: 140px;
+  margin-top: 6px;
+  div{margin-top: 6px;}
+}
+
+.orange-btn {
+  -moz-box-shadow:inset 0px 1px 0px 0px #f9853e;
+  -webkit-box-shadow:inset 0px 1px 0px 0px #f9853e;
+  box-shadow:inset 0px 1px 0px 0px #f9853e;
+  background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #e6600d), color-stop(1, #da5400) );
+  background:-moz-linear-gradient( center top, #e6600d 5%, #da5400 100% );
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#e6600d', endColorstr='#da5400');
+  background-color:#e6600d;
+  -moz-border-radius:4px;
+  -webkit-border-radius:4px;
+  border-radius:4px;
+  border:1px solid #bc4800;
+  display:inline-block;
+  color:#ffffff;
+  font-family:arial;
+  font-size:12px;
+  font-weight:bold;
+  padding:6px 10px;
+  text-decoration:none;
+  cursor:pointer;
+}
+.subscription-input{ float:left;  margin-top:10px;}
+.email-tip{ 
+  margin-left:5px; 
+  color:#c90c0c;
+}
+.subscribe-btn{
+  margin-top: 10px; 
+  margin-left:5px;
+}
+#breakingnews {
+  border-bottom: 2px solid #fc4f3f;
+  height: 42px;
+  line-height: 29px;
+  margin: -25px 0 10px;
+  overflow: hidden;
+  .plus-icon{
+    margin-right: 7px;
+    margin-top: 7px;
+  }
+}
+#breakingnews .breakhead {
+  background: #fc4f3f none repeat scroll 0 0;
+  color: #fff;
+  display: block;
+  float: left;
+  font-family: "Roboto Condensed";
+  font-weight: bold;
+  padding: 6.5px 22px;
+  position: absolute;
+  text-transform: uppercase;
+}
+#adbreakingnews {
+  float: left;
+  font-size: 14px;
+  margin-left: 175px;
+  margin-top: 6px;
+}
+
+/* main jobs list block*/
+.job-type-block{
+  padding: 0px 10px 5px;
+  .job-type-hdr{
+    font-size: 14px;
+    font-weight: bold;
+    border-bottom: 1px solid lightgray;
+    padding: 5px 0px;
+    margin-bottom: 10px;
+  }
+  .job-type-body{
+    margin-bottom: 20px;
+    ul{padding: 0px !important;}
+    li{padding: 2px 0px;list-style: none;}
+  }
+}
+.advertiment-block{
+  border-top: 1px solid lightgray;
+  padding: 5px 4px;
+  text-align: center;
+  color: red;
+}
+
+
+/* job summary block css*/
+.job-summary-block{
+  margin-bottom: 30px;
+  .read-more{margin-top: -5px;}
+}
+.job-summary-hdr{
+  background-color: #f9f8f8;
+  border-bottom: 2px solid lightgray;
+  font-size: 17px;
+  margin-bottom: 8px;
+  padding: 4px;
+}
+.job-summary-body{
+  font-size: 14px;
+}

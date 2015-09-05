@@ -20,17 +20,17 @@ ActiveRecord::Schema.define(version: 20150902153114) do
   end
 
   create_table "jobs", force: :cascade do |t|
-    t.string   "title",        limit: 255
-    t.text     "descritption", limit: 65535
-    t.string   "age_limit",    limit: 255
-    t.string   "eligibility",  limit: 255
-    t.text     "experience",   limit: 65535
-    t.integer  "job_type_id",  limit: 4
-    t.integer  "state_id",     limit: 4
-    t.datetime "from_date"
+    t.string   "title",       limit: 255
+    t.text     "description", limit: 65535
+    t.string   "age_limit",   limit: 255
+    t.string   "eligibility", limit: 255
+    t.text     "experience",  limit: 65535
+    t.integer  "job_type_id", limit: 4
+    t.integer  "state_id",    limit: 4
+    t.datetime "start_date"
     t.datetime "end_date"
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
   end
 
   create_table "states", force: :cascade do |t|

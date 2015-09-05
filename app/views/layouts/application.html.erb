@@ -37,7 +37,7 @@
         </ul>
       </div>
     </div>-->
-    <div class="navbar custom-navbar1 navbar-fixed-top" role="navigation">
+    <div class="navbar custom-navbar navbar-fixed-top" role="navigation">
       <div class="pull-right">
         <ul class="nav navbar-nav pull-right">
           <li><a href="#">Register</a></li>
@@ -45,54 +45,88 @@
         </ul>
       </div>
     </div>
-    <div class="navbar image-navbar1" role="navigation">
-      <div class="collapse navbar-collapse">
-        <div class="col-md-3">
-          <div class="pull-left" style="font-size:30px;margin-top:25px;font-weight:bold;">JOBS-HUB</div>
-        </div>
-        <div class="col-md-9">
-        </div>
-      </div>
-    </div>
-    <div class="navbar menu-navbar" role="navigation">	
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        </button>
-      </div>
-      <div class="collapse navbar-collapse">
-        <ul class="nav navbar-nav menu-bar-menu-style">
-          <li><a href="javascript:void(0);"><span>Home&nbsp;</span></a></li>
-          <% @job_types.each do | job_type | %>
-            <% if job_type.name === "State Govt job"%>
-              <li class="dropdown">
-                <a data-toggle="dropdown" class="dropdown-toggle" href="#" aria-expanded="false">
-                  <%= job_type.name %>&nbsp;<b class="caret"></b>
-                </a>
-                <ul class="dropdown-menu">
-                  <% @states.each do | state | %>
-                    <li class="lst-devider"><a href="#"><%= state.name %></a></li>
-                  <% end %>
-                </ul>
-              </li>
-            <% else %>
-              <li><a href="javascript:void(0);"><span><%= job_type.name %>&nbsp;</span></a></li>
-            <% end %>
-          <% end %>
-        </ul>
-      </div>
-    </div>
     <div class="container-fluid">
       <div class="row">
-        <div class="col-md-2"></div>
-        <div class="col-md-8 bdr-lft-rght">
-          <%= yield %>
+        <div class="col-md-1"></div>
+        <div class="col-md-10 bdr-lft-rght">
+          <div class="row navbar image-navbar logo-outer" role="navigation">
+            <div class="collapse navbar-collapse">
+              <div class="col-md-3">
+                <div class="pull-left" style="font-size:30px;margin-top:25px;font-weight:bold;">JOBS-HUB</div>
+              </div>
+              <div class="col-md-9">
+                <div class="pull-right subscription-outer">
+                  <div class="subscription-box">
+                    <span class="pull-left">
+                      <%#= image_tag("email-icon.png") %>
+                      <img border="0" src="/assets/email-icon.png">
+                    </span>
+                    <div>Subscribe for Free Job alerts</div>
+                  </div>
+                  <div class="subscription-input">
+                    <form target="popupwindow" style="display: block;"  method="post" id="subscribeForm" action="">
+                      <div class="form-group">
+                        <input type="text" placeholder="Enter your email address" name="email" id="subscribeNow" class="form-control">
+                        <input type="hidden" value="apply4sarkarinaukri" name="uri"><input type="hidden" value="en_US" name="loc">
+                      </div>
+                    </form>
+                  </div>
+                  <input type="submit" value="Submit" class="subscribe-btn orange-btn">
+                  <div class="clear"></div>
+                  <div class="email-tip"><span>Note:</span> Please check your inbox to verify your email id.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row navbar menu-navbar" role="navigation">	
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              </button>
+            </div>
+            <div class="collapse navbar-collapse">
+              <ul class="nav navbar-nav menu-bar-menu-style">
+                <li><a href="javascript:void(0);"><span>Home&nbsp;</span></a></li>
+                <% @job_types.each do | job_type | %>
+                  <% if job_type.name === "State Govt jobs"%>
+                    <li class="dropdown">
+                      <a data-toggle="dropdown" class="dropdown-toggle" href="#" aria-expanded="false">
+                        <%= job_type.name %>&nbsp;<b class="caret"></b>
+                      </a>
+                      <ul class="dropdown-menu state-list-ul">
+                        <% @states.each do | state | %>
+                          <li class="lst-devider"><a href="#"><%= state.name %></a></li>
+                        <% end %>
+                      </ul>
+                    </li>
+                  <% else %>
+                    <li><a href="javascript:void(0);"><span><%= job_type.name %>&nbsp;</span></a></li>
+                  <% end %>
+                <% end %>
+                <li><a href="javascript:void(0);"><span>Admit Cards&nbsp;</span></a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="row job-list-block">
+            <div id="breakingnews">
+              <div class="breakhead col-md-2"><i class="pull-left glyphicon glyphicon-plus plus-icon"></i>Breaking News</div>
+              <div id="adbreakingnews" class="col-md-10">
+                <marquee>
+                  <a href="/admit_cards">SSC CGL admit card 2015</a> |
+                  <a href="/admit_cards">SSC CGL admit card 2016</a> |
+                  <a href="/admit_cards">SSC CGL admit card 2017</a> |
+                  <a href="/admit_cards">SSC CGL admit card 2018</a>
+                </marquee>
+              </div>
+            </div>
+            <%= yield %>
+          </div>
         </div>
-        <div class="col-md-2"></div>
+        <div class="col-md-1"></div>
       </div>
     </div><!-- /.container -->
   </body>
-</html>
+</html> 

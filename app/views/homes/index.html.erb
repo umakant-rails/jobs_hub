@@ -1,36 +1,82 @@
-<div class="row job-list-block">
-  <div class="content">
-    <div class="table-responsive">
-      <div id="datatable_wrapper" class="dataTables_wrapper form-inline" role="grid">
-        <table aria-describedby="datatable_info" class="table table-bordered dataTable" id="datatable">
-          <thead>
-            <tr role="row">
-              <!--
-              <th style="width: 172px;" class="sorting_asc">Job Title</th>
-              <th style="width: 249px;" class="sorting">From Date</th>
-              <th style="width: 237px;" class="sorting">To Date</th>
-              <th style="width: 147px;" class="sorting">Job Details</th>
-              <th style="width: 137px;" class="sorting">Apply Online</th>-->
-              <th class="col-md-4 center">Job Title</th>
-              <th class="col-md-2 center">From Date</th>
-              <th class="col-md-2 center">To Date</th>
-              <th class="col-md-2 center">Job Details</th>
-              <th class="col-md-2 center">Apply Online</th>
-            </tr>
-          </thead>
-          <tbody aria-relevant="all" aria-live="polite" role="alert">
-            <% @jobs.each do | job |%>
-              <tr class="gradeA odd">
-                <td class=""><%= job.title %></td>
-                <td class="center"><%= job.start_date.strftime("%d/%b/%Y") %></td>
-                <td class="center"><%= job.end_date.blank? ? '--' : job.end_date.strftime("%d/%b/%Y") %></td>
-                <td class="center"><a href="javascript:void(0);">View More</a></td>
-                <td class="center"><a href="javascript:void(0);">Apply Online</a></td>
-              </tr>
-            <% end %>
-          </tbody>
-        </table>
-      </div>
+<div class="col-md-3">
+  <div class="row panel-block">
+    <div class="panel-block-hdr bdr-btm">
+      Notifications
     </div>
+    <ul class="panel-block-body nav">
+      <li><a href="http://www.sarkarinaukriupdates.com/2015/08/employment-newspaper-of-this-week-29th-aug-to-4th-sept-2015.html">Latest Notifications</a> </li>
+      <li><a href="http://www.sarkarinaukriupdates.com/2015/08/employment-newspaper-of-this-week-21st-to-28th-august-2015.html" >Upcoming Notifications</a> </li>
+    </ul>
   </div>
+  <div class="row panel-block">
+    <div class="panel-block-hdr bdr-btm">
+      Current Affairs
+    </div>
+    <ul class="panel-block-body nav">
+      <li><a href="http://www.freejobalert.com/exam-results/22075/">Daily updates</a></li>
+      <li><a href="http://www.freejobalert.com/interview-results/22135/">Weekly updates 0</a></li>
+      <li><a href="http://www.freejobalert.com/interview-results/22135/">Weekly updates 1</a></li>
+      <li><a href="http://www.freejobalert.com/interview-results/22135/">Weekly updates 2</a></li>
+      <li><a href="http://www.freejobalert.com/interview-results/22135/">Weekly updates 3</a></li>
+      <li><a href="http://www.freejobalert.com/interview-results/22135/">Weekly updates 4</a></li>
+    </ul>
+  </div>
+</div>
+
+<div class="col-md-6">
+  <% @jobs.each do | job |%>
+    <div class="job-summary-block">
+      <div class="job-summary-hdr">
+        <a href="http://www.sarkarinaukriupdates.com/2015/09/rites-limited-recruitment-manager-posts.html">
+          <%= job.title%>
+        </a>
+      </div>
+      <div class="job-summary-body">
+        <%= job.description.truncate(200)%>
+      </div>
+      <div class="pull-right read-more"><a href="javascript:void(0);">Read more ...</a></div>
+    </div>
+  <% end %>
+</div> 
+<div class="col-md-3">
+  <div class="row panel-block">
+    <div class="panel-block-hdr bdr-btm">
+      Latest Announcements
+    </div>
+    <ul class="panel-block-body nav">
+      <li><a href="http://www.freejobalert.com/exam-results/22075/">Exam Results</a></li>
+      <li><a href="http://www.freejobalert.com/interview-results/22135/">Interview Results</a></li>
+      <li><a href="http://www.freejobalert.com/interview-schedule/22252/">Interview Schedule</a></li>
+      <li><a href="http://www.freejobalert.com/upcoming-exam-dates-of-various-jobs/1835/">Exam Date Reminder</a></li>
+      <li><a href="http://www.freejobalert.com/written-test-marks/22399/">Written Marks</a></li>
+      <li><a href="http://www.freejobalert.com/admit-card-call-letter/22406/">Admit Card / Call Letter</a></li>
+    </ul>
+  </div> 
+  <div class="row panel-block">
+    <div class="panel-block-hdr bdr-btm">
+      Banking jobs
+    </div>
+    <ul class="panel-block-body nav">
+      <li><a href="http://www.sarkarinaukriupdates.com/2015/09/vijaya-bank-recruitment-36-managers-posts.html">Vijaya Bank Recruitment 2015 - 36 Managers Posts</a> </li><li><a href="http://www.sarkarinaukriupdates.com/2015/09/kerala-gramin-bank-recruitment-635-officer-and-office-assistant-posts.html">Kerala Gramin Bank Recruitment 2015 - 635 Officer &amp; Office Assistant Posts</a> </li><li><a href="http://www.sarkarinaukriupdates.com/2015/09/madhyanchal-gramin-bank-recruitment-97-officer-posts.html">Madhyanchal Gramin Bank Recruitment 2015 - 97 Officer Posts</a> </li><li><a href="http://www.sarkarinaukriupdates.com/2015/09/punjab-gramin-bank-recruitment-26-posts.html">Punjab Gramin Bank Recruitment 2015 - 26 Posts</a> </li><li><a href="http://www.sarkarinaukriupdates.com/2015/08/malwa-gramin-bank-recruitment-64-posts.html">Malwa Gramin Bank Recruitment 2015 - 64 Officer &amp; Office Assistant Posts</a> </li><li><a href="http://www.sarkarinaukriupdates.com/2015/08/sebi-recruitment-46-officer-posts.html">SEBI Recruitment 2015 - 46 Officer Posts</a> </li><li><a href="http://www.sarkarinaukriupdates.com/2015/08/puduvai-bharathiar-grama-bank-recruitment-15-officer-and-office-assistant-posts.html">Puduvai Bharathiar Grama Bank Recruitment 2015 - 15 Officer &amp; Office Assistant Posts</a> </li>
+    </ul>
+  </div> 
+  <div class="row panel-block">
+    <div class="panel-block-hdr bdr-btm">
+      Railway jobs
+    </div>
+    <ul class="panel-block-body nav">
+      <li><a "="" href="http://www.sarkarinaukriupdates.com/2015/08/krcl-recruitment-junior-engineer-posts.html">KRCL Recruitment 2015 - Junior Engineer Posts</a> </li><li><a "="" href="http://www.sarkarinaukriupdates.com/2015/08/dmrc-recruitment-131-various-posts.html">DMRC Recruitment 2015 - 131 Various Posts</a> </li><li><a "="" href="http://www.sarkarinaukriupdates.com/2015/08/cmrl-recruitment-driver-posts.html">CMRL Recruitment 2015 - Driver Posts</a> </li><li><a "="" href="http://www.sarkarinaukriupdates.com/2015/07/central-railway-recruitment-sports-quota.html">Central Railway Recruitment 2015 - Sports Quota Posts</a> </li><li><a "="" href="http://www.sarkarinaukriupdates.com/2015/07/mrvc-recruitment-25-site-engineer-posts.html">MRVC Recruitment 2015 - 23 Site Engineer Posts</a> </li><li><a "="" href="http://www.sarkarinaukriupdates.com/2015/07/mmrcl-recruitment-40-various-posts.html">MMRCL Recruitment 2015 - 40 Various Posts</a> </li><li><a "="" href="http://www.sarkarinaukriupdates.com/2015/07/northern-railway-recruitment-sports-personnel-posts.html">Northern Railway Recruitment 2015 - Sports Personnel Posts</a> </li>
+    </ul>
+  </div> 
+  <div class="row panel-block">
+    <div class="panel-block-hdr bdr-btm">
+      Teaching jobs
+    </div>
+    <ul class="panel-block-body nav">
+      <li><a "="" href="http://www.sarkarinaukriupdates.com/2015/03/mmmut-recruitment-professors-posts.html">MMMUT Recruitment 2015 - 43 Professors Posts</a> </li><li><a "="" href="http://www.sarkarinaukriupdates.com/2014/05/10th-12-pass-govt-jobs-2014.html">Govt Jobs Jan 2015 for 10th-12th Pass - 67003 Posts</a> </li><li><a "="" href="http://www.sarkarinaukriupdates.com/2014/06/sainik-school-rewari-recruitment.html">Sainik School Rewari Recruitment - Various Posts</a> </li><li><a "="" href="http://www.sarkarinaukriupdates.com/2014/07/bharti-recruitment.html">BARTI Recruitment- 22 Vacancies</a> </li><li><a "="" href="http://www.sarkarinaukriupdates.com/2014/07/iip-recruitment-2014.html">IIP Recruitment 2014- SRF Post</a> </li><li><a "="" href="http://www.sarkarinaukriupdates.com/2014/02/nift-recruitment-for-275-posts-2014.html">NIFT Recruitment- Various Posts</a> </li><li><a "="" href="http://www.sarkarinaukriupdates.com/2014/08/national-institute-recruitment.html">National Institute for the Orthopaedically Handicapped- Various Vacancies</a> </li>
+    </ul>
+  </div> 
+  <div class="row panel-block">
+    <strong>Sarkari Naukri Archive</strong>
+  </div> 
 </div>
