@@ -1,0 +1,58 @@
+<div class="row panel-block">
+  <div class="panel-block-hdr bdr-btm">
+    Latest Announcements
+  </div>
+  <ul class="panel-block-body nav">
+    <li><a href="http://www.freejobalert.com/exam-results/22075/">Exam Results</a></li>
+    <li><a href="http://www.freejobalert.com/interview-results/22135/">Interview Results</a></li>
+    <li><a href="http://www.freejobalert.com/interview-schedule/22252/">Interview Schedule</a></li>
+    <li><a href="http://www.freejobalert.com/upcoming-exam-dates-of-various-jobs/1835/">Exam Date Reminder</a></li>
+    <li><a href="http://www.freejobalert.com/written-test-marks/22399/">Written Marks</a></li>
+    <li><a href="http://www.freejobalert.com/admit-card-call-letter/22406/">Admit Card / Call Letter</a></li>
+  </ul>
+</div> 
+<div class="row panel-block">
+  <div class="panel-block-hdr bdr-btm">
+    Banking jobs
+  </div>
+  <ul class="panel-block-body nav">
+    <% if banking_jobs.present? %>
+      <% banking_jobs.each do | job |%>
+        <li><a href="<%= job_path(job.id)%>"><%= job.title %></a> </li>
+      <% end %>
+    <% else %>
+      <div class="no-job-status">No more jobs</div>
+    <% end %>
+  </ul>
+</div> 
+<div class="row panel-block">
+  <div class="panel-block-hdr bdr-btm">
+    Railway jobs
+  </div>
+  <ul class="panel-block-body nav">
+    <% if railway_jobs.present? %>
+      <% railway_jobs.each do | job |%>
+        <li><a href="<%= job_path(job.id)%>"><%= job.title %></a> </li>
+      <% end %>
+    <% else %>
+      <div class="no-job-status">No more jobs</div>
+    <% end %>
+  </ul>
+</div> 
+<div class="row panel-block">
+  <div class="panel-block-hdr bdr-btm">
+    Teaching jobs
+  </div>
+  <ul class="panel-block-body nav">
+    <% if teaching_jobs.present? %>
+      <% teaching_jobs.each do | job |%>
+        <li><a href="<%= job_path(job.id)%>"><%= job.title %></a> </li>
+      <% end %>
+    <% else %>
+      <div class="no-job-status">No more jobs</div>
+    <% end %>
+  </ul>
+</div> 
+<div class="row panel-block">
+  <strong>Sarkari Naukri Archive</strong>
+</div> 

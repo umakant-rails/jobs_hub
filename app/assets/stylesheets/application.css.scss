@@ -54,15 +54,9 @@ body{
 .image-navbar{
   margin-top: 30px;
   min-height: 188px !important;
-  border-bottom: 1px solid #ddd;
+  //border-bottom: 1px solid #ddd;
   background-color: #FFF; 
   min-height: 100px !important;
-  .col-md-9{ 
-    //background:url(navbar-image.jpg);
-    //min-height: 100px !important;
-    //box-shadow: -25px 1px 65px 50px rgba(0, 0, 0, 0.12), 1px 1px 0 rgba(255, 255, 255, 0.2) inset;
-    //box-shadow: -25px 1px 65px 50px rgba(0, 0, 0, 0.12), 1px 1px 0 lightgreen inset;
-  }
 }
 
 .menu-navbar{
@@ -71,6 +65,7 @@ body{
   background-color: #555555;
   min-height: 40px !important;
   border-radius: 0;
+  a{padding-top:8px!important;;padding-bottom:8px!important;}
   div ul li a {
     background-color: #555555 !important;
     color: #FFF !important;

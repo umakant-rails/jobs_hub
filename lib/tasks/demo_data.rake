@@ -7,7 +7,7 @@ namespace :jobs_data do
       age_limit: "30 years",
       eligibility: "All Batchlor and master candidates",
       experience: "",
-      job_type_id: 1,
+      job_category_id: 1,
       start_date: Date.today + 5.days,
       end_date: Date.today + 40.days
     )
@@ -17,7 +17,7 @@ namespace :jobs_data do
       age_limit: "30 years",
       eligibility: "Bachlors/Masters candidate application invited",
       experience: "2",
-      job_type_id: 2,
+      job_category_id: 2,
       state_id: 1,
       start_date: Date.today + 5.days,
       end_date: Date.today + 40.days
@@ -28,7 +28,7 @@ namespace :jobs_data do
       age_limit: "30 years",
       eligibility: "MBA (marketing and Accounting), B.Com, M.Com ",
       experience: "5-7 year working experience in marketing and accounting in any banking or financial organisation",
-      job_type_id: 3,
+      job_category_id: 3,
       start_date: Date.today + 5.days,
       end_date: Date.today + 40.days
     )
@@ -38,7 +38,7 @@ namespace :jobs_data do
       age_limit: "30 years",
       eligibility: "All graduates and post graduates",
       experience: "",
-      job_type_id: 4,
+      job_category_id: 4,
       start_date: Date.today + 5.days,
       end_date: Date.today + 40.days
     )
@@ -48,7 +48,7 @@ namespace :jobs_data do
       age_limit: "30 years",
       eligibility: "BE/B.Tech(CS), MCA, M.Tech(CS), B.Sc(CS)",
       experience: "5-7 year working experience in programming, database management, js etc, preffered to certied candidate",
-      job_type_id: 4,
+      job_category_id: 4,
       start_date: Date.today + 5.days,
       end_date: Date.today + 40.days
     )
@@ -58,7 +58,7 @@ namespace :jobs_data do
       age_limit: "30 years",
       eligibility: "BE/B.Tech, M.Tech with Civil, Mechanical, Electrical, EE etc streams",
       experience: "5-7 year working experience in programming, database management, js etc, preffered to certied candidate",
-      job_type_id: 4,
+      job_category_id: 4,
       start_date: Date.today + 5.days,
       end_date: Date.today + 40.days
     )
@@ -68,7 +68,7 @@ namespace :jobs_data do
       age_limit: "",
       eligibility: "BE/B.Tech(CS), MCA, M.Tech(CS), B.Sc(CS)",
       experience: "5-7 year working experience in programming, database management, js etc, preffered to certied candidate",
-      job_type_id: 5,
+      job_category_id: 5,
       start_date: Date.today + 5.days
     )
     Job.create(
@@ -77,7 +77,7 @@ namespace :jobs_data do
       age_limit: "30 years",
       eligibility: "Graduates/Post-Graduates, 12 pass out, ITI ",
       experience: "",
-      job_type_id: 6,
+      job_category_id: 6,
       start_date: Date.today + 5.days,
       end_date: Date.today + 40.days
     )
@@ -87,7 +87,7 @@ namespace :jobs_data do
       age_limit: "30 years",
       eligibility: "All Bachler and Masters invited to  apply for this post",
       experience: "",
-      job_type_id: 7,
+      job_category_id: 7,
       start_date: Date.today + 5.days,
       end_date: Date.today + 40.days
     )

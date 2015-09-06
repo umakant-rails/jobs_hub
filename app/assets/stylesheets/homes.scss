@@ -1,3 +1,13 @@
+.selected-menu{
+  border-bottom: 4px solid #009dfc !important;
+}
+.selected-lst{
+  background-color: #EEEEEE;
+}
+.no-job-status{
+  font-size: 14px;
+  text-align: center;
+}
 .panel-block{
   border: 1px solid lightgray;
   padding: 4px 0px !important;
@@ -19,13 +29,17 @@
   margin-top: 30px;
 }
 
+.breaking-news-block{
+  background-color: #FFF;
+  font-size: 12px;
+  margin-top: -20px;
+  padding: 35px 15px 25px 15px;
+}
 .job-list-block{
   background-color: #FFF;
-  padding: 10px 20px;
   margin-top: -20px;
-  padding-top: 40px;
-  padding-bottom: 40px;
   font-size: 12px;
+  padding: 5px 15px;
 }
 
 
@@ -42,14 +56,14 @@ background: linear-gradient(to bottom,  #ffffff 0%,#efeded 100%); /* W3C */
 .subscription-outer{ 
   -moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
   -webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
-  background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #fdfdfc), color-stop(1, #f5ddca) );
-  background:-moz-linear-gradient( center top, #fdfdfc 5%, #f5ddca 100% );
-  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#fdfdfc', endColorstr='#f5ddca');
+  background:-moz-linear-gradient(center top , #fdfdfc 0%, #009dfc 150%) repeat scroll 0 0;
+  background:-moz-linear-gradient( center top, #fdfdfc 0%, #009DFC 150% );
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#fdfdfc', endColorstr='#009DFC');
   background-color:#fdfdfc;
   -moz-border-radius:3px;
   -webkit-border-radius:3px;
   border-radius:3px;
-  border:1px solid #f7c7c2;
+  border:1px solid #009DFC;
   padding: 10px 2px;
   margin-right:7px; 
   margin-top:10px;
@@ -66,17 +80,17 @@ background: linear-gradient(to bottom,  #ffffff 0%,#efeded 100%); /* W3C */
 }
 
 .orange-btn {
-  -moz-box-shadow:inset 0px 1px 0px 0px #f9853e;
-  -webkit-box-shadow:inset 0px 1px 0px 0px #f9853e;
-  box-shadow:inset 0px 1px 0px 0px #f9853e;
-  background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #e6600d), color-stop(1, #da5400) );
-  background:-moz-linear-gradient( center top, #e6600d 5%, #da5400 100% );
-  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#e6600d', endColorstr='#da5400');
-  background-color:#e6600d;
+  -moz-box-shadow:inset 0px 1px 0px 0px #009DFC;
+  -webkit-box-shadow:inset 0px 1px 0px 0px #009DFC;
+  box-shadow:inset 0px 1px 0px 0px #009DFC;
+  background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #009DFC), color-stop(1, #009DFC) );
+  background:-moz-linear-gradient( center top, #009DFC 5%, #009DFC 100% );
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#009DFC', endColorstr='#009DFC');
+  background-color:#009DFC;
   -moz-border-radius:4px;
   -webkit-border-radius:4px;
   border-radius:4px;
-  border:1px solid #bc4800;
+  border:1px solid #009DFC;
   display:inline-block;
   color:#ffffff;
   font-family:arial;
@@ -89,14 +103,14 @@ background: linear-gradient(to bottom,  #ffffff 0%,#efeded 100%); /* W3C */
 .subscription-input{ float:left;  margin-top:10px;}
 .email-tip{ 
   margin-left:5px; 
-  color:#c90c0c;
+  color:#000;;
 }
 .subscribe-btn{
   margin-top: 10px; 
   margin-left:5px;
 }
 #breakingnews {
-  border-bottom: 2px solid #fc4f3f;
+  border-bottom: 2px solid #009DFC;
   height: 42px;
   line-height: 29px;
   margin: -25px 0 10px;
@@ -107,7 +121,7 @@ background: linear-gradient(to bottom,  #ffffff 0%,#efeded 100%); /* W3C */
   }
 }
 #breakingnews .breakhead {
-  background: #fc4f3f none repeat scroll 0 0;
+  background: #009DFC none repeat scroll 0 0;
   color: #fff;
   display: block;
   float: left;
@@ -163,3 +177,23 @@ background: linear-gradient(to bottom,  #ffffff 0%,#efeded 100%); /* W3C */
 .job-summary-body{
   font-size: 14px;
 }
+
+.job-details-block{
+  background-color: #F9F8F8;
+  padding:8px;
+  border-radius: 4px;
+}
+.job-details-hdr{
+  background-color: #eeeeee;
+  border-bottom: 2px solid lightgray;
+  font-size: 17px;
+  padding: 4px;
+  margin: -8px -8px 0 -8px;
+  border-radius: 4px 4px 0px 0px;
+}
+.job-details-body{
+  padding: 4px;
+  div{margin-bottom:4px;}
+}
+.job-attr{font-size: 14px;}
+.job-attr-detail{font-size: 13px; }

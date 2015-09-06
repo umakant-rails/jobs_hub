@@ -1,0 +1,36 @@
+<div class="row navbar menu-navbar" role="navigation">	
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+  </div>
+  <div class="collapse navbar-collapse">
+    <ul class="nav navbar-nav menu-bar-menu-style">
+      <li class="<%= params[:job_category_id].blank? ? 'selected-menu' : '' %>"><a href="<%= root_path %>"><span>Home&nbsp;</span></a></li>
+      <% @job_categories.each do | job_category | %>
+        <% if job_category.id === 2%>
+          <li class="dropdown <%= (params[:job_category_id].to_i == job_category.id) ? 'selected-menu' : '' %>">
+            <a data-toggle="dropdown" class="dropdown-toggle" href="/jobs/category<%= job_category.id %>" aria-expanded="false">
+              <%= job_category.name %>&nbsp;<b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu state-list-ul">
+              <% @states.each do | state | %>
+                <li class="lst-devider"><a href="<%= jobs_by_state_category_jobs_path(job_category.id, state.id) %>"><%= state.name %></a></li>
+              <% end %>
+            </ul>
+          </li>
+        <% else %>
+          <li class="<%= (params[:job_category_id].to_i == job_category.id) ? 'selected-menu' : '' %>">
+            <a href="<%= jobs_by_category_jobs_path(job_category.id) %>">
+              <span><%= job_category.name %>&nbsp;</span>
+            </a>
+          </li>
+        <% end %>
+      <% end %>
+      <li><a href="javascript:void(0);"><span>Admit Cards&nbsp;</span></a></li>
+    </ul>
+  </div>
+</div>

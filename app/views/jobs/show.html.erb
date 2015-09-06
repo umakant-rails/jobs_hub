@@ -1,0 +1,35 @@
+<div class="job-details-block">
+  <div class="job-details-hdr">
+    <a href="<%= job_path(@job.id)%>">
+      <%= @job.title%>
+    </a>
+  </div>
+  <div class="job-details-body">
+    <div>
+      <strong class="job-attr">Post names:&nbsp;</strong>
+      <span class="job-attr-detail"><%= @job.title%></span>
+    </div>
+    <div>
+      <strong class="job-attr">Description:&nbsp;</strong>
+      <span class="job-attr-detail"><%= @job.description%></span>
+    </div>
+    <div>
+      <strong class="job-attr">Eligibility:&nbsp;</strong>
+      <span class="job-attr-detail"><%= @job.eligibility%></span>
+    </div>
+    <div>
+      <strong class="job-attr">Age limit:&nbsp;</strong>
+      <span class="job-attr-details"><%= @job.age_limit%></span>
+    </div>
+    <div>
+      <strong class="job-attr">Start Date:&nbsp;</strong>
+      <span class="job-attr-details"><%= @job.start_date.strftime("%d / %b / %Y")%></span>
+    </div>
+    <div>
+      <strong class="job-attr">End Date:&nbsp;</strong>
+      <span class="job-attr-details"><%= @job.end_date.strftime("%d / %b / %Y")%></span>
+    </div>
+    <strong class="job-attr"><a href="javascript:void(0);">Click here to view original advertisement</a></strong><br/>
+    <strong class="job-attr"><a href="javascript:void(0);">Click here to apply online</a></strong>
+  </div>
+</div>
