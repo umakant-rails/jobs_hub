@@ -1,0 +1,25 @@
+<div class="job-details-block">
+  <div class="job-details-hdr">
+     <%= Announcement::TITLE_NAMES[(""+params[:announcement_type_id]).to_sym] %>
+  </div>
+  <div class="job-details-body">
+    <table class="table table-bordered">
+      <thead>
+      <tr>
+        <th>Title</th>
+        <th>Location</th>
+      </tr>
+      </thead>
+      <tbody>
+        <% @announcements && @announcements.each do | announcement | %>
+          <tr>
+            <td class="anncment-link"><%= announcement.job_name %></td>
+            <td>
+              <a class="anncment-link" href="<%= announcement.website_link %>">Click here to view</a>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

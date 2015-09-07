@@ -4,7 +4,15 @@
   </div>
   <ul class="panel-block-body nav">
     <li class="<%= params[:job_category_id].blank? ? 'selected-lst' : '' %>"><a href="<%= jobs_path %>">Latest Notifications</a> </li>
-    <li><a href="javascript:void(0);" >Upcoming Notifications</a> </li>
+    <li>
+      <a href="<%= announcement_type_announcements_path(1) %>" >Upcoming Notifications 
+        <% @ft_announcements & @ft_announcements.each do | announcement | %>
+          <% if announcement.announcement_type_id == 1 %>
+            <span class="badge pull-right custom-badge"><%= announcement.count %></span> 
+          <% end %>
+        <% end %>
+      </a>
+    </li>
   </ul>
 </div>
 <div class="row panel-block">

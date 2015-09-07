@@ -2,7 +2,9 @@
   border-bottom: 4px solid #009dfc !important;
 }
 .selected-lst{
-  background-color: #EEEEEE;
+  //background-color: #EEEEEE;
+  background-color: #009dfc;
+  a{color: #fff !important;}
 }
 .no-job-status{
   font-size: 14px;
@@ -29,12 +31,6 @@
   margin-top: 30px;
 }
 
-.breaking-news-block{
-  background-color: #FFF;
-  font-size: 12px;
-  margin-top: -20px;
-  padding: 35px 15px 25px 15px;
-}
 .job-list-block{
   background-color: #FFF;
   margin-top: -20px;
@@ -109,6 +105,14 @@ background: linear-gradient(to bottom,  #ffffff 0%,#efeded 100%); /* W3C */
   margin-top: 10px; 
   margin-left:5px;
 }
+
+.breaking-news-block{
+  background-color: #FFF;
+  font-size: 12px;
+  margin-top: -20px;
+  padding: 35px 15px 25px 15px;
+}
+
 #breakingnews {
   border-bottom: 2px solid #009DFC;
   height: 42px;
@@ -179,21 +183,30 @@ background: linear-gradient(to bottom,  #ffffff 0%,#efeded 100%); /* W3C */
 }
 
 .job-details-block{
+/*
   background-color: #F9F8F8;
   padding:8px;
   border-radius: 4px;
+  min-height: 350px;
+*/
 }
 .job-details-hdr{
+/*
   background-color: #eeeeee;
-  border-bottom: 2px solid lightgray;
+*/
+  background-color: #fefdfd;
+  border: 1px solid #009dfc;
+  border-radius: 4px;
+  box-shadow: 0 1px 0 -1px rgba(0, 0, 0, 0.12), 2px 1px 0 #009dfc inset;
   font-size: 17px;
-  padding: 4px;
-  margin: -8px -8px 0 -8px;
-  border-radius: 4px 4px 0px 0px;
+  margin-bottom: 10px;
+  padding: 5px 15px;
 }
 .job-details-body{
-  padding: 4px;
+  padding: 4px 0px;
   div{margin-bottom:4px;}
 }
 .job-attr{font-size: 14px;}
 .job-attr-detail{font-size: 13px; }
+.custom-badge{background-color: #ff2500;}
+.anncment-link{font-size: 13px;}

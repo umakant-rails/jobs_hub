@@ -1,8 +1,8 @@
-JobCategory.create!(name: "Central Govt jobs") if JobCategory.where(name: "Central Govt job").blank?
-JobCategory.create!(name: "State Govt jobs") if JobCategory.where(name: "State Govt job").blank?
-JobCategory.create!(name: "Banking jobs") if JobCategory.where(name: "Banking job").blank?
-JobCategory.create!(name: "Teaching jobs") if JobCategory.where(name: "Teaching job").blank?
-JobCategory.create!(name: "Technical jobs") if JobCategory.where(name: "Technical job").blank?
+JobCategory.create!(name: "Central Govt jobs") if JobCategory.where(name: "Central Govt jobs").blank?
+JobCategory.create!(name: "State Govt jobs") if JobCategory.where(name: "State Govt jobs").blank?
+JobCategory.create!(name: "Banking jobs") if JobCategory.where(name: "Banking jobs").blank?
+JobCategory.create!(name: "Teaching jobs") if JobCategory.where(name: "Teaching jobs").blank?
+JobCategory.create!(name: "Technical jobs") if JobCategory.where(name: "Technical jobs").blank?
 JobCategory.create!(name: "Railway Jobs") if JobCategory.where(name: "Railway Jobs").blank?
 JobCategory.create!(name: "Police/Defence Jobs") if JobCategory.where(name: "Police/Defence Jobs").blank?
 

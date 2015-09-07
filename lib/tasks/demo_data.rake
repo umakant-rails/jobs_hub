@@ -93,3 +93,51 @@ namespace :jobs_data do
     )
   end
 end
+namespace :announcement_data do
+  desc 'Load the notification and announment demo data'  
+  task :load_demo_data => :environment do
+    Announcement.create(
+      job_name: "MPPSC 2015 admit card",
+      date: Date.today + 5.days,
+      website_link: "http:/mppsc.in",
+      announcement_type_id: 1
+    )
+    Announcement.create(
+      job_name: "MP ASI 2015 admit card",
+      date: Date.today + 5.days,
+      website_link: "http:/mppsc.in",
+      announcement_type_id: 2
+    )
+    Announcement.create(
+      job_name: "Samvida Shala Sikshak 1st 2nd and 3rd",
+      date: Date.today + 5.days,
+      website_link: "http:/vyapam.nic.in",
+      announcement_type_id: 2
+    )
+    Announcement.create(
+      job_name: "FCI Recruitement 2015",
+      date: Date.today + 5.days,
+      website_link: "http:/fci.in",
+      announcement_type_id: 2
+    )
+    
+    Announcement.create(
+      job_name: "SCC CGL 2015 Result",
+      date: Date.today + 5.days,
+      website_link: "http:/ssconline.com",
+      announcement_type_id: 3
+    )
+    Announcement.create(
+      job_name: "SBI Officer and clerck notification 2015 Result",
+      date: Date.today - 5.days,
+      website_link: "http:/ibps.com",
+      announcement_type_id: 4
+    )
+    Announcement.create(
+      job_name: "SSC CGL 2015 1st Phase Result",
+      date: Date.today - 5.days,
+      website_link: "http:/ssconline.nic.in",
+      announcement_type_id: 4
+    )
+  end
+end

@@ -3,12 +3,42 @@
     Latest Announcements
   </div>
   <ul class="panel-block-body nav">
-    <li><a href="http://www.freejobalert.com/exam-results/22075/">Exam Results</a></li>
-    <li><a href="http://www.freejobalert.com/interview-results/22135/">Interview Results</a></li>
-    <li><a href="http://www.freejobalert.com/interview-schedule/22252/">Interview Schedule</a></li>
-    <li><a href="http://www.freejobalert.com/upcoming-exam-dates-of-various-jobs/1835/">Exam Date Reminder</a></li>
-    <li><a href="http://www.freejobalert.com/written-test-marks/22399/">Written Marks</a></li>
-    <li><a href="http://www.freejobalert.com/admit-card-call-letter/22406/">Admit Card / Call Letter</a></li>
+    <% admit_card_counter, interviewer_reminder_counter, interview_result_counter = 0, 0, 0%>
+    <% @ft_announcements & @ft_announcements.each do | announcement | %>
+      <% if announcement.announcement_type_id == 2 %>
+        <% admit_card_counter = announcement.count %>
+      <% end %>
+      <% if announcement.announcement_type_id == 3 %>
+        <% interviewer_reminder_counter = announcement.count %>
+      <% end %>
+    <%end%>
+    <% if @pst_announcements.announcement_type_id == 4 %>
+      <% interview_result_counter = @pst_announcements.count %>
+    <% end %>
+    <li>
+      <a href="<%= announcement_type_announcements_path(2)%>">
+        Admit Card / Call Letter
+        <% if interviewer_reminder_counter.present? %>
+          <span class="badge pull-right custom-badge"><%= admit_card_counter %></span>
+        <% end %>
+      </a>
+    </li>
+    <li>
+      <a href="<%= announcement_type_announcements_path(3)%>">
+        Inteviewer / Exam Date Reminder
+        <% if interviewer_reminder_counter.present? %>
+          <span class="badge pull-right custom-badge"><%= interviewer_reminder_counter %></span>
+        <% end %>
+      </a>
+    </li>
+    <li>
+      <a href="<%= announcement_type_announcements_path(4)%>">
+        Interview / Exam Results
+        <% if interview_result_counter.present? %>
+          <span class="badge pull-right custom-badge"><%= interview_result_counter %></span>
+        <% end %>
+      </a>
+    </li>
   </ul>
 </div> 
 <div class="row panel-block">
@@ -38,7 +68,7 @@
       <div class="no-job-status">No more jobs</div>
     <% end %>
   </ul>
-</div> 
+</div>
 <div class="row panel-block">
   <div class="panel-block-hdr bdr-btm">
     Teaching jobs
@@ -52,7 +82,7 @@
       <div class="no-job-status">No more jobs</div>
     <% end %>
   </ul>
-</div> 
+</div>
 <div class="row panel-block">
   <strong>Sarkari Naukri Archive</strong>
-</div> 
+</div>

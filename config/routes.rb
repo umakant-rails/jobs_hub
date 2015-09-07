@@ -11,6 +11,10 @@ Rails.application.routes.draw do
     get '/category/:job_category_id/state/:state_id' => "jobs#jobs_by_state_category", as: :jobs_by_state_category, on: :collection
   end
 
+  resources :announcements do
+    get '/announcement_type/:announcement_type_id' => "announcements#get_annoucements", as: :announcement_type, on: :collection
+  end
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

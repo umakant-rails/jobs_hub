@@ -1,15 +1,9 @@
 class JobsController < ApplicationController
   before_action :set_job, only: [:show, :edit, :update, :destroy]
-  before_action :set_job_associated_data, only: [:jobs_by_category, :jobs_by_state_category, :show]
+  before_action :set_job_associated_data, only: [:jobs_by_category, :jobs_by_state_category, :show, :index]
   # GET /jobs
   # GET /jobs.json
   def index
-    @job_categories = JobCategory.all
-    @states = State.all
-    @jobs = Job.where("start_date >= ?", Date.today - 30.days)
-    @banking_jobs = @jobs.where(:job_category_id => 3)
-    @railway_jobs = @jobs.where(:job_category_id => 4)
-    @teacher_jobs = @jobs.where(:job_category_id => 6)
   end
 
   # GET /jobs/1
@@ -79,17 +73,6 @@ class JobsController < ApplicationController
   
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_job_associated_data
-      @jobs = Job.where("start_date >= ?", Date.today - 30.days)
-      @banking_jobs = @jobs.where(:job_category_id => 3)
-      @railway_jobs = @jobs.where(:job_category_id => 4)
-      @teacher_jobs = @jobs.where(:job_category_id => 6)
-      #@banking_jobs = Job.where(:job_category_id => 3)
-      #@railway_jobs = Job.where(:job_category_id => 4)
-      #@teacher_jobs = Job.where(:job_category_id => 6)
-      @job_categories = JobCategory.all
-      @states = State.all
-    end
     
     def set_job
       @job = Job.find(params[:id])
