@@ -1,6 +1,7 @@
 class JobsController < ApplicationController
   before_action :set_job, only: [:show, :edit, :update, :destroy]
   before_action :set_job_associated_data, only: [:jobs_by_category, :jobs_by_state_category, :show, :index]
+  layout :set_layout
   # GET /jobs
   # GET /jobs.json
   def index
@@ -14,6 +15,8 @@ class JobsController < ApplicationController
 
   # GET /jobs/new
   def new
+    @job_categories = JobCategory.all
+    @states = State.all
     @job = Job.new
   end
 
@@ -73,7 +76,15 @@ class JobsController < ApplicationController
   
   private
     # Use callbacks to share common setup or constraints between actions.
-    
+
+    def set_layout
+      if ["show", "jobs_by_category", "jobs_by_state_category"].include?(params[:action])
+        return 'application'
+      else
+        return 'admin'
+      end
+    end
+
     def set_job
       @job = Job.find(params[:id])
     end

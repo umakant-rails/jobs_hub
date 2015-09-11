@@ -1,6 +1,7 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "homes";
+@import "font-awesome";
 
 body{
  background-color: #EEEEEE;
@@ -24,15 +25,6 @@ body{
   font-size:30px;
   margin-top:25px;
   font-weight:bold;
-}
-.custom-navbar1{
-  border-bottom: 1px solid #ddd;
-  padding: 0px 40px;
-  background-color: #555555;
-  div ul li a {
-   background-color: #555555 !important;
-   color: #FFF !important;
-  }
 }
 
 .custom-navbar{
@@ -86,12 +78,6 @@ body{
   }
 }
 
-.navbar-nav > li > a {
-  background-color: #FFF !important;
-  padding-bottom: 10px;
-  padding-top: 10px
-}
-
 .bdr-lft-rght{
   #border-left: 1px solid lightgray;
   #border-right: 1px solid lightgray;
@@ -105,3 +91,37 @@ body{
   a{padding: 6px 10px !important;}
 }
 
+.app-footer {
+  z-index: 1030;
+  bottom: 0px;
+  padding: 8px;
+  background-color: #555555;
+  border-top: 3px solid #eeeeee;
+  ul{padding-left: 0px;}
+  li{ list-style-type: none;font-size:13px;}
+  a{color: #FFF; text-decoration: none;}
+}
+.app-footer .job-type-hdr{
+  font-size: 13px;
+  font-weight: bold;
+  color: #fff;
+  border-bottom: 3px solid lightgray;
+  padding: 6px 0px;
+  margin-bottom: 10px;
+}
+.job-type-hdr::after{
+  border-bottom: 3px solid #009dfc;
+  content: " ";
+  left: 15px;
+  position: absolute;
+  top: 31px;
+  width: 110px;
+}
+.more_states{
+  color: #FFF;
+  float: left;
+  cursor: pointer;
+}
+#remaining_states{
+  display: none;
+}

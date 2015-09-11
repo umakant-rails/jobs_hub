@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   def set_job_associated_data
-    @job_categories = JobCategory.all
+    @job_categories = JobCategory.where("name not in (?)", "Others")
     @states = State.all
     @jobs = Job.where("start_date >= ?", Date.today - 30.days)
     @banking_jobs = @jobs.where(:job_category_id => 3)

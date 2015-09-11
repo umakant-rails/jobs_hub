@@ -3,7 +3,7 @@
     Latest Announcements
   </div>
   <ul class="panel-block-body nav">
-    <% admit_card_counter, interviewer_reminder_counter, interview_result_counter = 0, 0, 0%>
+    <% admit_card_counter, interviewer_reminder_counter, interview_result_counter = nil, nil, nil%>
     <% @ft_announcements & @ft_announcements.each do | announcement | %>
       <% if announcement.announcement_type_id == 2 %>
         <% admit_card_counter = announcement.count %>
@@ -12,7 +12,7 @@
         <% interviewer_reminder_counter = announcement.count %>
       <% end %>
     <%end%>
-    <% if @pst_announcements.announcement_type_id == 4 %>
+    <% if @pst_announcements && @pst_announcements.announcement_type_id == 4 %>
       <% interview_result_counter = @pst_announcements.count %>
     <% end %>
     <li>
@@ -46,7 +46,7 @@
     Banking jobs
   </div>
   <ul class="panel-block-body nav">
-    <% if banking_jobs.present? %>
+    <% if banking_jobs && banking_jobs.present? %>
       <% banking_jobs.each do | job |%>
         <li><a href="<%= job_path(job.id)%>"><%= job.title %></a> </li>
       <% end %>

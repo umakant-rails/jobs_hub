@@ -1,0 +1,14 @@
+@import "dashboards";
+@import "font-awesome";
+@import "style";
+@import "bootstrap-datetimepicker.min";
+@import "bootstrap-switch";
+
+.admin-navbar{
+  border-bottom: 1px solid #ddd;
+  background-color: #2494F2;
+  .navbar-nav > li > a{
+    background-color: #2494F2 !important;
+    color: #FFF !important;
+  }
+}

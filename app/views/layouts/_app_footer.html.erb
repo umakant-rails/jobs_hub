@@ -1,0 +1,49 @@
+<div class="col-md-4">
+  <div class="job-type-hdr">GOVT JOBS BY QUALIFICATIONS</div>
+  <ul>
+    <li><a href="http://www.sarkarinaukriupdate.com/search/label/10th%2F12th%20Pass">Sarkari Naukri for 10th / 12th pass</a></li>
+    <li><a href="http://www.sarkarinaukriupdate.com/search/label/Graduate%20%28B.A%2FB.COM%2FB.SC%29">Sarkari Naukri for Graduate</a></li>
+    <li><a href="http://www.sarkarinaukriupdate.com/search/label/ITI%2FDiploma">Sarkari Naukri For ITI &amp; Diploma</a></li>
+    <li><a href="http://www.sarkarinaukriupdate.com/search/label/BE%2FB.Tech">Sarkari Naukri for BE/BTECH</a></li>
+    <li><a href="http://www.sarkarinaukriupdate.com/search/label/BCA%2FMCA">Sarkari Naikri for BCA / MCA</a></li>
+    <li><a href="http://www.sarkarinaukriupdate.com/search/label/B.ed%20%2FM.ed">Sarkari Naukri for BED / MED</a></li>
+    <li><a href="http://www.sarkarinaukriupdate.com/search/label/CA%2FICWA">Sarkari Naukri For CA / ICWA</a></li>
+    <li><a href="http://www.sarkarinaukriupdate.com/search/label/M.Tech%2FME">Sarkari Naukri For ME / MTECH</a></li>
+    <li><a href="http://www.sarkarinaukriupdate.com/search/label/MBA%2FPGDBM%2FPGDBA">Sarkari Naukri for MBA / PGDBA</a></li>
+    <li><a href="http://www.sarkarinaukriupdate.com/search/label/Post%20Graduate%20%28M.A%2FM.com%2FM.sc%29">Sarkari Naukri for Post Graduate</a></li>
+    <li><a href="http://www.sarkarinaukriupdate.com/search/label/MBBS">Sarkari Naukri for MBBS</a></li>
+  </ul>
+</div>
+<div class="col-md-4">
+  <div class="job-type-hdr">GOVT JOBS BY STATES</div>
+  <ul>
+    <li><a href="<%= jobs_path %>">Government Jobs in All India</a></li>
+    <% @states.limit(10).each do |state| %>
+      <li><a href="<%= jobs_by_state_category_jobs_path(2, state.id)%>">Government Jobs in <%= state.name.capitalize %></a></li>
+    <% end %>
+    <div id="remaining_states">
+      <% @states.last(@states.size-10).each do |state| %>
+        <li><a href="<%= jobs_by_state_category_jobs_path(2, state.id)%>">Government Jobs in <%= state.name.capitalize %></a></li>
+      <% end %>
+    </div>
+    <li class="more_states"><i class="fa fa-plus"></i>&nbsp;&nbsp;More States</li>
+  </ul>
+</div>
+<div class="col-md-4">
+  <div class="job-type-hdr">GOVT JOBS BY CITIES</div>
+  <ul>
+    <li><a href="http://www.sarkarinaukriupdate.com/search/label/Delhi">Govt Jobs in New Delhi</a></li>
+    <li><a href="http://www.sarkarinaukriupdate.com/search/label/Mumbai">Govt Jobs in Mumbai</a></li>
+    <li><a href="http://www.sarkarinaukriupdate.com/search/label/Bangalore">Govt Jobs in Bangalore</a></li>
+    <li><a href="http://www.sarkarinaukriupdate.com/search/label/Hyderabad">Govt Jobs in Hyderabad</a></li>
+    <li><a href="http://www.sarkarinaukriupdate.com/search/label/Chennai">Govt Jobs in Chennai</a></li>
+    <li><a href="http://www.sarkarinaukriupdate.com/search/label/Kolkata">Govt Jobs in Kolkata</a></li>
+    <li><a href="http://www.sarkarinaukriupdate.com/search/label/Lucknow">Govt Jobs in Lucknow</a></li>
+    <li><a href="http://www.sarkarinaukriupdate.com/search/label/Bhopal">Govt Jobs in Bhopal</a></li>
+    <li><a href="http://www.sarkarinaukriupdate.com/search/label/Patna">Govt Jobs in Patna</a></li>
+    <li><a href="http://www.sarkarinaukriupdate.com/search/label/Ranchi">Govt Jobs in Ranchi</a></li>
+    <li><a href="http://www.sarkarinaukriupdate.com/search/label/Jabalpur">Govt Jobs in Jabalpur</a></li>
+    <li><a href="http://www.sarkarinaukriupdate.com/search/label/Chandigarh">Govt Jobs in Chandigarh</a></li>
+    <li><a href="http://www.sarkarinaukriupdate.com/search/label/Gurgaon">Govt Jobs in Gurgaon</a></li>
+  </ul>
+</div>
