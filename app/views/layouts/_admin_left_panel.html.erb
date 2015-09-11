@@ -1,0 +1,26 @@
+<div class="cl-sidebar"> 
+  <div class="cl-navblock">
+    <div class="menu-space">
+      <div class="content">
+        <ul class="cl-vnavigation">
+          <li class="">
+            <a href="#"><i class="fa fa-home"></i><span>Dashboard</span></a>
+          </li>
+          <li class="parent">
+            <a href="#">
+              <i class="fa fa-smile-o"></i><span>Job Info</span>
+            </a>
+            <ul class="sub-menu">
+              <li><a href="<%= admin_jobs_path %>">Jobs list</a></li>
+              <li><a href="<%= new_admin_job_path %>">Create Job</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div style="padding:7px 9px;" class="text-right collapse-button">
+      <input type="text" placeholder="Search..." class="form-control search">
+      <button style="" class="btn btn-default" id="sidebar-collapse"><i class="fa fa-angle-left" style="color:#fff;"></i></button>
+    </div>
+  </div>
+</div>

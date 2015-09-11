@@ -15,9 +15,12 @@ Rails.application.routes.draw do
     get '/announcement_type/:announcement_type_id' => "announcements#get_annoucements", as: :announcement_type, on: :collection
   end
 
-  resources :dashboards do
-  end
 
+  namespace :admin do
+     resources :jobs
+     resources :dashboards
+  end
+  
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

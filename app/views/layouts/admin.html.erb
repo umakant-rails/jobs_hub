@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>JobsHub</title>
+    <%= stylesheet_link_tag    'dashboards', media: 'all', 'data-turbolinks-track' => true %>
+    
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <%= render partial: "layouts/admin_navbar"%>
+    <div id="cl-wrapper">
+      <%= render partial: "layouts/admin_left_panel"%>
+      <div id="pcont" class="container-fluid">
+        <%= yield %>
+      </div> 
+    </div>
+    
+    <script type="text/javascript">
+         $(document).ready(function(){
+      //initialize the javascript
+      App.init();
+    });
+ 
+    </script> 
+ </body>
+</div>
