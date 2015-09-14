@@ -1,0 +1,44 @@
+<div class="page-head">
+  <h2>Job Posts Form</h2>
+</div>
+<div class="cl-mcont">
+  <div class="row wizard-row">
+    <div class="col-md-12 fuelux">
+      <div class="block-wizard">
+        <div class="step-content">
+          <%#= form_for(@job, url: admin_jobs_path(@job), html: {class: 'form-horizontal group-border-dashed'} ) do |f| %>
+          <% debugger %>
+          <%= form_for(@job_post, url: admin_job_create_job_posts_path(@job), html: {class: 'form-horizontal group-border-dashed'} ) do |f| %>  
+            <div class="form-group">
+              <label class="col-sm-3 control-label">Post Name</label>
+              <div class="col-sm-6">
+                <%= f.text_field :post_name, autofocus: true, placeholder: "Post Name", class: "form-control" %>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-3 control-label">Number of Vacancies</label>
+              <div class="col-sm-6">
+                <%= f.text_field :vacancies, autofocus: true, placeholder: "Number of Vacancies", class: "form-control" %>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-3 control-label">Salary</label>
+              <div class="col-sm-6">
+                <%= f.text_field :salary, autofocus: true, placeholder: "Salary", class: "form-control" %>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-3 control-label">Qualifications</label>
+              <div class="col-sm-6">
+                <%= f.text_area :qualifications, autofocus: true, placeholder: "Type Qualifications Here ...", class: "form-control" %>
+              </div>
+            </div>
+          <% end %>
+          <%= link_to 'Show', @job %> |
+          <%= link_to 'Back', jobs_path %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

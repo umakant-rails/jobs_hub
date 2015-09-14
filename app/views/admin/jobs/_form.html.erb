@@ -1,17 +1,113 @@
-<%= form_for(@job) do |f| %>
-  <% if @job.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@job.errors.count, "error") %> prohibited this job from being saved:</h2>
-
-      <ul>
-      <% @job.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="actions">
-    <%= f.submit %>
+<div class="form-group">
+  <label class="col-sm-3 control-label">Title</label>
+  <div class="col-sm-6">
+    <%= f.text_field :title, autofocus: true, placeholder: "Title", class: "form-control" %>
   </div>
-<% end %>
+</div>
+<div class="form-group">
+  <label class="col-sm-3 control-label">Description</label>
+  <div class="col-sm-6">
+    <%= f.text_area :description, autofocus: true, placeholder: "Description", class: "form-control" %>
+  </div>
+</div>
+<div class="form-group">
+  <label class="col-sm-3 control-label">Age Limit</label>
+  <div class="col-sm-6">
+    <%= f.text_field :age_limit, autofocus: true, placeholder: "Maximum age", class: "form-control" %>
+  </div>
+</div>
+<div class="form-group">
+  <label class="col-sm-3 control-label">Job Qaulifications</label>
+  <div class="col-sm-6">
+    <%= f.text_area :qualifications, autofocus: true, placeholder: "Job qualification", class: "form-control" %>
+  </div>
+</div>
+<div class="form-group">
+  <label class="col-sm-3 control-label">Experience</label>
+  <div class="col-sm-6">
+    <%= f.text_area :experience, autofocus: true, placeholder: "Experience Required", class: "form-control" %>
+  </div>
+</div>
+<div class="form-group">
+  <label class="col-sm-3 control-label">Selection Procedure</label>
+  <div class="col-sm-6">
+    <%= f.text_area :selection_procedure, autofocus: true, placeholder: "Selection Procedure", class: "form-control" %>
+  </div>
+</div>
+<div class="form-group">
+  <label class="col-sm-3 control-label">Application Fee</label>
+  <div class="col-sm-6">
+    <%= f.text_field :application_fee, autofocus: true, placeholder: "Application Fee", class: "form-control" %>
+  </div>
+</div>
+<div class="form-group">
+  <label class="col-sm-3 control-label">How To Apply</label>
+  <div class="col-sm-6">
+    <%= f.text_area :how_to_apply, autofocus: true, placeholder: "Details to apply", class: "form-control" %>
+  </div>
+</div>
+<div class="form-group">
+  <label class="col-sm-3 control-label">Online link for Job Application</label>
+  <div class="col-sm-6">
+    <%= f.text_field :apply_online_link, autofocus: true, placeholder: "Online link to apply", class: "form-control" %>
+  </div>
+</div>
+<div class="form-group">
+  <label class="col-sm-3 control-label">Original Advertisement link</label>
+  <div class="col-sm-6">
+    <%= f.text_field :website_ads_link, autofocus: true, placeholder: "Type Advertisement link", class: "form-control" %>
+  </div>
+</div>
+<div class="form-group">
+  <label class="col-sm-3 control-label">Job Location</label>
+  <div class="col-sm-6">
+    <%= f.text_field :location, autofocus: true, placeholder: "Type Job Location", class: "form-control" %>
+  </div>
+</div>
+<div class="form-group">
+  <label class="col-sm-3 control-label">Job Type</label>
+  <div class="col-sm-6">
+    <%= select_tag "job[job_category_id]", options_from_collection_for_select(@job_categories, "id", "name"),  prompt: "Select State", class: "form-control" %>
+  </div>
+</div>
+<div class="form-group">
+  <label class="col-sm-3 control-label">State</label>
+  <div class="col-sm-6">
+    <%= select_tag "job[state_id]", options_from_collection_for_select(@states, "id", "name"),  prompt: "Select State", class: "form-control" %>
+  </div>
+</div>
+<div class="form-group">
+  <label class="col-sm-3 control-label">Start Date</label>
+  <div class="col-sm-6">
+    <div data-date-format="dd-mm-yyyy" data-min-view="2" class="input-group date datetime col-md-5 col-xs-7">
+      <%= f.text_field :start_date, value: (f.object.new_record? ? '' : f.object.start_date.strftime('%d-%m-%Y')),
+        size: '16', readonly: '', class: "form-control" %>
+      <span class="input-group-addon btn btn-primary"><span class="glyphicon glyphicon-th"></span></span>
+    </div>
+  </div>
+</div>
+<div class="form-group">
+  <label class="col-sm-3 control-label">End Date</label>
+  <div class="col-sm-6">
+    <div data-date-format="dd-mm-yyyy" data-min-view="2" class="input-group date datetime col-md-5 col-xs-7">
+      <%= f.text_field :end_date, value:  (f.object.new_record? ? '' : f.object.end_date.strftime('%d-%m-%Y')),
+        size: '16', readonly: '', class: "form-control" %>
+      <span class="input-group-addon btn btn-primary"><span class="glyphicon glyphicon-th"></span></span>
+    </div>
+  </div>
+</div>
+<div class="form-group">
+  <label class="col-sm-3 control-label">Tentative Exam Date</label>
+  <div class="col-sm-6">
+    <div data-date-format="dd-mm-yyyy" data-min-view="2" class="input-group date datetime col-md-5 col-xs-7">
+      <%= f.text_field :tentative_exam_date, value:  (f.object.new_record? ? '' : f.object.tentative_exam_date.strftime('%d-%m-%Y')), size: '16', readonly: '', class: "form-control" %>
+      <span class="input-group-addon btn btn-primary"><span class="glyphicon glyphicon-th"></span></span>
+    </div>
+  </div>
+</div>
+<div class="form-group">
+  <div class="col-sm-offset-2 col-sm-10">
+    <button class="btn btn-default">Cancel</button>
+    <button class="btn btn-primary wizard-next" data-wizard="#wizard1">Next Step <i class="fa fa-caret-right"></i></button>
+  </div>
+</div>

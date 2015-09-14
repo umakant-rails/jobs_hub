@@ -5,7 +5,7 @@ class CreateJobPosts < ActiveRecord::Migration
       t.integer :vacancies
       t.string :salary
       t.text :qualifications
-
+      t.integer :job_id
       t.timestamps null: false
     end
   end

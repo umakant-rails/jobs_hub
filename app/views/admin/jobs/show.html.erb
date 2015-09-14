@@ -1,35 +1,59 @@
-<div class="job-details-block">
-  <div class="job-details-hdr">
-    <a href="<%= job_path(@job.id)%>">
-      <%= @job.title%>
-    </a>
-  </div>
-  <div class="job-details-body">
-    <div>
-      <strong class="job-attr">Post names:&nbsp;</strong>
-      <span class="job-attr-detail"><%= @job.title%></span>
+<div class="page-head">
+  <h2>Jobs Details</h2>
+</div>
+<div class="cl-mcont">
+  <div class="row wizard-row">
+    <div class="col-md-12 fuelux">
+      <div class="block-wizard">
+        <div class="step-content">
+          <div class="job_hdr"><%= @job.title %></div>
+          <%= @job.description %>
+          <% if @job.qualifications.present? %>
+            <div class="row-fluid mrgn-top">
+              <strong>Qualifications:&nbsp;&nbsp;</strong><%= @job.qualifications %>
+            </div>
+          <% end %>
+          <% if @job.experience.present? %>
+            <div class="row-fluid mrgn-top">
+              <strong>Experience:&nbsp;&nbsp;</strong><%= @job.experience %>
+            </div>
+          <% end %>
+          <% if @job.application_fee.present? %>
+            <div class="row-fluid mrgn-top">
+              <strong>Application Fee:&nbsp;&nbsp;</strong><%= @job.application_fee %>
+            </div>
+          <% end %>
+          <% if @job.selection_procedure.present? %>
+            <div class="row-fluid mrgn-top">
+              <strong>Selection Procedure:&nbsp;&nbsp;</strong><%= @job.selection_procedure %>
+            </div>
+          <% end %>
+          <% if @job.start_date.present? %>
+            <div class="row-fluid mrgn-top">
+              <strong>Start Date:&nbsp;&nbsp;</strong><%= @job.start_date.strftime("%d-%b-%Y") %>
+            </div>
+          <% end %>
+          <% if @job.start_date.present? %>
+            <div class="row-fluid mrgn-top">
+              <strong>End Date:&nbsp;&nbsp;</strong><%= @job.end_date.strftime("%d-%b-%Y") %>
+            </div>
+          <% end %>
+          <% if @job.tentative_exam_date.present? %>
+            <div class="row-fluid mrgn-top">
+              <strong>Tentative Exam Date:&nbsp;&nbsp;</strong><%= @job.tentative_exam_date.strftime("%d-%b-%Y") %>
+            </div>
+          <% end %>
+          <% if @job.apply_online_link.present? ||  @job.website_ads_link.present? %>
+            <div class="row-fluid mrgn-top">
+              <strong>Important Links:&nbsp;&nbsp;</strong>
+            </div>
+            <div class="imprt-lnks">
+              <a href="<%= @job.apply_online_link %>"> Click Here for online Application </a><br/>
+              <a href="<%= @job.website_ads_link %>"> Click Here for more details</a>
+            </div>
+          <% end %>
+        </div>
+      </div>
     </div>
-    <div>
-      <strong class="job-attr">Description:&nbsp;</strong>
-      <span class="job-attr-detail"><%= @job.description%></span>
-    </div>
-    <div>
-      <strong class="job-attr">Eligibility:&nbsp;</strong>
-      <span class="job-attr-detail"><%= @job.eligibility%></span>
-    </div>
-    <div>
-      <strong class="job-attr">Age limit:&nbsp;</strong>
-      <span class="job-attr-details"><%= @job.age_limit%></span>
-    </div>
-    <div>
-      <strong class="job-attr">Start Date:&nbsp;</strong>
-      <span class="job-attr-details"><%= @job.start_date.strftime("%d / %b / %Y")%></span>
-    </div>
-    <div>
-      <strong class="job-attr">End Date:&nbsp;</strong>
-      <span class="job-attr-details"><%= @job.end_date.strftime("%d / %b / %Y")%></span>
-    </div>
-    <strong class="job-attr"><a href="javascript:void(0);">Click here to view original advertisement</a></strong><br/>
-    <strong class="job-attr"><a href="javascript:void(0);">Click here to apply online</a></strong>
   </div>
 </div>

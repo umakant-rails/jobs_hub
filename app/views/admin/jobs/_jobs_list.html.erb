@@ -1,0 +1,32 @@
+<% if jobs.present? %>
+  <% previous_job = nil %>
+  <% jobs.each_with_index do | job, index |%>
+    <% if index == 0 || previous_job.created_at.strftime("%d-%b-%Y") != job.created_at.strftime("%d-%b-%Y") %>
+      <% previous_job = job %>
+      <table class="table table-hover row-fluid">
+        <caption>
+          <strong><%= job.created_at.strftime("%d-%B-%Y") %></strong>
+        </caption>
+        <tbody>
+    <% end %>
+          <tr id="row-<%= job.id %>">
+            <td class="col-md-10">
+              <a href="<%= admin_job_path(job) %>"><%= job.title.truncate(100) %></a>
+            </td>
+            <td class="col-md-1">
+              <%= link_to ' Edit', edit_admin_job_path(job), class: "fa fa-edit btn btn-primary" %>
+            </td>
+            <td  class="col-md-1">
+              <%= link_to ' Delete', admin_job_path(job), method: :delete, data: { confirm: 'Are you sure?' }, class: "fa fa-trash-o btn btn-danger" %>
+              <%#= link_to ' Delete', "javascript:void(0);", class: "fa fa-trash-o btn btn-danger delete_job", 
+                "data-job_id": job.id %>
+            </td>
+          </tr>
+    <% if previous_job.created_at.strftime("%d-%b-%Y") != job.created_at.strftime("%d-%b-%Y") %>
+        </tbody>
+      </table>
+    <% end %>
+  <% end %>
+<% else %>
+  <div class="no-job-status">No more jobs</div>
+<% end %>

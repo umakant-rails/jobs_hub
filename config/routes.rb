@@ -17,7 +17,9 @@ Rails.application.routes.draw do
 
 
   namespace :admin do
-     resources :jobs
+     resources :jobs do 
+      resources :job_posts
+     end
      resources :dashboards
   end
   

@@ -9,8 +9,9 @@ class CreateJobs < ActiveRecord::Migration
       t.text :experience
       t.string :application_fee
       t.text :how_to_apply
-      t.text :apply_online_link
-      t.integer :website_ads_link
+      t.string :apply_online_link
+      t.string :website_ads_link
+      t.string :location
       t.integer :job_category_id
       t.integer :state_id
       t.datetime :start_date

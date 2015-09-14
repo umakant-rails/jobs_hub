@@ -1,6 +1,26 @@
-<h1>Editing Job</h1>
+<div class="page-head">
+  <h2>Jobs Edit Form</h2>
+</div>
+<div class="cl-mcont">
+  <div class="row wizard-row">
+    <div class="col-md-12 fuelux">
+      <div class="block-wizard">
+        <div class="step-content">
+          <%= form_for(@job, url: admin_job_path(@job), html: {class: 'form-horizontal group-border-dashed'} ) do |f| %>
+            <div id="step1" class="step-pane active">
+              <div class="form-group no-padding">
+                <div class="col-sm-7">
+                  <h3 class="hthin">Edit Job</h3>
+                </div>
+              </div>
+              <%= render partial: "form", locals: {f: f} %>
+            </div>
+          <% end %>
+          <%= link_to 'Show', @job %> |
+          <%= link_to 'Back', jobs_path %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-<%= render 'form' %>
-
-<%= link_to 'Show', @job %> |
-<%= link_to 'Back', jobs_path %>

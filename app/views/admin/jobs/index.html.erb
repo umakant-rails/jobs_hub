@@ -1,1 +1,32 @@
-<%= render partial: "jobs/jobs_list_display", locals: {jobs: @jobs} %>
+<div class="page-head">
+  <h2>Jobs List</h2>
+</div>
+<div class="cl-mcont">
+  <div class="row wizard-row">
+    <div class="col-md-12 fuelux">
+      <div class="block-wizard">
+        <div class="step-content">
+          <%= render partial: "admin/jobs/jobs_list", locals: {jobs: @jobs} %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  //~ $(document).ready(function(){
+    //~ $(".delete_job").on("click", function(){
+      //~ var job_id = $(this).data('job_id');
+      //~ var is_confirm = confirm('Are you sure');
+      //~ if(is_confirm){
+        //~ $.ajax({
+          //~ url: "/admin/jobs/" + job_id,
+          //~ type: 'delete',
+          //~ dataType: "script",
+          //~ data: {},
+          //~ success: function() {
+          //~ }
+        //~ });
+      //~ }
+    //~ });
+  //~ });
+</script>
