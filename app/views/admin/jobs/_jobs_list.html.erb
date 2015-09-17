@@ -17,8 +17,8 @@
               <%= link_to ' Edit', edit_admin_job_path(job), class: "fa fa-edit btn btn-primary" %>
             </td>
             <td  class="col-md-1">
-              <%= link_to ' Delete', admin_job_path(job), method: :delete, data: { confirm: 'Are you sure?' }, class: "fa fa-trash-o btn btn-danger" %>
-              <%#= link_to ' Delete', "javascript:void(0);", class: "fa fa-trash-o btn btn-danger delete_job", 
+              <%#= link_to ' Delete', admin_job_path(job), method: :delete, data: { confirm: 'Are you sure?' }, class: "fa fa-trash-o btn btn-danger" %>
+              <%= link_to ' Delete', "javascript:void(0);", class: "fa fa-trash-o btn btn-danger delete_job", 
                 "data-job_id": job.id %>
             </td>
           </tr>

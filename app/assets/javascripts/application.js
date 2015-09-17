@@ -1,9 +1,8 @@
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
 //= require jquery-ui
 //= require bootstrap
-//= require general
+//= require_tree ./admin
 //= require_tree .
 
 $(document).ready(function(){

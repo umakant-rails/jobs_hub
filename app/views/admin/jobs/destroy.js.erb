@@ -1,2 +1,8 @@
-alert(' djflas jfla jflla jfdljasfl');
-$("#row-<%= params[:id]%>).remove();
+var numberOfRows = $("#row-<%= params[:id]%>").closest('table').find('tr').length;
+
+if(numberOfRows == 1){
+  $("#row-<%= params[:id]%>").closest('table').remove();
+  if($('table').length == 0){$(".step-content").html('<h6>There is no more jobs.</h6>');}
+} else {
+  $("#row-<%= params[:id]%>").remove();
+}
