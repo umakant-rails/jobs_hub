@@ -47,18 +47,12 @@
             </div>
           </div>
 
-            <div class="row-fluid mrgn-top">
-              <strong>Education Qualifications:&nbsp;&nbsp;</strong>
-              <div class="mrgn-top">
-                <% if @job.job_posts.map(&:qualifications).uniq.size == 1 %>
-                  <% @job.job_posts.each do | job_post |  %>
-                    <strong><%= job_post.post_name %> </strong> <%= job_post.qualifications %>
-                  <% end %>
-                <% else %>
-                  
-                <% end %>
-              </div>
+          <div class="row-fluid mrgn-top">
+            <strong>Education Qualifications:&nbsp;&nbsp;</strong>
+            <div class="mrgn-top">
+              <%= get_job_qualification %>
             </div>
+          </div>
           <% if @job.experience.present? %>
             <div class="row-fluid mrgn-top">
               <strong>Experience:&nbsp;&nbsp;</strong><%= @job.experience %>
