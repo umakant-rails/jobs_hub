@@ -31,14 +31,6 @@
   margin-top: 30px;
 }
 
-.job-list-block{
-  background-color: #FFF;
-  margin-top: -20px;
-  font-size: 12px;
-  padding: 5px 15px;
-}
-
-
 /*Subscribe group inputs related css*/
 .logo-outer{border:1px solid #fff;background: #ffffff; /* Old browsers */
 background: -moz-linear-gradient(top,  #ffffff 0%, #efeded 100%); /* FF3.6+ */
@@ -202,11 +194,10 @@ background: linear-gradient(to bottom,  #ffffff 0%,#efeded 100%); /* W3C */
   margin-bottom: 10px;
   padding: 5px 15px;
 }
-.job-details-body{
-  padding: 4px 0px;
-  div{margin-bottom:4px;}
-}
-.job-attr{font-size: 14px;}
-.job-attr-detail{font-size: 13px; }
+
 .custom-badge{background-color: #ff2500;}
 .anncment-link{font-size: 13px;}
+
+.copyright-txt{
+  border-top:3px solid #d3d3d3;margin-left:-8px;margin-right:-8px;padding:5px 0px 0px 0px;color:#FFF;
+}

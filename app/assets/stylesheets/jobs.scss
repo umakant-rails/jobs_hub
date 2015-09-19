@@ -1,16 +1,14 @@
-.job_hdr{
-  font-size: 16px;
-  font-weight: bold;
-  border-bottom: 1px solid lightgray;
-  padding-bottom: 10px;
-  margin-bottom: 10px;
-  .add-post-link{
-    padding: 0px; margin-left:-25px;margin-top:-5px;
-  }
+.job-list-block{
+  background-color: #FFF;
+  margin-top: -20px;
+  font-size: 12px;
+  padding: 5px 15px;
 }
-.mrgn-top{
-  margin-top: 10px;
+.job-details-body{
+  padding: 4px 0px;
+  div{margin-bottom:4px;}
 }
-.imprt-lnks{
-  margin-left:10px;
-}
+.job-attrs{margin-bottom: 10px !important;}
+.job-attr-lbl{font-size: 14px;}
+.job-attr-detail{font-size: 13px; }
+.mrgn-top{margin-top: 10px;}

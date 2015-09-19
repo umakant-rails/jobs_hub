@@ -23,22 +23,31 @@
                     <td>Post Detail</td>
                     <td colspan="2">Action</td>
                   </tr>
-                  <% @job.job_posts.each_with_index do | job_post, index | %>
+                  <% job_posts = @job.job_posts %>
+                  <% if  job_posts.present? %>
+                    <% job_posts.each_with_index do | job_post, index | %>
+                      <tr>
+                        <td>
+                          <div class="post-detail">
+                            <div class="">Post Name : <%= job_post.post_name %></div>
+                            <div class="">Vacancies : <%= job_post.vacancies %></div>
+                            <div class="">Salary : <%= job_post.salary %> </div>
+                          </div>
+                        </td>
+                        <td>
+                          <%= link_to ' Edit', edit_admin_job_job_post_path(@job, job_post), class: "fa fa-edit btn btn-primary" %>
+                        </td>
+                        <td>
+                          <%= link_to ' Delete', "javascript:void(0);", class: "fa fa-trash-o btn btn-danger delete_job",
+                            "data-job_id": @job.id, "data-job_post_id": job_post.id %>
+                          <%#= link_to ' Delete', admin_job_job_posts_path(@job, job_post), class: "fa fa-trash-o btn btn-danger" %>
+                        </td>
+                      </tr>
+                    <% end %>
+                  <% else %>
                     <tr>
-                      <td>
-                        <div class="post-detail">
-                          <div class="">Post Name : <%= job_post.post_name %>
-                          <div class="">Vacancies : <%= job_post.vacancies %>
-                          <div class="">Salary : <%= job_post.salary %> </div>
-                        </div>
-                      </td>
-                      <td>
-                        <%= link_to ' Edit', edit_admin_job_job_post_path(@job, job_post), class: "fa fa-edit btn btn-primary" %>
-                      </td>
-                      <td>
-                        <%= link_to ' Delete', "javascript:void(0);", class: "fa fa-trash-o btn btn-danger delete_job",
-                          "data-job_id": @job.id, "data-job_post_id": job_post.id %>
-                        <%#= link_to ' Delete', admin_job_job_posts_path(@job, job_post), class: "fa fa-trash-o btn btn-danger" %>
+                      <td colspan="2">
+                        <center><%= link_to ' Add Post', new_admin_job_job_post_path(@job), class: "fa fa-plus btn btn-primary" %></center>
                       </td>
                     </tr>
                   <% end %>
@@ -88,8 +97,12 @@
               <strong>Important Links:&nbsp;&nbsp;</strong>
             </div>
             <div class="imprt-lnks">
-              <a href="<%= @job.apply_online_link %>"> Click Here for online Application </a><br/>
-              <a href="<%= @job.website_ads_link %>"> Click Here for more details</a>
+              <% if @job.apply_online_link.present? %>
+                <a href="<%= @job.apply_online_link %>"> Click Here for online Application </a><br/>
+              <% end %>
+              <%if @job.website_ads_link.present? %>
+                <a href="<%= @job.website_ads_link %>"> Click Here for more details</a>
+              <% end %>
             </div>
           <% end %>
         </div>
