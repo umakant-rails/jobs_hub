@@ -1,9 +1,12 @@
 .job_hdr{
-  font-size: 14px;
+  font-size: 16px;
   font-weight: bold;
   border-bottom: 1px solid lightgray;
   padding-bottom: 10px;
   margin-bottom: 10px;
+  .add-post-link{
+    padding: 0px; margin-left:-25px;margin-top:-5px;
+  }
 }
 .mrgn-top{
   margin-top: 10px;

@@ -1,7 +1,7 @@
 class Admin::JobsController < ApplicationController
   before_action :set_job, only: [:show, :edit, :update, :destroy]
   layout 'admin'
-    
+
   def index
     @jobs = Job.all
   end
@@ -14,7 +14,7 @@ class Admin::JobsController < ApplicationController
     @states = State.all
     @job = Job.new
   end
-  
+
    # POST /jobs
   # POST /jobs.json
   def create
@@ -35,12 +35,20 @@ class Admin::JobsController < ApplicationController
     @job.start_date = job_params[:start_date]
     @job.end_date = job_params[:end_date]
     @job.tentative_exam_date = job_params[:tentative_exam_date]
+
+    is_validation_failed = false
+    if job_params[:job_category_id] == "2" && job_params[:state_id].blank?
+      is_validation_failed = true
+      flash[:info] = "State is mandatory field with job type State govt job"
+    end
     
     respond_to do |format|
-      if @job.save
+      if !is_validation_failed && @job.save
         format.html { redirect_to new_admin_job_job_post_path(@job), notice: 'Job was successfully created.' }
         format.json { render :show, status: :created, location: @job }
       else
+        @job_categories = JobCategory.all
+        @states = State.all
         format.html { render :new }
         format.json { render json: @job.errors, status: :unprocessable_entity }
       end
@@ -51,24 +59,21 @@ class Admin::JobsController < ApplicationController
     @job_categories = JobCategory.all
     @states = State.all
   end
-  
-  # PATCH/PUT /jobs/1
-  # PATCH/PUT /jobs/1.json
+
   def update
-    debugger
     respond_to do |format|
       if @job.update(job_params)
         format.html { redirect_to admin_job_path(@job), notice: 'Job was successfully updated.' }
         format.json { render :show, status: :ok, location: @job }
       else
+        @job_categories = JobCategory.all
+        @states = State.all
         format.html { render :edit }
         format.json { render json: @job.errors, status: :unprocessable_entity }
       end
     end
   end
 
-  # DELETE /jobs/1
-  # DELETE /jobs/1.json
   def destroy
     @job.destroy
     respond_to do |format|
@@ -84,7 +89,11 @@ class Admin::JobsController < ApplicationController
   private
   
   def job_params
-    params[:job]
+    #params[:job]
+    params.require(:job).permit(:title, :description, :age_limit, :qualifications, :selection_procedure, :experience,
+      :application_fee, :how_to_apply, :apply_online_link, :website_ads_link, :location, :job_category_id, :state_id,
+      :start_date, :end_date, :tentative_exam_date
+    )
   end
   
   def set_job

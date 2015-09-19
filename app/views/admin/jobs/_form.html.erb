@@ -1,19 +1,32 @@
+<div class="row-fluid <%= 'hide' if f.object.errors.blank? %>" style="margin-top:10px;">
+  <div class="col-sm-6 col-sm-offset-3">
+    <p class="alert alert-danger">
+      <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+      <%  f.object.errors.messages.each do | key, values | %>
+        <% values.each do | value |%>
+          <%= key.to_s + " " + value %><br/>
+        <% end %>
+      <% end %>
+    </p>
+  </div>
+</div>
+<div class="clear"></div>
 <div class="form-group">
   <label class="col-sm-3 control-label">Title</label>
   <div class="col-sm-6">
-    <%= f.text_field :title, autofocus: true, placeholder: "Title", class: "form-control" %>
+    <%= f.text_field :title, autofocus: true, placeholder: "Title", class: "form-control mandatory_field" %>
   </div>
 </div>
 <div class="form-group">
   <label class="col-sm-3 control-label">Description</label>
   <div class="col-sm-6">
-    <%= f.text_area :description, autofocus: true, placeholder: "Description", class: "form-control" %>
+    <%= f.text_area :description, autofocus: true, placeholder: "Description", class: "form-control mandatory_field" %>
   </div>
 </div>
 <div class="form-group">
   <label class="col-sm-3 control-label">Age Limit</label>
   <div class="col-sm-6">
-    <%= f.text_field :age_limit, autofocus: true, placeholder: "Maximum age", class: "form-control" %>
+    <%= f.text_field :age_limit, autofocus: true, placeholder: "Maximum age", class: "form-control mandatory_field" %>
   </div>
 </div>
 <div class="form-group">
@@ -43,7 +56,7 @@
 <div class="form-group">
   <label class="col-sm-3 control-label">How To Apply</label>
   <div class="col-sm-6">
-    <%= f.text_area :how_to_apply, autofocus: true, placeholder: "Details to apply", class: "form-control" %>
+    <%= f.text_area :how_to_apply, autofocus: true, placeholder: "Details to apply", class: "form-control mandatory_field" %>
   </div>
 </div>
 <div class="form-group">
@@ -55,7 +68,7 @@
 <div class="form-group">
   <label class="col-sm-3 control-label">Original Advertisement link</label>
   <div class="col-sm-6">
-    <%= f.text_field :website_ads_link, autofocus: true, placeholder: "Type Advertisement link", class: "form-control" %>
+    <%= f.text_field :website_ads_link, autofocus: true, placeholder: "Type Advertisement link", class: "form-control mandatory_field" %>
   </div>
 </div>
 <div class="form-group">
@@ -67,20 +80,22 @@
 <div class="form-group">
   <label class="col-sm-3 control-label">Job Type</label>
   <div class="col-sm-6">
-    <%= select_tag "job[job_category_id]", options_from_collection_for_select(@job_categories, "id", "name"),  prompt: "Select State", class: "form-control" %>
+    <% job_category_hash = Hash[@job_categories.map{|category| [category.name, category.id]}] %>
+    <%= f.select :job_category_id, options_for_select(job_category_hash, f.object.job_category_id), {:prompt => "Select Job Type"}, class:"form-control mandatory_field" %>
   </div>
 </div>
 <div class="form-group">
   <label class="col-sm-3 control-label">State</label>
   <div class="col-sm-6">
-    <%= select_tag "job[state_id]", options_from_collection_for_select(@states, "id", "name"),  prompt: "Select State", class: "form-control" %>
+    <% states_hash = Hash[@states.map{|state| [state.name, state.id]}] %>
+    <%= f.select :state_id, options_for_select(states_hash, f.object.state_id), {:prompt => "Select State"}, class:"form-control" %>
   </div>
 </div>
 <div class="form-group">
   <label class="col-sm-3 control-label">Start Date</label>
   <div class="col-sm-6">
     <div data-date-format="dd-mm-yyyy" data-min-view="2" class="input-group date datetime col-md-5 col-xs-7">
-      <%= f.text_field :start_date, value: (f.object.new_record? ? '' : f.object.start_date.strftime('%d-%m-%Y')),
+      <%= f.text_field :start_date, value: (f.object.start_date.blank? ? '' : f.object.start_date.strftime('%d-%m-%Y')),
         size: '16', readonly: '', class: "form-control" %>
       <span class="input-group-addon btn btn-primary"><span class="glyphicon glyphicon-th"></span></span>
     </div>
@@ -90,8 +105,8 @@
   <label class="col-sm-3 control-label">End Date</label>
   <div class="col-sm-6">
     <div data-date-format="dd-mm-yyyy" data-min-view="2" class="input-group date datetime col-md-5 col-xs-7">
-      <%= f.text_field :end_date, value:  (f.object.new_record? ? '' : f.object.end_date.strftime('%d-%m-%Y')),
-        size: '16', readonly: '', class: "form-control" %>
+      <%= f.text_field :end_date, value:  (f.object.end_date.blank? ? '' : f.object.end_date.strftime('%d-%m-%Y')),
+        size: '16', readonly: '', class: "form-control mandatory_field" %>
       <span class="input-group-addon btn btn-primary"><span class="glyphicon glyphicon-th"></span></span>
     </div>
   </div>
@@ -100,14 +115,20 @@
   <label class="col-sm-3 control-label">Tentative Exam Date</label>
   <div class="col-sm-6">
     <div data-date-format="dd-mm-yyyy" data-min-view="2" class="input-group date datetime col-md-5 col-xs-7">
-      <%= f.text_field :tentative_exam_date, value:  (f.object.new_record? ? '' : f.object.tentative_exam_date.strftime('%d-%m-%Y')), size: '16', readonly: '', class: "form-control" %>
+      <%= f.text_field :tentative_exam_date, value:  (f.object.tentative_exam_date.blank? ? '' : f.object.tentative_exam_date.strftime('%d-%m-%Y')), size: '16', readonly: '', class: "form-control" %>
       <span class="input-group-addon btn btn-primary"><span class="glyphicon glyphicon-th"></span></span>
     </div>
   </div>
 </div>
 <div class="form-group">
-  <div class="col-sm-offset-2 col-sm-10">
+  <div class="col-sm-offset-3 col-sm-9">
     <button class="btn btn-default">Cancel</button>
-    <button class="btn btn-primary wizard-next" data-wizard="#wizard1">Next Step <i class="fa fa-caret-right"></i></button>
+    <% if f.object.new_record? %>
+      <button type="submit" class="btn btn-primary wizard-next" id="#wizard1">
+        Next Step <i class="fa fa-caret-right"></i>
+      </button>
+    <% else %>
+      <button type="submit" class="btn btn-primary wizard-next" id="#wizard1">Update job</button>
+    <% end %>
   </div>
 </div>

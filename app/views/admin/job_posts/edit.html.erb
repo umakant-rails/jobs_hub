@@ -7,7 +7,7 @@
       <div class="block-wizard">
         <div class="step-content">
           <div class="job_hdr"><%= @job.title %></div>
-          <%= form_for(@job_post, url: admin_job_job_posts_path(@job), html: {class: 'form-horizontal group-border-dashed'} ) do |f| %>
+          <%= form_for(@job_post, url: admin_job_job_post_path(@job, @job_post), html: {class: 'form-horizontal group-border-dashed'} ) do |f| %>
             <%= render partial: "admin/job_posts/form", locals: {f: f} %>
           <% end %>
           <%= link_to 'Show', @job %> |

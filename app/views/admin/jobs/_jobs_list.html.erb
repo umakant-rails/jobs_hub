@@ -10,8 +10,11 @@
         <tbody>
     <% end %>
           <tr id="row-<%= job.id %>">
-            <td class="col-md-10">
+            <td class="col-md-9">
               <a href="<%= admin_job_path(job) %>"><%= job.title.truncate(100) %></a>
+            </td>
+            <td class="col-md-1">
+              <%= link_to ' Add Post', new_admin_job_job_post_path(job), class: "fa fa-plus btn btn-primary" %>
             </td>
             <td class="col-md-1">
               <%= link_to ' Edit', edit_admin_job_path(job), class: "fa fa-edit btn btn-primary" %>

@@ -1,0 +1,22 @@
+<div class="row-fluid" id="message_div">
+  <div class="col-xm-2 col-sm-2 col-md-2 col-lg-2"></div>
+  <div class="col-xm-8 col-sm-8 col-md-8 col-lg-8">
+    <div id="alert_msg" >
+      <% if flash[:notice].present? %>
+        <p class="alert notice alert-success">
+          <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button><%= flash[:notice] %>
+        </p>
+      <% elsif flash[:info].present? %>
+        <p class="alert notice alert-info">
+          <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button><%= flash[:info] %>
+        </p>
+      <% elsif flash[:error].present?%>
+        <p class="alert notice alert-danger">
+          <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+          <%= flash[:error] %>
+        </p>
+      <% end %>
+    </div>
+  </div>
+  <div class="col-xm-2 col-sm-2 col-md-2 col-lg-2"></div>
+</div>

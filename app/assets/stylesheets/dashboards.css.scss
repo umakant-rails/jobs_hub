@@ -14,3 +14,12 @@
     color: #FFF !important;
   }
 }
+.notice{
+  border-radius: 5px !important;
+  margin-top: 15px !important;
+  position: absolute !important;
+  z-index: 1000 !important;
+}
+.mandatory_field {
+  border-left: 3px solid #ff0000 !important;
+}

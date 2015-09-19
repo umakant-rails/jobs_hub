@@ -1,0 +1,47 @@
+<div class="row-fluid <%= 'hide' if f.object.errors.blank? %>" style="margin-top:10px;">
+  <div class="col-sm-6 col-sm-offset-3">
+    <p class="alert alert-danger">
+      <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+      <%  f.object.errors.messages.each do | key, values | %>
+        <% values.each do | value |%>
+          <%= key.to_s + " " + value %><br/>
+        <% end %>
+      <% end %>
+    </p>
+  </div>
+</div>
+<div class="clear"></div>
+<div class="form-group">
+  <label class="col-sm-3 control-label">Post Name</label>
+  <div class="col-sm-6">
+    <%= f.text_field :post_name, autofocus: true, placeholder: "Post Name", class: "form-control mandatory_field" %>
+  </div>
+</div>
+<div class="form-group">
+  <label class="col-sm-3 control-label">Number of Vacancies</label>
+  <div class="col-sm-6">
+    <%= f.text_field :vacancies, autofocus: true, placeholder: "Number of Vacancies", class: "form-control mandatory_field" %>
+  </div>
+</div>
+<div class="form-group">
+  <label class="col-sm-3 control-label">Salary</label>
+  <div class="col-sm-6">
+    <%= f.text_field :salary, autofocus: true, placeholder: "Salary", class: "form-control" %>
+  </div>
+</div>
+<div class="form-group">
+  <label class="col-sm-3 control-label">Qualifications</label>
+  <div class="col-sm-6">
+    <%= f.text_area :qualifications, autofocus: true, placeholder: "Type Qualifications Here ...", class: "form-control mandatory_field" %>
+  </div>
+</div>
+<div class="form-group">
+  <div class="col-sm-offset-3 col-sm-9">
+    <button class="btn btn-default">Cancel</button>
+    <% if f.object.new_record? %>
+      <%= f.submit "Create Job Post", class: "btn btn-primary wizard-next" %>
+    <% else %>
+      <%= f.submit "Update Job Post", class: "btn btn-primary wizard-next" %>
+    <% end %>
+  </div>
+</div>
