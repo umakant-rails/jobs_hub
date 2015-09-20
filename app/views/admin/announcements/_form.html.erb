@@ -1,0 +1,57 @@
+<div class="row-fluid <%= 'hide' if f.object.errors.blank? %>" style="margin-top:10px;">
+  <div class="col-sm-6 col-sm-offset-3">
+    <p class="alert alert-danger">
+      <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+      <%  f.object.errors.messages.each do | key, values | %>
+        <% values.each do | value |%>
+          <%= key.to_s + " " + value %><br/>
+        <% end %>
+      <% end %>
+    </p>
+  </div>
+</div>
+<div class="clear"></div>
+<div class="form-group">
+  <label class="col-sm-3 control-label">Job Name</label>
+  <div class="col-sm-6">
+    <%= f.text_field :job_name, autofocus: true, placeholder: "Job name", class: "form-control mandatory_field" %>
+  </div>
+</div>
+<div class="form-group">
+  <label class="col-sm-3 control-label">Description</label>
+  <div class="col-sm-6">
+    <%= f.text_area :description, autofocus: true, placeholder: "Description", class: "form-control" %>
+  </div>
+</div>
+<div class="form-group">
+  <label class="col-sm-3 control-label">Announcment Type</label>
+  <div class="col-sm-6">
+    <%= f.select :announcement_type_id, options_for_select(get_announcement_hash, f.object.announcement_type_id), {:prompt => "Select State"}, class:"form-control mandatory_field" %>
+  </div>
+</div>
+<div class="form-group">
+  <label class="col-sm-3 control-label">Website Link</label>
+  <div class="col-sm-6">
+    <%= f.text_field :website_link, autofocus: true, placeholder: "Type Job Location", class: "form-control mandatory_field" %>
+  </div>
+</div>
+<div class="form-group">
+  <label class="col-sm-3 control-label">Announcement Date</label>
+  <div class="col-sm-6">
+    <div data-date-format="dd-mm-yyyy" data-min-view="2" class="input-group date datetime col-md-5 col-xs-7">
+      <%= f.text_field :date, value: (f.object.date.blank? ? '' : f.object.date.strftime('%d-%m-%Y')),
+        size: '16', readonly: '', class: "form-control mandatory_field" %>
+      <span class="input-group-addon btn btn-primary"><span class="glyphicon glyphicon-th"></span></span>
+    </div>
+  </div>
+</div>
+<div class="form-group">
+  <div class="col-sm-offset-3 col-sm-9">
+    <button class="btn btn-default">Cancel</button>
+    <% if f.object.new_record? %>
+      <button type="submit" class="btn btn-primary wizard-next" id="#wizard1">Create</button>
+    <% else %>
+      <button type="submit" class="btn btn-primary wizard-next" id="#wizard1">Update</button>
+    <% end %>
+  </div>
+</div>

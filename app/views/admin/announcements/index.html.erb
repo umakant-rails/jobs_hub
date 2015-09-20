@@ -1,0 +1,47 @@
+<div class="page-head">
+  <h2>Announcement List</h2>
+</div>
+<div class="cl-mcont">
+  <div class="row wizard-row">
+    <div class="col-md-12 fuelux">
+      <div class="block-wizard">
+        <div class="step-content">
+          <% if @announcements.present? %>
+            <% previous_anc = nil %>
+            <% @announcements.each_with_index do | anc, index |%>
+              <% if index == 0 || previous_anc.created_at.strftime("%d-%b-%Y") != anc.created_at.strftime("%d-%b-%Y") %>
+                <% previous_anc = anc %>
+                <table class="table table-hover row-fluid">
+                  <caption>
+                    <strong><%= anc.created_at.strftime("%d-%B-%Y") %></strong>
+                  </caption>
+                  <tbody>
+              <% end %>
+                    <tr id="row-<%= anc.id %>">
+                      <td class="col-md-9">
+                        <a href="<%= admin_announcement_path(anc) %>"><%= anc.job_name.truncate(100) %></a>
+                      </td>
+                      <td class="col-md-1">
+                        <%= link_to ' Edit', edit_admin_announcement_path(anc), class: "fa fa-edit btn btn-primary" %>
+                      </td>
+                      <td  class="col-md-1">
+                        <%#= link_to ' Delete', admin_announcement_path(anc), method: :delete, data: { confirm: 'Are you sure?' }, class: "fa fa-trash-o btn btn-danger" %>
+                        <%= link_to ' Delete', "javascript:void(0);", class: "fa fa-trash-o btn btn-danger delete_anc", 
+                          "data-anc_id": anc.id %>
+                      </td>
+                    </tr>
+              <% if previous_anc.created_at.strftime("%d-%b-%Y") != anc.created_at.strftime("%d-%b-%Y") %>
+                  </tbody>
+                </table>
+              <% end %>
+            <% end %>
+          <% else %>
+            <div class="no-job-status">No more Announcements</div>
+          <% end %>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

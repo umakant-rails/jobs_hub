@@ -160,7 +160,8 @@ background: linear-gradient(to bottom,  #ffffff 0%,#efeded 100%); /* W3C */
 
 /* job summary block css*/
 .job-summary-block{
-  margin-bottom: 30px;
+  margin-bottom: 20px;
+  min-height: 350px;
   .read-more{margin-top: -5px;}
 }
 .job-summary-hdr{

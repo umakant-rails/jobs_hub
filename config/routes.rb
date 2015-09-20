@@ -21,6 +21,7 @@ Rails.application.routes.draw do
       resources :job_posts
      end
      resources :dashboards
+     resources :announcements
   end
   
   # Example of regular route:
