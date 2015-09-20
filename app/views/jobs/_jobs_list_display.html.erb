@@ -1,17 +1,33 @@
-<% if jobs.present? %>
-  <% jobs.each do | job |%>
-    <div class="job-summary-block">
-      <div class="job-summary-hdr">
-        <a href="<%= job_path(job.id)%>">
-          <%= job.title%>
-        </a>
+<div class="job-summary-block">
+  <% if jobs.present? %>
+    <div class="row-fluid" style="font-size:14px;font-weight:bold;border-bottom:1px solid lightgray;padding-bottom:5px;margin-bottom:10px;">Latest Jobs</div>
+    <% jobs.each do | job |%>
+      <div class="row-fluid clear" style="padding:2px 0px;">
+        <i class="fa fa-caret-right pull-left" style="padding-top:2px;"></i>
+        <div class="" style="margin-left:8px;font-size:13px;">
+          <a href="<%= job_path(job.id)%>"><%= job.title %></a>
+        </div>
       </div>
-      <div class="job-summary-body">
-        <%= job.description.truncate(200)%>
-      </div>
-      <div class="pull-right read-more"><a href="javascript:void(0);">Read more ...</a></div>
-    </div>
+    <% end %>
+  <% else %>
+    <div class="no-job-status">No more jobs</div>
   <% end %>
-<% else %>
-  <div class="no-job-status">No more jobs</div>
-<% end %>
+</div>
+<div class="bdr-btm"></div>
+<div class="ads-block"><br/>
+  <div class=""><center>Advertisement goes here.</center></div>
+</div>
+
+<%# jobs.each do | job |%>
+  <!--<div class="job-summary-block">
+    <div class="job-summary-hdr">
+      <a href="<%#= job_path(job.id)%>">
+        <%#= job.title%>
+      </a>
+    </div>
+    <div class="job-summary-body">
+      <%#= job.description.truncate(200)%>
+    </div>
+    <div class="pull-right read-more"><a href="javascript:void(0);">Read more ...</a></div>
+  </div> -->
+<%# end %>
