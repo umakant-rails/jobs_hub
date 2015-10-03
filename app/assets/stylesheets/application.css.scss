@@ -13,7 +13,10 @@ body{
 .bdr-lft{border-left: 1px solid lightgray;}
 .bdr-rght{border-right: 1px solid lightgray;}
 .bdr-btm{border-bottom: 1px solid lightgray;}
+.mrgn-btm15{margin-bottom: 10px;}
+.mrgn-btm15{margin-bottom: 15px;}
 .clear{clear:both;}
+.fa-bars {color: #FFF;}
 
 .site-tag{
   color: #009dfc;
@@ -28,6 +31,7 @@ body{
   font-weight:bold;
 }
 
+.top-lbl-web-title{color:#FFF;font-size:18px;font-weight:bold;padding-top:6px;}
 .custom-navbar{
   border-bottom: 1px solid #ddd;
   padding: 0px 40px;
@@ -41,6 +45,19 @@ body{
     color: #FFF !important;
   }
 }
+.custom-navbar1{
+  border-bottom: 1px solid #ddd;
+  padding: 0px 40px;
+  background-color: #555555;
+  min-height: 25px !important;
+  div ul li a {
+    min-height: 15px !important;
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+    background-color: #555555 !important;
+    color: #FFF !important;
+  }
+}
 
 .navbar-header > a{
   color: #FFF !important;
@@ -48,7 +65,7 @@ body{
 }
 
 .image-navbar1{
-  margin-top: 30px;
+  margin-top: 40px;
   min-height: 188px !important;
   border-bottom: 1px solid #ddd;
   background-color: #FFF;
@@ -77,6 +94,17 @@ body{
     font-weight: bold;
     font-size: 12px;
   }
+  .current-affr-menu{
+    background-color: #009dfc !important;
+    border-radius: 5px;
+    border: 1px solid #009dfc;
+    margin-left: 5px;
+  }
+}
+
+.menu-bar-menu-style{
+  margin-left: -30px;
+  li{border-bottom: 3px solid #555555;}
 }
 
 .bdr-lft-rght{

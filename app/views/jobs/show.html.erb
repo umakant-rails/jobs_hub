@@ -44,11 +44,11 @@
     </div>
     <div class="job-attrs">
       <strong class="job-attr-lbl">Start Date:&nbsp;</strong>
-      <span class="job-attr-details"><%= @job.start_date.strftime("%d / %b / %Y")%></span>
+      <span class="job-attr-details"><%= @job.start_date.strftime("%d / %b / %Y") if @job.start_date.present? %></span>
     </div>
     <div class="job-attrs">
       <strong class="job-attr-lbl">End Date:&nbsp;</strong>
-      <span class="job-attr-details"><%= @job.end_date.strftime("%d / %b / %Y")%></span>
+      <span class="job-attr-details"><%= @job.end_date.strftime("%d / %b / %Y") if @job.end_date.present? %></span>
     </div>
     <strong class="job-attr-lbl"><a href="javascript:void(0);">Click here to view original advertisement</a></strong><br/>
     <strong class="job-attr-lbl"><a href="javascript:void(0);">Click here to apply online</a></strong>

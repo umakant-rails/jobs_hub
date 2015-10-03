@@ -25,6 +25,13 @@
     a { padding: 5px; font-size:13px;}
   }
 }
+.search-by-tags{
+  border-bottom: 1px solid #d3d3d3;
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 10px !important;
+  padding-bottom: 8px;
+}
 .starter-template {
   padding: 40px 15px;
   text-align: center;
@@ -121,9 +128,10 @@ background: linear-gradient(to bottom,  #ffffff 0%,#efeded 100%); /* W3C */
   color: #fff;
   display: block;
   float: left;
+  cursor: pointer;
   font-family: "Roboto Condensed";
   font-weight: bold;
-  padding: 6.5px 22px;
+  padding: 6.5px 18px;
   position: absolute;
   text-transform: uppercase;
 }
@@ -161,7 +169,7 @@ background: linear-gradient(to bottom,  #ffffff 0%,#efeded 100%); /* W3C */
 /* job summary block css*/
 .job-summary-block{
   margin-bottom: 20px;
-  min-height: 350px;
+  min-height: 328px;
   .read-more{margin-top: -5px;}
 }
 .job-summary-hdr{
@@ -201,4 +209,57 @@ background: linear-gradient(to bottom,  #ffffff 0%,#efeded 100%); /* W3C */
 
 .copyright-txt{
   border-top:3px solid #d3d3d3;margin-left:-8px;margin-right:-8px;padding:5px 0px 0px 0px;color:#FFF;
+}
+
+.states-name-list{
+  background-color: #555555;
+  padding: 8px;
+  margin-top: 40px;
+  z-index: 1000;
+  position: absolute;
+  display: none;
+  border-radius: 3px;
+  /*border: 1px solid #555555;*/
+  border: 1px solid #009DFC;
+}
+.states-name-block{
+  background-color: #FFF;
+  font-size: 13px;
+  font-weight: bold;
+  border-radius: 2px;
+  padding:4px;
+  .state-name{ margin-top: 2px !important; }
+  a{text-decoration: none; }
+}
+.breaking-news-list{
+  background-color: #555555;
+  font-size: 13px;
+  padding: 8px 0;
+  display: none;
+  margin-top: -12px;
+  z-index: 1000;
+  position: absolute;
+  border-radius: 3px;
+  border: 1px solid #009DFC;
+  min-width: 98%;
+}
+.breaking-news-list-row{
+  padding: 0 8px 5px;
+  div{
+    background-color: #FFF;
+  }
+  div:first-child{border-radius: 2px 0px 0px 2px;}
+  div:last-child{border-radius: 0px 2px 2px 0px;}
+}
+.ancmnt-hdr{
+  border-bottom: 3px solid #009DFC;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+.ancmnt-details{
+  padding-left: 2px;
+  li{list-style-type:none;padding-bottom:4px;}
+  a{text-decoration: none;}
 }
