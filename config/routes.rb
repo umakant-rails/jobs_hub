@@ -22,6 +22,7 @@ Rails.application.routes.draw do
      end
      resources :dashboards
      resources :announcements
+     resources :current_affairs
   end
   
   # Example of regular route:

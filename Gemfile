@@ -21,6 +21,7 @@ gem 'puma'
 # gem 'capistrano-rails', group: :development
 gem 'devise'
 gem "carrierwave"
+gem "pdfkit"
 
 group :development, :test do
   gem 'byebug'

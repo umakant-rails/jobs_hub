@@ -1,0 +1,52 @@
+<div class="row-fluid <%= 'hide' if f.object.errors.blank? %>" style="margin-top:10px;">
+  <div class="col-sm-6 col-sm-offset-3">
+    <p class="alert alert-danger">
+      <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+      <%  f.object.errors.messages.each do | key, values | %>
+        <% values.each do | value |%>
+          <%= key.to_s + " " + value %><br/>
+        <% end %>
+      <% end %>
+    </p>
+  </div>
+</div>
+<div class="forms_field">
+  <div class="loader_image">
+    <img width="83" height="15" border="0" align="absmiddle" style="padding:0; margin:0;" src="/assets/loading.gif"/>&nbsp;&nbsp;<strong>Work in progress...</strong> 
+  </div>
+  <div class="clear"></div>
+  <div class="form-group">
+    <label class="col-sm-3 control-label">News Date</label>
+    <div class="col-sm-6">
+      <div data-date-format="dd-mm-yyyy" data-min-view="2" class="input-group date datetime col-md-5 col-xs-7" style= 'margin-bottom:0px;'>
+        <%= f.text_field :date, value: (f.object.date.blank? ? '' : f.object.date.strftime('%d-%m-%Y')), size: '16', readonly: '', class: "form-control" %>
+        <span class="input-group-addon btn btn-primary"><span class="glyphicon glyphicon-th"></span></span>
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-sm-3 control-label">Crt Affair Type</label>
+    <div class="col-sm-6">
+      <% crt_affr_category_hash = Hash[@current_affair_types.map{|category| [category.name, category.id]}] %>
+      <%= f.select :current_affair_category_id, options_for_select(crt_affr_category_hash, f.object.current_affair_category_id), {:prompt => "Select Type"}, class:"form-control mandatory_field" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-sm-3 control-label">Description</label>
+    <div class="col-sm-6">
+      <%= f.text_area :description, autofocus: true, placeholder: "Description", class: "form-control mandatory_field" %>
+    </div>
+  </div>
+</div>
+<div class="form-group">
+  <div class="col-sm-offset-3 col-sm-9">
+    <button class="btn btn-default">Cancel</button>
+    <% if f.object.new_record? %>
+      <button type="button" class="btn btn-primary wizard-next" id="create_crt_affr">
+        Submit
+      </button>
+    <% else %>
+      <button type="button" class="btn btn-primary wizard-next" id="#wizard1">Update</button>
+    <% end %>
+  </div>
+</div>
