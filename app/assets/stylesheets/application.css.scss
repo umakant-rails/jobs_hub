@@ -154,3 +154,37 @@ body{
 #remaining_states{
   display: none;
 }
+.job-group-hdr{
+ font-size:14px;font-weight:bold;border-bottom:1px solid lightgray;padding-bottom:5px;margin-bottom:10px;
+}
+.job-detail-link, .job-detail-link:hover{
+  text-decoration: none;
+  font-weight: bold;
+  color: #075FE6;
+}
+.job-view-more, .job-view-more:hover{
+  color: #D63A37;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.jobs-table{
+  thead {
+    th{
+      background-color: #DDDDDD;
+      padding: 5px 8px !important;
+      border-bottom: 1px solid #DDDDDD !important;
+    }
+  }
+  tbody{
+    tr:last-child{
+      border-bottom: 1px solid #DDDDDD;
+    }
+  }
+}
+
+.breaking-news-list-row{
+  .col-md-4{
+    padding-bottom: 15px;
+  }
+}
