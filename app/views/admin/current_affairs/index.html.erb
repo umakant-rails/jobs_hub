@@ -15,17 +15,17 @@
                 <div class="col-sm-4 filter-input-boxes">
                   <div class="row-fluid" >
                     <div class="col-sm-6">
-                      <%= select_tag "years", options_for_select(Date.today.year-2..Date.today.year, Date.today.year), class: 'form-control', prompt: "Select Year"%>
+                      <%= select_tag "year", options_for_select(Date.today.year-2..Date.today.year, Date.today.year), class: 'form-control', prompt: "Select Year"%>
                     </div>
                     <div class="col-sm-6">
-                      <%= select_tag "months", options_for_select(CurrentAffair::MONTHS.invert), class: 'form-control', prompt: "Select Month"%>
+                      <%= select_tag "month", options_for_select(CurrentAffair::MONTHS.invert, Date.today.month), class: 'form-control', prompt: "Select Month"%>
                     </div>
                   </div>
                 </div>
                 <div class="col-sm-2 filter-input-boxes">
                   <div data-date-format="dd-mm-yyyy" data-min-view="2" style="margin-bottom:0px;"
                     class="input-group date datetime col-md-12 col-xs-12">
-                    <input type="text" readonly="" id="date" value="Select Date" size="16" class="form-control">
+                    <input type="text" readonly="" id="date" name="date" value="Select Date" size="16" class="form-control">
                     <span class="input-group-addon btn btn-primary" id="date-span">
                       <span class="glyphicon glyphicon-th"></span>
                     </span>
@@ -35,14 +35,17 @@
                   <%= select_tag 'current_affair_category_id', options_from_collection_for_select(@current_affair_types, "id", "name"), :prompt => "Select Type", class:"form-control" %>
                 </div>
                 <div class="col-sm-1">
-                  <button type="button" class="btn btn-primary wizard-next" id="#wizard1">
+                  <button type="button" class="btn btn-primary wizard-next" id="filter_current_affair">
                     <i class="fa fa-search"></i>
                   </button>
                 </div>
               </div>
               <div class="clear"></div>
-              <div class="form-group">
+              <div class="form-group" id="crt_affr_list_block">
                 <%= render partial: "admin/current_affairs/crt_affr_list", locals: {current_affairs: @current_affairs}%>
+              </div>
+              <div class="loader_image">
+                <img width="83" height="15" border="0" align="absmiddle" style="padding:0; margin:0;" src="/assets/loading.gif"/>&nbsp;&nbsp;<strong>Work in progress...</strong> 
               </div>
             </div>
           </form>       

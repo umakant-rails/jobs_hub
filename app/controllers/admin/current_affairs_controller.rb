@@ -51,6 +51,28 @@ class Admin::CurrentAffairsController < ApplicationController
     end
   end
 
+  def filter_current_affair
+    category_filter = ""
+
+    if params[:category_id].present?
+      category_filter = "current_affair_category_id = #{params[:category_id]} and "
+    end
+
+    if params[:date].present?
+      @current_affairs = CurrentAffair.joins(:current_affair_category).where(category_filter + "date = ?", params[:date] )
+    elsif params[:year].present? && params[:month].present?
+      @current_affairs = CurrentAffair.joins(:current_affair_category).where(category_filter + "year(date) = ? and month(date) = ?", params[:year], params[:month])
+    else
+      @current_affairs = CurrentAffair.joins(:current_affair_category).where( category_filter + "year(date) = ? and month(date) = ?", Date.today.year, Date.today.month)
+    end
+
+    respond_to do |format|
+      format.html{}
+      format.js{}
+    end
+
+  end
+
   private
   
     def current_affair_params

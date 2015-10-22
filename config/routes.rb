@@ -22,7 +22,9 @@ Rails.application.routes.draw do
      end
      resources :dashboards
      resources :announcements
-     resources :current_affairs
+     resources :current_affairs do
+      post 'filter_current_affair', on: :collection
+     end
   end
   
   # Example of regular route:
