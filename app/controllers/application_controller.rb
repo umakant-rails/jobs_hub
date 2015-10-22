@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
   def set_job_associated_data
     @job_categories = JobCategory.where("name not in (?)", "Others")
     @states = State.all
-    @jobs = Job.where("start_date >= ?", Date.today - 30.days)
+    @jobs = Job.joins(:job_posts).where("start_date >= ?", Date.today - 60.days)
     @banking_jobs = @jobs.where(:job_category_id => 3)
     @railway_jobs = @jobs.where(:job_category_id => 4)
     @teacher_jobs = @jobs.where(:job_category_id => 6)

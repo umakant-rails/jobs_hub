@@ -1,9 +1,5 @@
 Rails.application.routes.draw do
 
-  # The priority is based upon order of creation: first created -> highest priority.
-  # See how all your routes lay out with "rake routes".
-
-  # You can have the root of your site routed with "root"
   root 'homes#index'
 
   resources :jobs do
@@ -14,7 +10,8 @@ Rails.application.routes.draw do
   resources :announcements do
     get '/announcement_type/:announcement_type_id' => "announcements#get_annoucements", as: :announcement_type, on: :collection
   end
-
+  resources :current_affairs, only: :index do
+  end
 
   namespace :admin do
      resources :jobs do 
