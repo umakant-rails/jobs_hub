@@ -1,7 +1,9 @@
 <div class="row">
   <% current_affairs && current_affairs.each_with_index do |crt_affr, index| %>
     <div class="col-md-6 crt-affr-bullets <%= (index % 2 == 0) ? 'pull-left' : 'pull-right' %>">
-      <div class="crt-affr-bullet-index"><strong><%= index + 1 %>.</strong></div>
+      <div class="crt-affr-bullet-index">
+        <strong><i class="fa fa-caret-right crt-affr-caret"></i></strong>
+      </div>
       <div class="crt-affr-description">
         <%= crt_affr.description.capitalize %>
       </div>
