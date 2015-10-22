@@ -1,11 +1,17 @@
 class Admin::CurrentAffairsController < ApplicationController
+  before_action :set_current_affair, only: [:show, :edit, :update, :destroy]
   layout 'admin'
-  
+
+  def index
+    @current_affair_types = CurrentAffairCategory.all
+    @current_affairs = CurrentAffair.joins(:current_affair_category).where("date between ? and ?" , Date.today.beginning_of_month, Date.today.end_of_month)
+  end
+
   def new
     @current_affair_types = CurrentAffairCategory.all
     @current_affair = CurrentAffair.new
   end
-  
+
   def create
     @current_affair = CurrentAffair.new(current_affair_params)
     @message = ""
@@ -26,10 +32,33 @@ class Admin::CurrentAffairsController < ApplicationController
     end
   end
   
+  def show
+  end
+
+  def edit
+    @current_affair_types = CurrentAffairCategory.all
+  end
+
+  def update
+    respond_to do |format|
+      if @current_affair.update(current_affair_params)
+        format.html { redirect_to admin_current_affair_path(@current_affair), notice: 'Current Affair was successfully updated.' }
+        format.json { render :show, status: :ok, location: @current_affair }
+      else
+        format.html { render :edit }
+        format.json { render json: @current_affair.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
   private
   
     def current_affair_params
       params.require(:current_affair).permit(:description, :date, :current_affair_category_id)
     end
-  
+
+    def set_current_affair
+      @current_affair = CurrentAffair.where(:id => params[:id]).first
+    end
+
 end

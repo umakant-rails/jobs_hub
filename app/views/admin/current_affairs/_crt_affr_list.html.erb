@@ -1,0 +1,27 @@
+<div class="row">
+  <% current_affairs && current_affairs.each_with_index do |crt_affr, index| %>
+    <div class="col-md-6 crt-affr-bullets <%= (index % 2 == 0) ? 'pull-left' : 'pull-right' %>">
+      <div class="crt-affr-bullet-index"><strong><%= index + 1 %>.</strong></div>
+      <div class="crt-affr-description">
+        <%= crt_affr.description.capitalize %>
+      </div>
+      <div class="clear"></div>
+      <div class="crt-affr-link">
+        <div class="row">
+          <div class="col-md-8 crt-affr-category"><strong>Type : </strong><%= crt_affr.current_affair_category.name%></div>
+          <div class="col-md-4">
+            <%= link_to ' Delete', admin_current_affair_path(crt_affr), method: :delete, data: { confirm: 'Are you sure?' }, class: "fa fa-trash-o" %>
+            <%= link_to ' Edit', edit_admin_current_affair_path(crt_affr), class: "fa fa-pencil-square-o" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+  <% if current_affairs.blank? %>
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+      There is no data now.
+    </div>
+    <div class="col-md-4"></div>
+  <% end %>
+</div>

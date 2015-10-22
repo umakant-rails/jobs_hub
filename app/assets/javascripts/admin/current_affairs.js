@@ -28,4 +28,13 @@ $(document).ready(function(){
       });
     }
   });
+
+  /*Select any filter and display selected alternate filter*/
+  $("#years, #months, #date-span").on('click change', function(){
+    if($(".selected-crt-affr-filter").length >= 1){
+      $(".selected-crt-affr-filter").removeClass('selected-crt-affr-filter');
+    }
+    $(this).closest(".filter-input-boxes").addClass('selected-crt-affr-filter');
+  });
+
 });

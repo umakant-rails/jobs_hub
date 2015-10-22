@@ -1,0 +1,36 @@
+<div class="page-head">
+  <h2>Current Affairs</h2>
+</div>
+<div class="cl-mcont">
+  <div class="row wizard-row">
+    <div class="col-md-12 fuelux">
+      <div class="block-wizard">
+        <div class="step-content">
+          <form method="post" accept-charset="UTF-8" action="" id="" class="form-horizontal group-border-dashed">
+            <div class="step-pane active" id="step1">
+              <div class="form-group padding">
+                <div class="col-sm-7">
+                  <h3 class="hthin">Current Affair News </h3>
+                </div>
+              </div>
+              <div class="clear"></div>
+              <div class="form-group">
+                <div class="crt-affr-description">
+                  <span style="margin-left:15px;"><%= @current_affair.description.capitalize %></span>
+                  <div class="clear"></div>
+                  <div class="row-field crt-affr-link">
+                    <div class="col-md-8"><strong>Type : </strong><%= @current_affair.current_affair_category.name%></div>
+                    <div class="col-md-4">
+                      <%= link_to ' Edit', edit_admin_current_affair_path(@current_affair), class: "fa fa-pencil-square-o" %>
+                      <%= link_to ' Delete', admin_current_affair_path(@current_affair), method: :delete, data: { confirm: 'Are you sure?' }, class: "fa fa-trash-o" %>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>       
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

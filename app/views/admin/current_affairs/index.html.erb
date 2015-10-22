@@ -1,0 +1,53 @@
+<div class="page-head">
+  <h2>Current Affairs</h2>
+</div>
+<div class="cl-mcont">
+  <div class="row wizard-row">
+    <div class="col-md-12 fuelux">
+      <div class="block-wizard">
+        <div class="step-content">
+          <form method="post" accept-charset="UTF-8" action="" id="" class="form-horizontal group-border-dashed">
+            <div class="step-pane active" id="step1">
+              <div class="form-group padding">
+                <div class="col-sm-3">
+                  <h4 class="hthin">Filter to Current Affairs : </h4>
+                </div>
+                <div class="col-sm-4 filter-input-boxes">
+                  <div class="row-fluid" >
+                    <div class="col-sm-6">
+                      <%= select_tag "years", options_for_select(Date.today.year-2..Date.today.year, Date.today.year), class: 'form-control', prompt: "Select Year"%>
+                    </div>
+                    <div class="col-sm-6">
+                      <%= select_tag "months", options_for_select(CurrentAffair::MONTHS.invert), class: 'form-control', prompt: "Select Month"%>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-2 filter-input-boxes">
+                  <div data-date-format="dd-mm-yyyy" data-min-view="2" style="margin-bottom:0px;"
+                    class="input-group date datetime col-md-12 col-xs-12">
+                    <input type="text" readonly="" id="date" value="Select Date" size="16" class="form-control">
+                    <span class="input-group-addon btn btn-primary" id="date-span">
+                      <span class="glyphicon glyphicon-th"></span>
+                    </span>
+                  </div>
+                </div>
+                <div class="col-sm-2 filter-input-boxes">
+                  <%= select_tag 'current_affair_category_id', options_from_collection_for_select(@current_affair_types, "id", "name"), :prompt => "Select Type", class:"form-control" %>
+                </div>
+                <div class="col-sm-1">
+                  <button type="button" class="btn btn-primary wizard-next" id="#wizard1">
+                    <i class="fa fa-search"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="clear"></div>
+              <div class="form-group">
+                <%= render partial: "admin/current_affairs/crt_affr_list", locals: {current_affairs: @current_affairs}%>
+              </div>
+            </div>
+          </form>       
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
