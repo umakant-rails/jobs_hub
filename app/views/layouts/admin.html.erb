@@ -7,11 +7,11 @@
     <%= csrf_meta_tags %>
   </head>
   <body>
-    <%= render partial: "layouts/admin_navbar"%>
+    <%= render partial: "layouts/admin/admin_navbar"%>
     <div id="cl-wrapper">
-      <%= render partial: "layouts/admin_left_panel"%>
+      <%= render partial: "layouts/admin/admin_left_panel"%>
       <div id="pcont" class="container-fluid">
-        <%= render :partial => "layouts/messages" %>
+        <%= render :partial => "layouts/main/messages" %>
         <%= yield %>
       </div> 
     </div>

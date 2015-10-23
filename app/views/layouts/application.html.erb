@@ -7,29 +7,29 @@
     <%= csrf_meta_tags %>
   </head>
   <body>
-    <%= render partial: "layouts/navbar" %>
+    <%= render partial: "layouts/main/navbar" %>
     <div class="container-fluid">
       <div class="row-fluid">
-        <%= render partial: "layouts/image_navbar" %>
+        <%= render partial: "layouts/main/image_navbar" %>
       </div>
       <div class="row-fluid">
-        <%= render partial: "layouts/menu_navbar" %>
+        <%= render partial: "layouts/main/menu_navbar" %>
       </div>
       <div class="row">
         <div class="col-md-1"></div>
         <div class="col-md-10 bdr-lft-rght">
           <div class="row breaking-news-block">
-            <%= render partial: "layouts/breaking_news" %>
+            <%= render partial: "layouts/main/breaking_news" %>
           </div>
           <div class="row job-list-block">
             <div class="col-md-2">
-              <%= render partial: "layouts/left_panel" %>
+              <%= render partial: "layouts/main/left_panel" %>
             </div>
             <div class="col-md-10">
               <%= yield %>
             </div>
             <div class="col-md-">
-              <%#= render partial: "layouts/right_panel", locals: {
+              <%#= render partial: "layouts/main/right_panel", locals: {
                   banking_jobs: @banking_jobs,
                   railway_jobs: @railway_jobs,
                   teaching_jobs: @teaching_jobs
@@ -38,7 +38,7 @@
             </div>
           </div>
           <div class="row app-footer">
-            <%= render partial: "layouts/app_footer" %>
+            <%= render partial: "layouts/main/app_footer" %>
           </div>
         </div>
         <div class="col-md-1"></div>

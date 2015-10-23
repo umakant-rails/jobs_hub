@@ -1,7 +1,14 @@
 Rails.application.routes.draw do
 
   root 'homes#index'
-
+  
+  devise_for :users, :controllers => {
+    registrations: "users/registrations",
+    passwords: "users/passwords",
+    sessions: "users/sessions"
+    #omniauth_callbacks: "users/omniauth_callbacks"
+  }
+  
   resources :jobs do
     get '/category/:job_category_id' => "jobs#jobs_by_category", as: :jobs_by_category, on: :collection
     get '/category/:job_category_id/state/:state_id' => "jobs#jobs_by_state_category", as: :jobs_by_state_category, on: :collection

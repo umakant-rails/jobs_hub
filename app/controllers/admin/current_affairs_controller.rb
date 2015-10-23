@@ -1,4 +1,5 @@
 class Admin::CurrentAffairsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_current_affair, only: [:show, :edit, :update, :destroy]
   layout 'admin'
 

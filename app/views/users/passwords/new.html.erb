@@ -1,0 +1,30 @@
+<div class="login-container" id="cl-wrapper">
+  <div class="middle-login">
+    <div class="block-flat">
+      <div class="header">
+        <h3 class="text-center">JOBS-HUB</h3>
+      </div>
+      <div>
+        <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+          <div class="content">
+            <h4 class="title">Forgot your password?</h4>
+            <div class="form-group">
+              <div class="col-sm-12 no-padding">
+                <%= f.email_field :email, autofocus: true, class: 'form-control', placeholder: 'E-mail' %>
+              </div>
+            </div>
+          </div>
+          <div class="clear"></div>
+          <div class="foot mrgn-top20">
+            <%= f.submit "Send me reset password instructions", 'data-dismiss': "modal", class: "btn btn-primary col-md-12 mrgn-lft0" %>
+          </div>
+          <div class="clear"></div>
+          <div class="shared-link">
+            <%= render "users/shared/links" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+    <div class="text-center out-links"><a href="#">&copy; 2013 Your Company</a></div>
+  </div> 
+</div>
