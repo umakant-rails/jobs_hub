@@ -1,25 +1,51 @@
-<h2>Change your password</h2>
-
-<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
-  <%= devise_error_messages! %>
-  <%= f.hidden_field :reset_password_token %>
-
-  <div class="field">
-    <%= f.label :password, "New password" %><br />
-    <% if @minimum_password_length %>
-      <em>(<%= @minimum_password_length %> characters minimum)</em><br />
-    <% end %>
-    <%= f.password_field :password, autofocus: true, autocomplete: "off" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation, "Confirm new password" %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Change my password" %>
-  </div>
-<% end %>
-
-<%= render "users/shared/links" %>
+<div class="login-container" id="cl-wrapper">
+  <div class="middle-login">
+    <div class="block-flat">
+      <div class="header">
+        <h3 class="text-center">JOBS-HUB</h3>
+      </div>
+      <div>
+        <%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
+          <div class="content">
+            <h4 class="title">Change your password</h4>
+            <div class="form-group">
+              <div class="col-sm-12 no-padding">
+                <% if resource.errors.messages.present? %>
+                  <div class="input-group alert alert-danger">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true" style="font-size: 15px;">×</button>
+                    <%= get_errors(resource.errors.messages) %>
+                  </div>
+                <% end %>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-sm-12 no-padding">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+                  <%= f.password_field :password_confirmation, autocomplete: "off", class: 'form-control',placeholder: "Confirm Password"  %>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-sm-12 no-padding">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+                  <%= f.password_field :password_confirmation, autocomplete: "off", class: 'form-control',placeholder: "Confirm Password"  %>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="clear"></div>
+          <div class="foot mrgn-top20">
+            <%= f.submit "Change my password", 'data-dismiss': "modal", class: "btn btn-primary col-md-12 mrgn-lft0" %>
+          </div>
+          <div class="clear"></div>
+          <div class="shared-link">
+            <%= render "users/shared/links" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+    <div class="text-center out-links"><a href="#">&copy; 2013 Your Company</a></div>
+  </div> 
+</div>

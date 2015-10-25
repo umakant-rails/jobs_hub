@@ -1,2 +1,23 @@
-<h1>CurrentAffairs#index</h1>
-<p>Find me in app/views/current_affairs/index.html.erb</p>
+<div class="row crt-affr-hdr">
+  <div class="col-md-10">
+    <div class=" crt-affr-hdr-txt">
+      <%= Date.today.strftime("%d") + " " +   Date.today.strftime("%B") %> News Updates
+    </div>
+  </div>
+  <div class="col-md-2">
+    <button class="export-pdf pull-right">Export as PDF</button>
+  </div>
+</div>
+<div class="row crt-afft-description">
+  <% @current_affairs.each do | crt_affr | %>
+    <div class="col-md-6 crt-affr-bullets pull-left">
+      <div class="crt-affr-bullet-index">
+        <strong><i class="fa fa-caret-right crt-affr-caret"></i></strong>
+      </div>
+      <div class="crt-affr-description">
+        <%= crt_affr.description %>
+      </div>
+      <div class="clear"></div>
+    </div>
+  <% end %>
+</div>

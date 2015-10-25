@@ -1,3 +1,31 @@
-// Place all the styles related to the CurrentAffairs controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.crt-affr-hdr{
+  border-bottom: 1px solid lightgray;
+  margin-left: 0px;
+  padding-bottom: 5px;
+  .crt-affr-hdr-txt{
+    font-size: 24px;
+    font-weight: bold;
+    margin-left: -15px;
+  }
+}
+.export-pdf{
+  background-color: #009dfc;
+  padding: 7px 15px;
+  border: 1px solid #009dfc;
+  border-radius: 5px;
+  color: #FFF;
+  font-weight: bold;
+}
+.crt-affr-bullets{
+  font-size: 14px;
+  word-spacing: 3px;
+  padding: 4px 12px;
+  .crt-affr-bullet-index{
+    float: left;
+    width: 5%;
+  }
+  .crt-affr-description{
+    float: right;
+    width: 95%;
+  }
+} 

@@ -1,10 +1,10 @@
-<div class="navbar navbar-default navbar-fixed-top" id="head-nav">
+<div class="navbar navbar-default devise-navbar navbar-fixed-top" id="head-nav">
   <div class="container-fluid">
     <div class="navbar-header">
       <button data-target=".navbar-collapse" data-toggle="collapse" class="navbar-toggle" type="button">
         <span class="fa fa-gear"></span>
       </button>
-      <a href="<%= root_path %>" class="navbar-brand"><span>JOBS-HUB</span></a>
+      <%= link_to "JOBS-HUB", root_path, class: 'navbar-brand'%>
     </div>
     <div class="collapse navbar-collapse">
       <ul class="nav navbar-nav pull-right">
