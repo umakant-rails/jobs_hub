@@ -1,3 +1,5 @@
+User.create(username: 'umakant', email: 'umakantrajpoot@gmail.com', password: '12345678', password_confirmation: '12345678', confirmed_at: Date.today) if User.where(email: 'umakantrajpoot@gmail.com').blank?
+
 JobCategory.create!(name: "Central Govt jobs") if JobCategory.where(name: "Central Govt jobs").blank?
 JobCategory.create!(name: "State Govt jobs") if JobCategory.where(name: "State Govt jobs").blank?
 JobCategory.create!(name: "Banking jobs") if JobCategory.where(name: "Banking jobs").blank?
@@ -50,4 +52,5 @@ CurrentAffairCategory.create(name: 'Places') if CurrentAffairCategory.create(nam
 CurrentAffairCategory.create(name: 'Politics') if CurrentAffairCategory.create(name: 'Politics').blank?
 CurrentAffairCategory.create(name: 'Science & Technology') if CurrentAffairCategory.create(name: 'Science & Technology').blank?
 CurrentAffairCategory.create(name: 'Sports & Games') if CurrentAffairCategory.where(name: 'Sports & Games').blank? 
+CurrentAffairCategory.create(name: 'New Program/Scheme') if CurrentAffairCategory.where(name: 'New Program/Scheme').blank? 
 

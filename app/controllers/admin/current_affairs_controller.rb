@@ -14,7 +14,8 @@ class Admin::CurrentAffairsController < ApplicationController
   end
 
   def create
-    @current_affair = CurrentAffair.new(current_affair_params)
+    @daily_update = DailyUpdate.new(daily_update_params)
+    @current_affair = @daily_update.current_affairs.new(current_affair_params) if @daily_update.save
     @message = ""
     @message_type = ""
     respond_to do |format|
@@ -78,6 +79,10 @@ class Admin::CurrentAffairsController < ApplicationController
   
     def current_affair_params
       params.require(:current_affair).permit(:description, :date, :current_affair_category_id)
+    end
+
+    def daily_update_params
+      params.require(:daily_update).permit(:date, :title)
     end
 
     def set_current_affair

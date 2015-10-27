@@ -1,6 +1,7 @@
 class CurrentAffair < ActiveRecord::Base
 
   belongs_to :current_affair_category
+  belongs_to :daily_update
 
   MONTHS = {
     '1': 'January',

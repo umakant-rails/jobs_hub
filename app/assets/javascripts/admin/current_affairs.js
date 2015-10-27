@@ -54,6 +54,8 @@ $(document).ready(function(){
         date:crtAffrDate,
         current_affair_category_id: crtAffrType,
         description: crtAffrDesc
+      }, daily_update: {
+        date: crtAffrDate
       }
     }
     createCurrentAffair(attrs);

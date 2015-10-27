@@ -9,15 +9,43 @@
   </div>
 </div>
 <div class="row crt-afft-description">
-  <% @current_affairs.each do | crt_affr | %>
-    <div class="col-md-6 crt-affr-bullets pull-left">
+  <% if @current_affairs.blank? %>
+    <br/>
+      <center>There is no updates now.</center>
+    <br/>
+  <% elsif @current_affairs.size == 1 %>
+    <div class="col-md-12 crt-affr-bullets pull-left">
       <div class="crt-affr-bullet-index">
         <strong><i class="fa fa-caret-right crt-affr-caret"></i></strong>
       </div>
       <div class="crt-affr-description">
-        <%= crt_affr.description %>
+        <%= @current_affairs.first.description %>
       </div>
       <div class="clear"></div>
     </div>
+  <% else %>
+    <% @current_affairs && @current_affairs.each do | crt_affr | %>
+      <div class="col-md-6 crt-affr-bullets pull-left">
+        <div class="crt-affr-bullet-index">
+          <strong><i class="fa fa-caret-right crt-affr-caret"></i></strong>
+        </div>
+        <div class="crt-affr-description border-btm">
+          <%= crt_affr.description %>
+        </div>
+        <div class="clear"></div>
+      </div>
+    <% end %>
   <% end %>
+</div>
+<br/>
+<div class="row comment-box-block">
+  <div class="col-md-12">
+    <h4>Comments : </h4>
+  </div>
+  <div  class="clear"></div>
+  <div class="col-md-10">
+    <textarea name="comment" id="comment" rows="2" cols="100" class="comment-box"></textarea>
+    <div  class="clear"></div>
+    <button class="pull-right btn btn-primary">Post Comment</button>
+  </div>
 </div>

@@ -21,7 +21,7 @@ class ApplicationController < ActionController::Base
     if resource.present?
       session['user_return_to'] = admin_dashboards_path
     else
-      request.referer || root_path
+      request.referer || new_user_session_path
     end
   end
 
@@ -30,7 +30,6 @@ class ApplicationController < ActionController::Base
   end
 
   def after_sign_up_path_for(resource)
-    debugger
     session['user_return_to'] = new_user_session_path
   end
 
