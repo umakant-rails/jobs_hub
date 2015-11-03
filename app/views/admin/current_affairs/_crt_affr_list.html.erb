@@ -12,7 +12,8 @@
         <div class="row">
           <div class="col-md-8 crt-affr-category"><strong>Type : </strong><%= crt_affr.current_affair_category.name%></div>
           <div class="col-md-4">
-            <%= link_to ' Delete', admin_current_affair_path(crt_affr), method: :delete, data: { confirm: 'Are you sure?' }, class: "fa fa-trash-o" %>
+            <%#= link_to ' Delete', admin_current_affair_path(crt_affr), method: :delete, data: { confirm: 'Are you sure?' }, class: "fa fa-trash-o" %>
+            <%= link_to ' Delete', 'javascript:void(0);', 'data-href': admin_current_affair_path(crt_affr), class: "delete_current_affair_news fa fa-trash-o" %>
             <%= link_to ' Edit', edit_admin_current_affair_path(crt_affr), class: "fa fa-pencil-square-o" %>
           </div>
         </div>

@@ -19,6 +19,9 @@ Rails.application.routes.draw do
     get '/announcement_type/:announcement_type_id' => "announcements#get_annoucements", as: :announcement_type, on: :collection
   end
   resources :current_affairs, only: :index do
+    collection do
+      post :create_comment
+    end
   end
 
   namespace :admin do

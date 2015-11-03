@@ -18,4 +18,18 @@ class CurrentAffair < ActiveRecord::Base
     '12': 'December',
   }
 
+  def self.filter_current_affair(category_id, date, month, year)
+    category_filter = ''
+    if category_id.present?
+      category_filter = "current_affair_category_id = #{params[:category_id]} and "
+    end
+    if date.present?
+      @current_affairs = CurrentAffair.joins(:current_affair_category).where(category_filter + "date = ?", date.to_date )
+    elsif year.present? && month.present?
+      @current_affairs = CurrentAffair.joins(:current_affair_category).where(category_filter + "year(date) = ? and month(date) = ?", year, month)
+    else
+      @current_affairs = CurrentAffair.joins(:current_affair_category).where( category_filter + "year(date) = ? and month(date) = ?", Date.today.year, Date.today.month)
+    end
+  end
+
 end

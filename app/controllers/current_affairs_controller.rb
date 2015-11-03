@@ -5,4 +5,8 @@ class CurrentAffairsController < ApplicationController
     @current_affairs = CurrentAffair.joins(:daily_update).where("daily_updates.date = ?", Date.today)
   end
   
+  def create_comment
+
+  end
+
 end
