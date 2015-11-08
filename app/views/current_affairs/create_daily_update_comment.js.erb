@@ -1,0 +1,2 @@
+$("#comment-list-box").html("<%= escape_javascript(render partial: 'current_affairs/comment_list', locals:{comments: @daily_update_comments})%>");
+$("#daily-update-comment").val("");

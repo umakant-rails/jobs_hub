@@ -4,11 +4,13 @@
 @import "font-awesome";
 @import "jobs";
 @import "current_affairs";
+@import "bootstrap-datetimepicker.min";
+@import "custom-datetimepicker";
 
 body{
  background-color: #EEEEEE;
 }
-
+.no-padding{padding: 0px;}
 .center{text-align:center;}
 
 .bdr-lft{border-left: 1px solid lightgray;}
@@ -105,7 +107,10 @@ body{
 
 .menu-bar-menu-style{
   margin-left: -30px;
-  li{border-bottom: 3px solid #555555;}
+  li{
+    border-bottom: 3px solid #555555;
+    a{padding-left: 14px;padding-right: 14px;}
+  }
 }
 
 .bdr-lft-rght{

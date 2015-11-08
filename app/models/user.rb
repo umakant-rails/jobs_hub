@@ -9,4 +9,6 @@ class User < ActiveRecord::Base
   validates :password, length: {minimum: 8, maximum: 20}, presence: true, on: :create
   validates :password, length: {minimum: 8, maximum: 20}, on: :update, allow_blank: true
   
+  has_many :comments
+  
 end

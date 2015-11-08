@@ -1,0 +1,7 @@
+<% comments && comments.each do | comment | %>
+  <div class="pull-left col-md-12" style="margin-right: 5px; border-bottom: 1px solid lightgray; padding: 5px 0px;">
+    <img src="/assets/avatar2.jpg" style="width:30px; margin-right: 5px;"/>
+    <%= comment.text.capitalize %>
+  </div>  
+  <div class="clear"></div>
+<% end %>

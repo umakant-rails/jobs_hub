@@ -1,51 +1,30 @@
-<div class="row crt-affr-hdr">
-  <div class="col-md-10">
-    <div class=" crt-affr-hdr-txt">
-      <%= Date.today.strftime("%d") + " " +   Date.today.strftime("%B") %> News Updates
+<div class="row-fluid">
+  <div class="row crt-affr-hdr">
+    <div class="col-md-9">
+      <div class="crt-affr-hdr-txt pull-left">
+        <%= Date.today.strftime("%d") + " " +   Date.today.strftime("%B") %> News Updates
+      </div>
+      <button class="export-pdf pull-left">Export as PDF</button>
     </div>
-  </div>
-  <div class="col-md-2">
-    <button class="export-pdf pull-right">Export as PDF</button>
-  </div>
-</div>
-<div class="row crt-afft-description">
-  <% if @current_affairs.blank? %>
-    <br/>
-      <center>There is no updates now.</center>
-    <br/>
-  <% elsif @current_affairs.size == 1 %>
-    <div class="col-md-12 crt-affr-bullets pull-left">
-      <div class="crt-affr-bullet-index">
-        <strong><i class="fa fa-caret-right crt-affr-caret"></i></strong>
+    <div class="col-md-2 no-padding">
+      <div data-date-format="dd-mm-yyyy" data-min-view="2" style="margin-bottom:0px;"
+        class="input-group date datetime col-md-12 col-xs-12 custom-datetime">
+        <input type="text" readonly="" id="date" name="date" placeholder="Select Date" size="16" class="form-control" >
+        <span class="input-group-addon">
+          <span class="glyphicon glyphicon-th"></span>
+        </span>
       </div>
-      <div class="crt-affr-description">
-        <%= @current_affairs.first.description %>
-      </div>
-      <div class="clear"></div>
     </div>
-  <% else %>
-    <% @current_affairs && @current_affairs.each do | crt_affr | %>
-      <div class="col-md-6 crt-affr-bullets pull-left">
-        <div class="crt-affr-bullet-index">
-          <strong><i class="fa fa-caret-right crt-affr-caret"></i></strong>
-        </div>
-        <div class="crt-affr-description border-btm">
-          <%= crt_affr.description %>
-        </div>
-        <div class="clear"></div>
-      </div>
-    <% end %>
-  <% end %>
-</div>
-<br/>
-<div class="row comment-box-block">
-  <div class="col-md-12">
-    <h4>Comments : </h4>
+    <div class="col-md-1">
+      <button id="daily-update-date-span" data-url=<%= get_daily_updates_current_affairs_path %>
+        class="btn btn-primary wizard-next" type="button">
+        <i class="fa fa-search"></i>
+      </button>
+    </div>
+    <!--<button class="export-pdf pull-right">Export as PDF</button>-->
   </div>
-  <div  class="clear"></div>
-  <div class="col-md-10">
-    <textarea name="comment" id="comment-box" rows="2" cols="100" class="comment-box"></textarea>
-    <div  class="clear"></div>
-    <button class="pull-right btn btn-primary" id="create-comment">Post Comment</button>
+  <div class="crt-affr-description">
+    <%= render partial: "crt_affr_list", locals: {current_affairs: @current_affairs, 
+      daily_update: @daily_update, daily_update_comments: @daily_update_comments} %>
   </div>
 </div>

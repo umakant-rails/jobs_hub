@@ -41,9 +41,9 @@ var currentAffair = {
     });
   },
   createComment: function(params){
-    if(params.text.length >= 0){
+    if(params.comment.text.length > 0){
       $.ajax({
-        url:"/current_affairs/create_comment",
+        url:"/current_affairs/create_daily_update_comment",
         type:"POST",
         dataType: 'script',
         data: params,
@@ -51,7 +51,8 @@ var currentAffair = {
         }
       });
     } else {
-      appFunction.showMessage('error', 'Comment value can not be empty.');
+      //appFunction.showMessage('error', 'Comment value can not be empty.');
+      alert('Comment value can not be empty.');
     }
   },
   deleteCurrentAffairNews: function(dataHref, params ){
@@ -66,6 +67,16 @@ var currentAffair = {
         }
       });
     }
+  },
+  getDailyUpdate: function(dataUrl, params){
+    $.ajax({
+      url: dataUrl,
+      type:"GET",
+      dataType: 'script',
+      data: params,
+      success: function (html) {
+      }
+    });
   }
 };
 
@@ -116,13 +127,38 @@ $(document).ready(function(){
     var dataHref = $(this).data('href');
     currentAffair.deleteCurrentAffairNews(dataHref, params);
   });
-    /*Create comment for daily updates */
-  $(document.body).on('click', '#create-comment', function(){
-    var comment = $("#comment-box").val();
-    var params = {
-      text: comment
+
+  /*Create comment for daily updates */
+  $(document.body).on('keyup', '#daily-update-comment', function(event){
+    var crtAffrListDiv = $(".crt-affr-bullets");
+    if(crtAffrListDiv.length !== 0){
+      var comment = $("#daily-update-comment").val();
+      var daily_update_id = $("#daily_update_id").val();
+      var params = {
+        comment: {
+          text: comment,
+          daily_update_id: daily_update_id
+        }
+      }
+      if(event.which === 13 ){ currentAffair.createComment(params);     }
+    } else {
+       appFunction.showMessage('error', '');
     }
-    currentAffair.createComment(params);
   });
 
+  /*get Daily updates */
+  $(document.body).on('click', '#daily-update-date-span', function(event){
+    var date = $('.custom-datetime input').val();
+    var dataUrl = $(this).data('url');
+    var params = {
+      daily_update: {
+        date: date,
+      }
+    }
+    if(params.daily_update.date.length !== 0) {
+      currentAffair.getDailyUpdate(dataUrl, params)
+    } else {
+      alert('Date is mandatory filed to fetch daily updates');
+    }
+  });
 });

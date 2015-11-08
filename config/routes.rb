@@ -20,7 +20,8 @@ Rails.application.routes.draw do
   end
   resources :current_affairs, only: :index do
     collection do
-      post :create_comment
+      post :create_daily_update_comment
+      get :get_daily_updates
     end
   end
 

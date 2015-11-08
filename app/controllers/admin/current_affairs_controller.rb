@@ -14,8 +14,12 @@ class Admin::CurrentAffairsController < ApplicationController
   end
 
   def create
-    @daily_update = DailyUpdate.new(daily_update_params)
-    @current_affair = @daily_update.current_affairs.new(current_affair_params) if @daily_update.save
+    @daily_update = DailyUpdate.where(date: Date.today).first
+    if @daily_update.blank?
+      params[:daily_update][:title] = "#{Date.today.strftime('%d')} #{Date.today.strftime('%B')} News Updates"
+      @daily_update = DailyUpdate.create(daily_update_params)
+    end
+    @current_affair = @daily_update.current_affairs.new(current_affair_params) if @daily_update
     @message = ""
     @message_type = ""
     respond_to do |format|
