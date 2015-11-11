@@ -1,5 +1,5 @@
 class CurrentAffairsController < ApplicationController
-  before_action :set_job_associated_data, only: [:index]
+  before_action :set_job_associated_data, only: [:index, :get_weekly_updates]
   respond_to :js, :html
   def index
     @current_affairs = CurrentAffair.joins(:daily_update).where("daily_updates.date = ?", Date.today)
@@ -28,10 +28,17 @@ class CurrentAffairsController < ApplicationController
     @daily_update_comments = @daily_update.present? ? @daily_update.comments.order('id desc') : []
   end
 
+  def get_weekly_updates
+    @selected_date = params[:date].blank? ? Date.today : params[:date].to_date
+    @start_date = @selected_date.beginning_of_week
+    @end_date = @selected_date.end_of_week
+    @current_affairs = CurrentAffair.where("date between ? and ? ", @start_date, @end_date)
+  end
+
   private
 
-   def comment_params
+  def comment_params
     params.require(:comment).permit(:text, :user_id)
-   end
+  end
 
 end

@@ -2,14 +2,15 @@
   <div class="row crt-affr-hdr">
     <div class="col-md-9">
       <div class="crt-affr-hdr-txt pull-left">
-        <%= @daily_update.present? ? @daily_update.title : daily_update_title %>
+        <%= weekly_update_title %>
       </div>
       <button class="export-pdf pull-left">Export as PDF</button>
     </div>
     <div class="col-md-2 no-padding">
       <div data-date-format="dd-mm-yyyy" data-min-view="2" style="margin-bottom:0px;"
         class="input-group date datetime col-md-12 col-xs-12 custom-datetime">
-        <input type="text" readonly="" id="date" name="date" placeholder="Select Date" size="16" class="form-control" >
+        <input type="text" readonly="" id="date" name="date" placeholder="Select Date" 
+          value="<%= ist_dateformat(@selected_date) %>" size="16" class="form-control" >
         <span class="input-group-addon">
           <span class="glyphicon glyphicon-th"></span>
         </span>
@@ -25,6 +26,6 @@
   </div>
   <div class="crt-affr-description">
     <%= render partial: "crt_affr_list", locals: {current_affairs: @current_affairs, 
-      daily_update: @daily_update, daily_update_comments: @daily_update_comments, weekly_update: false} %>
+      daily_update: @daily_update, daily_update_comments: [], weekly_update: true} %>
   </div>
 </div>

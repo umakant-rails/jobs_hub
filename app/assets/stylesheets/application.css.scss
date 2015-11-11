@@ -194,3 +194,13 @@ body{
     padding-bottom: 15px;
   }
 }
+.custom-dropdown{
+  padding: 0px;
+  .divider{margin: 0px;}
+  li:last-child{
+    /*border-bottom: 1px solid #FFF; */
+  }
+}
+#alert_msg{
+  z-index: 1000; position: absolute; width: 700px; top: 45px;
+}

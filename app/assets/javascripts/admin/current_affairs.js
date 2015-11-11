@@ -129,10 +129,10 @@ $(document).ready(function(){
   });
 
   /*Create comment for daily updates */
-  $(document.body).on('keyup', '#daily-update-comment', function(event){
+  $(document.body).on('keyup', '#daily-update-comment-box', function(event){
     var crtAffrListDiv = $(".crt-affr-bullets");
     if(crtAffrListDiv.length !== 0){
-      var comment = $("#daily-update-comment").val();
+      var comment = $("#daily-update-comment-box").val();
       var daily_update_id = $("#daily_update_id").val();
       var params = {
         comment: {
@@ -140,9 +140,11 @@ $(document).ready(function(){
           daily_update_id: daily_update_id
         }
       }
-      if(event.which === 13 ){ currentAffair.createComment(params);     }
+      if(event.which === 13 ){ 
+        currentAffair.createComment(params);
+      }
     } else {
-       appFunction.showMessage('error', '');
+      appFunction.showMessage('error', 'News updates must be for comments');
     }
   });
 
@@ -150,13 +152,18 @@ $(document).ready(function(){
   $(document.body).on('click', '#daily-update-date-span', function(event){
     var date = $('.custom-datetime input').val();
     var dataUrl = $(this).data('url');
+    var hdrText = $(".crt-affr-hdr-txt").text().trim();
     var params = {
       daily_update: {
         date: date,
       }
     }
     if(params.daily_update.date.length !== 0) {
-      currentAffair.getDailyUpdate(dataUrl, params)
+      if(hdrText.indexOf('Weekly') == -1){
+        currentAffair.getDailyUpdate(dataUrl, params)
+      } else {
+        window.location = '/current_affairs/get_weekly_updates' + "?date=" + date ;
+      }
     } else {
       alert('Date is mandatory filed to fetch daily updates');
     }

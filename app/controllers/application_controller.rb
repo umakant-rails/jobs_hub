@@ -19,7 +19,7 @@ class ApplicationController < ActionController::Base
 
   def after_sign_in_path_for(resource)
     if resource.present?
-      session['user_return_to'] = admin_dashboards_path
+      session['user_return_to'] = root_path
     else
       request.referer || new_user_session_path
     end
