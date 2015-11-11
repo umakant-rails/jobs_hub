@@ -1,0 +1,31 @@
+<div class="row-fluid">
+  <div class="row crt-affr-hdr">
+    <div class="col-md-9">
+      <div class="crt-affr-hdr-txt pull-left">
+        <%= monthly_update_title %>
+      </div>
+      <button class="export-pdf pull-left">Export as PDF</button>
+    </div>
+    <div class="col-md-2 no-padding">
+      <div data-date-format="dd-mm-yyyy" data-min-view="2" style="margin-bottom:0px;"
+        class="input-group date datetime col-md-12 col-xs-12 custom-datetime">
+        <input type="text" readonly="" id="date" name="date" placeholder="Select Date" 
+          value="<%= ist_dateformat(@selected_date) %>" size="16" class="form-control" >
+        <span class="input-group-addon">
+          <span class="glyphicon glyphicon-th"></span>
+        </span>
+      </div>
+    </div>
+    <div class="col-md-1">
+      <button id="daily-update-date-span" data-url=<%= get_daily_updates_current_affairs_path %>
+        class="btn btn-primary wizard-next" type="button">
+        <i class="fa fa-search"></i>
+      </button>
+    </div>
+    <!--<button class="export-pdf pull-right">Export as PDF</button>-->
+  </div>
+  <div class="crt-affr-description">
+    <%= render partial: "crt_affr_list", locals: {current_affairs: @current_affairs, 
+      daily_update: @daily_update, daily_update_comments: [], weekly_update: true} %>
+  </div>
+</div>

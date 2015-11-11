@@ -21,10 +21,21 @@
   </div>
   <ul class="panel-block-body nav">
     <li><a href="<%= current_affairs_path %>">Today updates</a></li>
-    <li><a href="<%= get_weekly_updates_current_affairs_path %>">Weekly updates</a></li>
-    <li><a href="http://www.freejobalert.com/interview-results/22135/">Weekly updates 1</a></li>
-    <li><a href="http://www.freejobalert.com/interview-results/22135/">Weekly updates 2</a></li>
-    <li><a href="http://www.freejobalert.com/interview-results/22135/">Weekly updates 3</a></li>
-    <li><a href="http://www.freejobalert.com/interview-results/22135/">Weekly updates 4</a></li>
+    <li><a href="<%= get_weekly_updates_current_affairs_path(Date.today) %>">Weekly updates</a></li>
+    <% get_crt_affr_months_list.first(4).each do | month_date | %>
+      <li>
+        <a href="<%= get_monthly_updates_current_affairs_path(month_date.year, month_date.month) %>">
+          <%= get_crt_affr_month_title(month_date) %>
+        </a>
+      </li>
+    <% end %>
+    <li><a href="javascript:void(0);" class="pull-right" id="view-more-months">View more ...</a></li>
+    <% get_crt_affr_months_list.last(get_crt_affr_months_list.length - 4).each do | month_date | %>
+      <li class="hide hidden-months">
+        <a href="<%= get_monthly_updates_current_affairs_path(month_date.year, month_date.month) %>">
+          <%= get_crt_affr_month_title(month_date) %>
+        </a>
+      </li>
+    <% end %>
   </ul>
 </div>

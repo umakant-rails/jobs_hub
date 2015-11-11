@@ -1,6 +1,7 @@
 class CurrentAffairsController < ApplicationController
-  before_action :set_job_associated_data, only: [:index, :get_weekly_updates]
+  before_action :set_job_associated_data, only: [:index, :get_weekly_updates, :get_monthly_updates]
   respond_to :js, :html
+
   def index
     @current_affairs = CurrentAffair.joins(:daily_update).where("daily_updates.date = ?", Date.today)
     @daily_update = DailyUpdate.where(date: Date.today).first
@@ -10,7 +11,7 @@ class CurrentAffairsController < ApplicationController
       #~ format.js{}
     #~ end
   end
-  
+
   def create_daily_update_comment
     @daily_update = DailyUpdate.where(id: params[:comment][:daily_update_id]).first
     params[:comment][:user_id] = current_user.id
@@ -32,6 +33,13 @@ class CurrentAffairsController < ApplicationController
     @selected_date = params[:date].blank? ? Date.today : params[:date].to_date
     @start_date = @selected_date.beginning_of_week
     @end_date = @selected_date.end_of_week
+    @current_affairs = CurrentAffair.where("date between ? and ? ", @start_date, @end_date)
+  end
+
+  def get_monthly_updates
+    @selected_date = Time.new(params[:year].to_i, params[:month].to_i)
+    @start_date = @selected_date.beginning_of_month
+    @end_date = @selected_date.end_of_month
     @current_affairs = CurrentAffair.where("date between ? and ? ", @start_date, @end_date)
   end
 

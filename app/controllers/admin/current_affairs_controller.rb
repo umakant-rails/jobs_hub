@@ -14,7 +14,7 @@ class Admin::CurrentAffairsController < ApplicationController
   end
 
   def create
-    @daily_update = DailyUpdate.where(date: Date.today).first
+    @daily_update = DailyUpdate.where(date: params[:daily_update][:date].to_date).first
     if @daily_update.blank?
       params[:daily_update][:title] = "#{Date.today.strftime('%d')} #{Date.today.strftime('%B')} News Updates"
       @daily_update = DailyUpdate.create(daily_update_params)

@@ -16,4 +16,24 @@ module CurrentAffairsHelper
     @start_date.strftime("%d") + "-" + @end_date.strftime("%d") + " " + @start_date.strftime("%b") + " Weekly News Updates"
   end
 
+  def monthly_update_title
+    @start_date.strftime("%B") + "-" + @end_date.strftime("%Y") + " Monthly News Updates"
+  end
+
+  def get_crt_affr_months_list
+    time = Time.now
+    year = time.year
+    months_date = []
+    time.month.times.each do | index |
+      months_date << time
+      time = time.prev_month
+    end
+    return months_date
+  end
+
+  def get_crt_affr_month_title(date)
+    date = date.to_date
+    date.strftime('%B') + " " + date.strftime("%Y") + " Updates"
+  end
+
 end

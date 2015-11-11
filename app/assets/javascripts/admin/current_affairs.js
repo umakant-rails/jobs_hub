@@ -155,17 +155,30 @@ $(document).ready(function(){
     var hdrText = $(".crt-affr-hdr-txt").text().trim();
     var params = {
       daily_update: {
-        date: date,
+        date: date
       }
     }
     if(params.daily_update.date.length !== 0) {
-      if(hdrText.indexOf('Weekly') == -1){
-        currentAffair.getDailyUpdate(dataUrl, params)
+      if(hdrText.indexOf('Weekly') >= 0){
+        window.location = "/current_affairs/get_weekly_updates/" + date ;
+      } else if (hdrText.indexOf('Monthly') >= 0){
+        var year = date.split("-")[2];
+        var month = date.split("-")[1];
+        window.location = '/current_affairs/get_monthly_updates/' + year + '/' + month ;
       } else {
-        window.location = '/current_affairs/get_weekly_updates' + "?date=" + date ;
+        currentAffair.getDailyUpdate(dataUrl, params)
       }
     } else {
       alert('Date is mandatory filed to fetch daily updates');
     }
+  });
+
+  /* show and hide current affair month list*/
+  $(document.body).on('click',  "#view-more-months", function(event){
+    $elements = $(".hidden-months");
+    $(this).parent('li').addClass('hide');
+    $elements.each(function(element){
+      $(this).removeClass('hide');
+    });
   });
 });

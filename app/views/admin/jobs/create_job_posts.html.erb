@@ -6,8 +6,6 @@
     <div class="col-md-12 fuelux">
       <div class="block-wizard">
         <div class="step-content">
-          <%#= form_for(@job, url: admin_jobs_path(@job), html: {class: 'form-horizontal group-border-dashed'} ) do |f| %>
-          <% debugger %>
           <%= form_for(@job_post, url: admin_job_create_job_posts_path(@job), html: {class: 'form-horizontal group-border-dashed'} ) do |f| %>  
             <div class="form-group">
               <label class="col-sm-3 control-label">Post Name</label>
