@@ -28,7 +28,7 @@
   <% end %>
 </div>
 <div class="clear">&nbsp;</div>
-<% unless weekly_update %>
+<% if daily_update && current_affairs.present? %>
   <div class="row-fluid comment-box-block">
     <div class="row-fluid">
       <h4>Comments : </h4>

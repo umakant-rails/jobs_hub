@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>JobsHub</title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <%= render partial: "layouts/main/navbar" %>
+    <%= render :partial => "layouts/main/messages" %>
+    <div class="container-fluid">
+      <div class="row-fluid">
+        <%= render partial: "layouts/main/image_navbar" %>
+      </div>
+      <div class="row-fluid">
+        <%= render partial: "layouts/current_affairs/menu_navbar" %>
+      </div>
+      <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10 bdr-lft-rght">
+          <div class="row breaking-news-block">
+            <%= render partial: "layouts/main/breaking_news" %>
+          </div>
+          <div class="row job-list-block">
+            <div class="col-md-2">
+              <%= render partial: "layouts/main/left_panel" %>
+            </div>
+            <div class="col-md-10">
+              <%= yield %>
+            </div>
+            <div class="col-md-">
+              <%#= render partial: "layouts/main/right_panel", locals: {
+                  banking_jobs: @banking_jobs,
+                  railway_jobs: @railway_jobs,
+                  teaching_jobs: @teaching_jobs
+                }
+              %>
+            </div>
+          </div>
+          <div class="row app-footer">
+            <%= render partial: "layouts/main/app_footer" %>
+          </div>
+        </div>
+        <div class="col-md-1"></div>
+      </div>
+    </div><!-- /.container -->
+  </body>
+  <script type="text/javascript">
+    $(document).ready(function(){
+      App.init();
+    }); 
+  </script>
+</html> 

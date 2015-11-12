@@ -24,27 +24,27 @@ $(document).ready(function(){
   });
 
   /* Open states list on hover event when medius and large size (pc etc ) devise is used */
-    $(".state-list-tab, .states-name-list, .states-name-block").hover(function(){
-      if($("#fa-menubar-button").css('display') == "none"){
-        $(".states-name-list").css({display: 'block'});
-      }
-    },function(){
-      if($("#fa-menubar-button").css('display') == "none"){
-        $(".states-name-list").css({display: 'none'});
-      }
-    });
+  $(".state-list-tab, .states-name-list, .states-name-block").hover(function(){
+    if($("#fa-menubar-button").css('display') == "none"){
+      $(".states-name-list").css({display: 'block'});
+    }
+  },function(){
+    if($("#fa-menubar-button").css('display') == "none"){
+      $(".states-name-list").css({display: 'none'});
+    }
+  });
 
-    /* Open states list on click event when small size (pc etc ) devise is used */
-    $(".state-list-tab").on('click', function(){
-      var menuBarBtnStatus = $("#fa-menubar-button").css('display');
-      var menuListOpenStatus = $(".states-name-list").css('display');
+  /* Open states list on click event when small size (pc etc ) devise is used */
+  $(".state-list-tab").on('click', function(){
+    var menuBarBtnStatus = $("#fa-menubar-button").css('display');
+    var menuListOpenStatus = $(".states-name-list").css('display');
 
-      if(menuBarBtnStatus == "block" && menuListOpenStatus == 'none'){
-        $(".states-name-list").css({display: 'block'});
-      }else if(menuBarBtnStatus == "block"){
-        $(".states-name-list").css({display: 'none'});
-      }
-    });
+    if(menuBarBtnStatus == "block" && menuListOpenStatus == 'none'){
+      $(".states-name-list").css({display: 'block'});
+    }else if(menuBarBtnStatus == "block"){
+      $(".states-name-list").css({display: 'none'});
+    }
+  });
 
   /*$(".breakhead, .breaking-news-list").hover(function(){
     $(".breaking-news-list").css({display: 'block'});
@@ -53,32 +53,46 @@ $(document).ready(function(){
   });*/
 
   /*Open notification popup on click on announcment and close on mouse blur event */  
-    $(".breakhead").on('click', function(){
-      if($(".breakhead i").hasClass('glyphicon-plus')){
-        $(".breakhead i").removeClass('glyphicon-plus');
-        $(".breakhead i").addClass('glyphicon-minus');
-        $(".breaking-news-list").css({display: 'block'});
-      } else {
-        $(".breakhead i").addClass('glyphicon-plus');
-        $(".breakhead i").removeClass('glyphicon-minus');
-        $(".breaking-news-list").css({display: 'none'});
-      }
-    });
-    
-    $(".breaking-news-list").hover(function(){
+  $(".breakhead").on('click', function(){
+    if($(".breakhead i").hasClass('glyphicon-plus')){
       $(".breakhead i").removeClass('glyphicon-plus');
       $(".breakhead i").addClass('glyphicon-minus');
       $(".breaking-news-list").css({display: 'block'});
-    },function(){
+    } else {
+      $(".breakhead i").addClass('glyphicon-plus');
+      $(".breakhead i").removeClass('glyphicon-minus');
+      $(".breaking-news-list").css({display: 'none'});
+    }
+  });
+  
+  $(".breaking-news-list").hover(function(){
+    $(".breakhead i").removeClass('glyphicon-plus');
+    $(".breakhead i").addClass('glyphicon-minus');
+    $(".breaking-news-list").css({display: 'block'});
+  },function(){
+    $(".breakhead i").addClass('glyphicon-plus');
+    $(".breakhead i").removeClass('glyphicon-minus');
+    $(".breaking-news-list").css({display: 'none'});
+  });
+
+  $(".breakhead").hover(function(){
+  },function(){
       $(".breakhead i").addClass('glyphicon-plus');
       $(".breakhead i").removeClass('glyphicon-minus');
       $(".breaking-news-list").css({display: 'none'});
     });
 
-    $(".breakhead").hover(function(){
-    },function(){
-      $(".breakhead i").addClass('glyphicon-plus');
-      $(".breakhead i").removeClass('glyphicon-minus');
-      $(".breaking-news-list").css({display: 'none'});
-    });
+  $(document.body).on("click", ".jobs-by-profession-tab", function(){
+    $(".jobs-by-profession-list").css({display: 'block'});
+  });
+  $(".jobs-by-profession-tab, .jobs-by-profession-list, .jobs-by-profession-block").hover(function(){
+    if($("#fa-menubar-button").css('display') == "none"){
+      $(".jobs-by-profession-list").css({display: 'block'});
+    }
+  },function(){
+    if($("#fa-menubar-button").css('display') == "none"){
+      $(".jobs-by-profession-list").css({display: 'none'});
+    }
+  });
+
 });

@@ -56,3 +56,23 @@
 #daily-update-comment-box{
   max-width: 835px;
 }
+.jobs-by-profession-list{
+  background-color: #555555;
+  padding: 8px;
+  margin-top: 40px;
+  z-index: 1000;
+  position: absolute;
+  display: none;
+  border-radius: 3px;
+  /*border: 1px solid #555555;*/
+  border: 1px solid #009DFC;
+}
+.jobs-by-profession-block{
+  background-color: #FFF;
+  font-size: 13px;
+  font-weight: bold;
+  border-radius: 2px;
+  padding:4px;
+  .state-name{ margin-top: 2px !important; }
+  a{text-decoration: none; }
+}

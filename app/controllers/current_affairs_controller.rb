@@ -1,6 +1,7 @@
 class CurrentAffairsController < ApplicationController
   before_action :set_job_associated_data, only: [:index, :get_weekly_updates, :get_monthly_updates]
   respond_to :js, :html
+  layout 'current_affairs'
 
   def index
     @current_affairs = CurrentAffair.joins(:daily_update).where("daily_updates.date = ?", Date.today)

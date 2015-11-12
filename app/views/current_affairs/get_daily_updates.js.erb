@@ -1,5 +1,5 @@
 $(".crt-affr-description").html("<%= escape_javascript(render partial: 'current_affairs/crt_affr_list',   
   locals:{current_affairs: @current_affairs, daily_update: @daily_update, 
-  daily_update_comments: @daily_update_comments, weekly_update: false})%>");
+  daily_update_comments: @daily_update_comments, daily_update: true})%>");
 $(".crt-affr-hdr-txt").html("<%= daily_update_title %>");
 $("#comment-box").val("");

@@ -1,0 +1,64 @@
+<div class="row navbar menu-navbar" role="navigation">	
+  <div class="col-md-1"></div>
+  <div class="col-md-10">
+    <div class="navbar-header">
+      <button id="fa-menubar-button" type="button" class="navbar-toggle" data-toggle="collapse" data-target=".menu-navbar-cls">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="fa fa-bars"></span>
+      </button>
+    </div>
+    <div class="collapse navbar-collapse menu-navbar-cls">
+      <ul class="nav navbar-nav menu-bar-menu-style">
+        <li class="<%= params[:job_category_id].blank? ? 'selected-menu' : '' %>"><a href="<%= root_path %>"><span>Home&nbsp;</span></a></li>
+        <% cent_govt_job = @job_categories.where(id: 1).first %>
+        <% state_govt_job = @job_categories.where(id: 2).first %>
+        
+        <li class="<%= (params[:job_category_id].to_i == cent_govt_job.id) ? 'selected-menu' : '' %>">
+          <a href="<%= jobs_by_category_jobs_path(cent_govt_job.id) %>">
+            <span><%= cent_govt_job.name %>&nbsp;</span>
+          </a>
+        </li>
+        <li class="state-list-tab <%= (params[:job_category_id].to_i == state_govt_job.id) ? 'selected-menu' : '' %>">
+          <a href="javascript:void(0);">
+            <%= state_govt_job.name %>&nbsp;<b class="caret"></b>
+          </a>
+        </li>
+        <div class="states-name-list">
+          <div class="states-name-block col-md-12">
+            <% @states.each do | state | %>
+              <div class="col-md-3 state-name"><a href="<%= jobs_by_state_category_jobs_path(2, state.id) %>"><%= state.name %></a></div>
+            <% end %>
+          </div>
+        </div>
+        
+        <li class="jobs-by-profession-tab">
+          <a href="javascript:void(0);">
+            Job By Profession&nbsp;<b class="caret"></b>
+          </a>
+        </li>
+        <div class="jobs-by-profession-list">
+          <div class="jobs-by-profession-block col-md-12">
+            <% @job_categories.each do | job_category | %>
+              <% unless [1,2].include?(job_category.id) %>
+                <div class="col-md-4 state-name"><a href="<%= jobs_by_category_jobs_path(job_category.id) %>"><%= job_category.name %></a></div>
+              <% end %>
+            <% end %>
+          </div>
+        </div>
+        <li>
+          <a href="#"><span>Current Affairs Quiz</span> </a>
+        </li>
+        <li>
+          <a href="#"><span>Question papers</span> </a>
+        </li>
+        <li>
+          <a href="<%= current_affairs_path %>"  class="current-affr-menu">
+            <span>Current Affairs&nbsp;</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="col-md-1"></div>
+</div>
+
