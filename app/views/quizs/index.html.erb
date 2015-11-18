@@ -1,0 +1,50 @@
+<div class="row">
+  <div class="col-md-12">
+    <div class="row-fluid quiz-list-hdr">
+      <div class="row">
+        <div class="col-md-6 pull-left quiz-list-hdr-text">Quiz List</div>
+        <div class="col-md-4 pull-right">
+          <select id="quiz_type" class="form-control">
+            <option value="">Select Quiz Type</option>
+            <option value="1">Banking Quiz</option>
+            <option value="2">SSC Quiz</option>
+            <option value="3">State Quiz</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="clear"></div>
+    <div class="quiz-list">
+      <div class="quiz">
+        <div class="quiz-hdr"><a href="<%= quiz_path(1) %>">Current Affair Quiz 1-31 August</a></div>
+        <div class="quiz-details row-fluid">
+          <div class="row">
+            <div class="col-md-4">Number of Questions: 20</div>
+            <div class="col-md-4">Alloted Time: 20 minuts</div>
+            <div class="col-md-4">Posted Time: <%= Date.today.strftime("%d") + " " + Date.today.strftime("%B") + " " + Date.today.strftime("%Y") %></div>
+          </div>
+        </div>
+      </div>
+      <div class="quiz">
+        <div class="quiz-hdr"><a href="<%= quiz_path(2) %>">Current Affair Quiz 1-31 August</a></div>
+        <div class="quiz-details row-fluid">
+          <div class="row">
+            <div class="col-md-4">Number of Questions: 20</div>
+            <div class="col-md-4">Alloted Time: 20 minuts</div>
+            <div class="col-md-4">Posted Time: <%= Date.today.strftime("%d") + " " + Date.today.strftime("%B") + " " + Date.today.strftime("%Y") %></div>
+          </div>
+        </div>
+      </div>
+      <div class="quiz">
+        <div class="quiz-hdr"><a href="<%= quiz_path(3) %>">Current Affair Quiz 1-31 August</a></div>
+        <div class="quiz-details row-fluid">
+          <div class="row">
+            <div class="col-md-4">Number of Questions: 20</div>
+            <div class="col-md-4">Alloted Time: 20 minuts</div>
+            <div class="col-md-4">Posted Time: <%= Date.today.strftime("%d") + " " + Date.today.strftime("%B") + " " + Date.today.strftime("%Y") %></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

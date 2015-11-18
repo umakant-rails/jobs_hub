@@ -1,0 +1,32 @@
+<div class="row-fluid" style="margin-left: 15px;">
+  <div class="col-md-12">
+    <div class="row quiz-questions-hdr">
+      Current Affair Quiz 1-30 August
+    </div>
+    <div class="row quiz-questions-list">
+      <% 5.times.each do | index | %>
+        <div class="unanswered-quiz-question">
+          <div class="row question-text">
+            <%= index + 1 %>. <strong>Who was appointed as CEO of VW Group on 25th September 2015?</strong>
+          </div>
+          <div class="row question-options">
+            <div class="pull-left option-input"><input type="radio" value="1" name="ques-option<%= index + 1%>"></div>
+            <div class="pull-left option-text">Kerala Tourism's Muziris Heritage Project bagged the 2015 Pacific Asia Travel Association (PATA) award in the ‘Heritage & Culture’ category.</div>
+          </div>
+          <div class="row question-options">
+            <div class="pull-left option-input"><input type="radio" value="1" name="ques-option<%= index + 1%>"></div>
+            <div class="pull-left option-text">Donald Trump</div>
+          </div>
+          <div class="row question-options">
+            <div class="pull-left option-input"><input type="radio" value="1" name="ques-option<%= index + 1%>"></div>
+            <div class="pull-left option-text">Matthias Muller</div>
+          </div>
+          <div class="row question-options">
+            <div class="pull-left option-input"><input type="radio" value="1" name="ques-option<%= index + 1%>"></div>
+            <div class="pull-left option-text">Commercial Leases</div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
