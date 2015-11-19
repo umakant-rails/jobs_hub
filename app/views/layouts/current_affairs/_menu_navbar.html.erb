@@ -30,10 +30,9 @@
             <% end %>
           </div>
         </div>
-        
         <li class="jobs-by-profession-tab">
           <a href="javascript:void(0);">
-            Job By Profession&nbsp;<b class="caret"></b>
+            Jobs By Profession&nbsp;<b class="caret"></b>
           </a>
         </li>
         <div class="jobs-by-profession-list">
@@ -46,10 +45,19 @@
           </div>
         </div>
         <li>
-          <a href="<%= quizs_path %>"><span>GK & Current Affairs Quiz</span> </a>
+          <a href="<%= quizs_path %>"><span>GK & Crt Affairs Quiz</span> </a>
         </li>
         <li>
-          <a href="#"><span>Question papers</span> </a>
+          <a href="#"><span>Exam Papers</span> </a>
+        </li>
+        <li class="dropdown profile_menu">
+          <a aria-expanded="true" data-toggle="dropdown" class="dropdown-toggle" href="#">
+            GK & Crt Affairs Chart&nbsp;<b class="caret"></b>
+          </a>
+          <ul class="dropdown-menu custom-dropdown">
+            <li><a href="#">RBI Policies</a></li>
+            <li><a href="#">Cabanit Secretaries</a></li>
+          </ul>
         </li>
         <li>
           <a href="<%= current_affairs_path %>"  class="current-affr-menu">

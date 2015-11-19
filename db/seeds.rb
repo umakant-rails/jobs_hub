@@ -54,3 +54,14 @@ CurrentAffairCategory.create(name: 'Science & Technology') if CurrentAffairCateg
 CurrentAffairCategory.create(name: 'Sports & Games') if CurrentAffairCategory.where(name: 'Sports & Games').blank? 
 CurrentAffairCategory.create(name: 'New Program/Scheme') if CurrentAffairCategory.where(name: 'New Program/Scheme').blank? 
 
+QuizCategory.create(name: 'Current Affairs') if QuizCategory.where(name: 'Current Affairs').blank?
+QuizCategory.create(name: 'Banking') if QuizCategory.where(name: 'Banking').blank?
+QuizCategory.create(name: 'SSC') if QuizCategory.where(name: 'SSC').blank?
+QuizCategory.create(name: 'History') if QuizCategory.where(name: 'History').blank?
+QuizCategory.create(name: 'Geography') if QuizCategory.where(name: 'Geography').blank?
+QuizCategory.create(name: 'Politics') if QuizCategory.where(name: 'Politics').blank?
+QuizCategory.create(name: 'Economy') if QuizCategory.where(name: 'Economy').blank?
+QuizCategory.create(name: 'Physics') if QuizCategory.where(name: 'Physics').blank?
+QuizCategory.create(name: 'Chemistry') if QuizCategory.where(name: 'Chemistry').blank?
+QuizCategory.create(name: 'Computer') if QuizCategory.where(name: 'Computer').blank?
+QuizCategory.create(name: 'English') if QuizCategory.where(name: 'English').blank?

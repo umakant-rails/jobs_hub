@@ -5,7 +5,7 @@ namespace :jobs_data do
       title: "SSC Combine Graduate level 2016", 
       description: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.",
       age_limit: "30 years",
-      eligibility: "All Batchlor and master candidates",
+      qualifications: "All Batchlor and master candidates",
       experience: "",
       job_category_id: 1,
       start_date: Date.today + 5.days,
@@ -15,7 +15,7 @@ namespace :jobs_data do
       title: "Platoon Commander",
       description: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.",
       age_limit: "30 years",
-      eligibility: "Bachlors/Masters candidate application invited",
+      qualifications: "Bachlors/Masters candidate application invited",
       experience: "2",
       job_category_id: 2,
       state_id: 1,
@@ -26,7 +26,7 @@ namespace :jobs_data do
       title: "SBI Assistant Manager", 
       description: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.",
       age_limit: "30 years",
-      eligibility: "MBA (marketing and Accounting), B.Com, M.Com ",
+      qualifications: "MBA (marketing and Accounting), B.Com, M.Com ",
       experience: "5-7 year working experience in marketing and accounting in any banking or financial organisation",
       job_category_id: 3,
       start_date: Date.today + 5.days,
@@ -36,7 +36,7 @@ namespace :jobs_data do
       title: "TGT/PGT Teacher", 
       description: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.",
       age_limit: "30 years",
-      eligibility: "All graduates and post graduates",
+      qualifications: "All graduates and post graduates",
       experience: "",
       job_category_id: 4,
       start_date: Date.today + 5.days,
@@ -46,7 +46,7 @@ namespace :jobs_data do
       title: "Assistant Programmer", 
       description: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.",
       age_limit: "30 years",
-      eligibility: "BE/B.Tech(CS), MCA, M.Tech(CS), B.Sc(CS)",
+      qualifications: "BE/B.Tech(CS), MCA, M.Tech(CS), B.Sc(CS)",
       experience: "5-7 year working experience in programming, database management, js etc, preffered to certied candidate",
       job_category_id: 4,
       start_date: Date.today + 5.days,
@@ -56,7 +56,7 @@ namespace :jobs_data do
       title: "Jr Engineer", 
       description: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.",
       age_limit: "30 years",
-      eligibility: "BE/B.Tech, M.Tech with Civil, Mechanical, Electrical, EE etc streams",
+      qualifications: "BE/B.Tech, M.Tech with Civil, Mechanical, Electrical, EE etc streams",
       experience: "5-7 year working experience in programming, database management, js etc, preffered to certied candidate",
       job_category_id: 4,
       start_date: Date.today + 5.days,
@@ -66,7 +66,7 @@ namespace :jobs_data do
       title: "Java Programmer", 
       description: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.",
       age_limit: "",
-      eligibility: "BE/B.Tech(CS), MCA, M.Tech(CS), B.Sc(CS)",
+      qualifications: "BE/B.Tech(CS), MCA, M.Tech(CS), B.Sc(CS)",
       experience: "5-7 year working experience in programming, database management, js etc, preffered to certied candidate",
       job_category_id: 5,
       start_date: Date.today + 5.days
@@ -75,7 +75,7 @@ namespace :jobs_data do
       title: "TC, Station Master, Station Guard, Khalasi etc", 
       description: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.",
       age_limit: "30 years",
-      eligibility: "Graduates/Post-Graduates, 12 pass out, ITI ",
+      qualifications: "Graduates/Post-Graduates, 12 pass out, ITI ",
       experience: "",
       job_category_id: 6,
       start_date: Date.today + 5.days,
@@ -85,7 +85,7 @@ namespace :jobs_data do
       title: "Assistant Sub-Inspector", 
       description: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.",
       age_limit: "30 years",
-      eligibility: "All Bachler and Masters invited to  apply for this post",
+      qualifications: "All Bachler and Masters invited to  apply for this post",
       experience: "",
       job_category_id: 7,
       start_date: Date.today + 5.days,
@@ -139,5 +139,64 @@ namespace :announcement_data do
       website_link: "http:/ssconline.nic.in",
       announcement_type_id: 4
     )
+  end
+end
+
+namespace :quiz_data do
+  desc 'Load the quiz list and quiz question demo data'  
+  task :load_demo_data => :environment do
+    Quiz.create(
+      title: "Demo Quiz list of #{(Date.today-120.day).strftime('%B')} #{Date.today.strftime('%Y')}",
+      user_id: 1, number_of_question: 5, alloted_time: 5, quiz_category_id: 1, date: Date.today - 4.day
+    )
+    Quiz.create(
+      title: "Demo Quiz list of #{(Date.today-90.day).strftime('%B')} #{Date.today.strftime('%Y')}",
+      user_id: 1, number_of_question: 5, alloted_time: 5, quiz_category_id: 1, date: Date.today - 3.day
+    )
+    Quiz.create(
+      title: "Demo Quiz list of #{(Date.today-60.day).strftime('%B')} #{Date.today.strftime('%Y')}",
+      user_id: 1, number_of_question: 5, alloted_time: 5, quiz_category_id: 1, date: Date.today - 2.day
+    )
+    Quiz.create(
+      title: "Demo Quiz list of #{(Date.today-30.day).strftime('%B')} #{Date.today.strftime('%Y')}",
+      user_id: 1, number_of_question: 5, alloted_time: 5, quiz_category_id: 1, date: Date.today - 1.day
+    )
+    Quiz.create(
+      title: "Demo Quiz list of #{Date.today.strftime('%B')} #{Date.today.strftime('%Y')}",
+      user_id: 1, number_of_question: 5, alloted_time: 5, quiz_category_id: 1, date: Date.today
+    )
+  
+    Quiz.all.each do | quiz | 
+      Question.create(
+        question: "Which is one of most popular website of #{Date.today.strftime('%Y')} year ?",
+        option1: "google", option2: "facebook", option3: "twitter", option4: "none of these",
+        answer: "none of these",
+        questioinable: quiz
+      )
+      Question.create(
+        question: "A famouse magzine which said 'india is most prosperous and exapectation full country for all relegion' ?",
+        option1: "fortune", option2: "forbse", option3: "time", option4: "none of these", answer: "time",
+        questioinable: quiz
+      )
+      Question.create(
+        question: "'India is full of diversities as religion, language, cast, culture etc and unity' statement is given by ? ",
+        option1: "USA President", option2: "British Govt", option3: "Turky Govt", option4: "Russian President",
+        answer: "USA President",
+        questioinable: quiz
+      )
+      Question.create(
+        question: "The state name which is top at the list of criminal cases in #{Date.today.strftime('%Y')} ?",
+        option1: "madhyapradesh", option2: "uttarpradesh", option3: "west bengal", option4: "andhrapradesh",
+        answer: "uttarpradesh",
+        questioinable: quiz
+      )
+      Question.create(
+        question: "What is current repo rate that is fixed by RBI ?",
+        option1: "7.50", option2: "7.25", option3: "7.00", option4: "none of these",
+        answer: "7.25",
+        questioinable: quiz
+      )
+    end
+    
   end
 end

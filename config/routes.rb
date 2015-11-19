@@ -28,7 +28,13 @@ Rails.application.routes.draw do
     get '/get_monthly_updates/:year/:month' => "current_affairs#get_monthly_updates", as: :get_monthly_updates, on: :collection
   end
   
-  resources :quizs
+  resources :quizs do
+    collection do  end
+    member do
+      post :quiz_result
+    end
+    get 'category/:category_id' => "quizs#quizs_by_category", as: :quizs_by_category, on: :collection
+  end
 
   namespace :admin do
      resources :jobs do 

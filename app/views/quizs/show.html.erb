@@ -1,32 +1,55 @@
 <div class="row-fluid" style="margin-left: 15px;">
   <div class="col-md-12">
     <div class="row quiz-questions-hdr">
-      Current Affair Quiz 1-30 August
+      <%= @quiz.title.capitalize%>
     </div>
     <div class="row quiz-questions-list">
-      <% 5.times.each do | index | %>
-        <div class="unanswered-quiz-question">
+      <% @questions && @questions.each_with_index do | question, index | %>
+        <div class="unanswered-quiz-question quiz-question-body" id="quiz-question-<%= question.id %>">
           <div class="row question-text">
-            <%= index + 1 %>. <strong>Who was appointed as CEO of VW Group on 25th September 2015?</strong>
+            Q.<%= index + 1 %>: <strong><%= question.question %></strong>
           </div>
           <div class="row question-options">
-            <div class="pull-left option-input"><input type="radio" value="1" name="ques-option<%= index + 1%>"></div>
-            <div class="pull-left option-text">Kerala Tourism's Muziris Heritage Project bagged the 2015 Pacific Asia Travel Association (PATA) award in the ‘Heritage & Culture’ category.</div>
+            <div class="pull-left option-input">
+              <input type="radio" value="<%= question.option1 %>" name="ques-option-<%= question.id %>" 
+                class="ques-option" data-question_id="<%= question.id %>">
+            </div>
+            <div class="pull-left option-text"><%= question.option1.capitalize %></div>
           </div>
           <div class="row question-options">
-            <div class="pull-left option-input"><input type="radio" value="1" name="ques-option<%= index + 1%>"></div>
-            <div class="pull-left option-text">Donald Trump</div>
+            <div class="pull-left option-input">
+              <input type="radio" value="<%= question.option2%>" name="ques-option-<%= question.id %>" 
+                class="ques-option" data-question_id="<%= question.id %>">
+            </div>
+            <div class="pull-left option-text"><%= question.option2.capitalize %></div>
           </div>
           <div class="row question-options">
-            <div class="pull-left option-input"><input type="radio" value="1" name="ques-option<%= index + 1%>"></div>
-            <div class="pull-left option-text">Matthias Muller</div>
+            <div class="pull-left option-input">
+              <input type="radio" value="<%= question.option3%>" name="ques-option-<%= question.id %>" 
+                class="ques-option" data-question_id="<%= question.id %>">
+            </div>
+            <div class="pull-left option-text"><%= question.option3.capitalize %></div>
           </div>
           <div class="row question-options">
-            <div class="pull-left option-input"><input type="radio" value="1" name="ques-option<%= index + 1%>"></div>
-            <div class="pull-left option-text">Commercial Leases</div>
+            <div class="pull-left option-input">
+              <input type="radio" value="<%= question.option4%>" name="ques-option-<%= question.id %>" 
+              class="ques-option" data-question_id="<%= question.id %>">
+            </div>
+            <div class="pull-left option-text"><%= question.option4.capitalize %></div>
           </div>
         </div>
       <% end %>
+      <center><%= "<br/>There is no questions".html_safe if @questions.blank? %></center>
+    </div>
+    <br/>
+    <div class="row">
+      <div class="col-md-4"></div>
+      <div class="col-md-4">
+        <button class="btn btn-primary btn-large" id="reset-quiz">Reset Quiz</button>
+        <button class="btn btn-primary btn-large" id="submit-quiz" 
+          data-href="<%= quiz_result_quiz_path(@quiz) %>" data-quiz_id="<%= @quiz.id %>">Submit Quiz</button>
+      </div>
+      <div class="col-md-4"></div>
     </div>
   </div>
 </div>
