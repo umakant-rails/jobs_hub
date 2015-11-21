@@ -1,21 +1,26 @@
-<% @questions.each do | question |  %>
-  var question_id = '<%= question.id %>';
-  var correctAnswerCount = 0;
-  var correctAnswer = [];
-  var unCorrectAnswer = [];
-  var totalNumberQuestion = <%= @questions.length %>;
+var question_id;
+var correctAnswerCount = 0;
+var correctAnswer = [];
+var unCorrectAnswer = [];
+var totalNumberQuestion = <%= @questions.length %>;
+
+var visitorAnswer;
+var questionAnswer;
   
-  var visitorAnswer = $("#quiz-question-" + question_id).find('.ques-option:checked').val().toLowerCase();
-  var questionAnswer = '<%= question.answer %>';
+<% @questions.each do | question |  %>
+  question_id = '<%= question.id %>';
+  
+  visitorAnswer = $("#quiz-question-" + question_id).find('.ques-option:checked').val().toLowerCase();
+  questionAnswer = '<%= question.answer %>';
   
   if( questionAnswer === visitorAnswer) {
-    correctAnswerCount += 1;
+    correctAnswerCount = correctAnswerCount + 1;
     $("#quiz-question-" + question_id).removeClass();
-    $("#quiz-question-" + question_id).addClass('quiz-question-body correct-answered-quiz-question');
+    $("#quiz-question-" + question_id).addClass('row quiz-question-body correct-answered-quiz-question');
   } else {
     $("#quiz-question-" + question_id).removeClass();
-    $("#quiz-question-" + question_id).addClass('quiz-question-body uncorrect-answered-quiz-question');
+    $("#quiz-question-" + question_id).addClass('row quiz-question-body wrong-answered-quiz-question');
   }
- 
-  appFunction.showMessage('success', 'Quiz Result: correct answer is : ' + correctAnswerCount + ' Wrong answer is : ' + (totalNumberQuestion - correctAnswerCount)); 
 <% end %>
+
+appFunction.showMessage('success', 'Quiz Result: correct answer is : ' + correctAnswerCount + ' Wrong answer is : ' + (totalNumberQuestion - correctAnswerCount));

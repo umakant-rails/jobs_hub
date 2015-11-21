@@ -1,55 +1,71 @@
-<div class="row-fluid" style="margin-left: 15px;">
-  <div class="col-md-12">
-    <div class="row quiz-questions-hdr">
-      <%= @quiz.title.capitalize%>
-    </div>
-    <div class="row quiz-questions-list">
-      <% @questions && @questions.each_with_index do | question, index | %>
-        <div class="unanswered-quiz-question quiz-question-body" id="quiz-question-<%= question.id %>">
-          <div class="row question-text">
-            Q.<%= index + 1 %>: <strong><%= question.question %></strong>
-          </div>
-          <div class="row question-options">
-            <div class="pull-left option-input">
-              <input type="radio" value="<%= question.option1 %>" name="ques-option-<%= question.id %>" 
-                class="ques-option" data-question_id="<%= question.id %>">
+<div class="row-fluid">
+
+  <div class="quiz-questions-hdr row">
+    <%= @quiz.title.capitalize%>
+  </div>
+  <div class="quiz-questions-list">
+    <% @questions && @questions.each_with_index do | question, index | %>
+      <div class="row unanswered-quiz-question quiz-question-body" id="quiz-question-<%= question.id %>">
+        <div class="row-fluid">
+          <div class="col-md-11">
+            <div class="row">
+              Q.<%= index + 1 %>: <strong><%= question.question %></strong>
             </div>
-            <div class="pull-left option-text"><%= question.option1.capitalize %></div>
-          </div>
-          <div class="row question-options">
-            <div class="pull-left option-input">
-              <input type="radio" value="<%= question.option2%>" name="ques-option-<%= question.id %>" 
-                class="ques-option" data-question_id="<%= question.id %>">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="radio">
+                  <label>
+                    <input type="radio" name="ques-option-<%= question.id %>" data-question_id="<%= question.id %>"
+                      value="<%= question.option1%>" aria-label="..." class="ques-option">
+                    <%= question.option1.capitalize %>
+                  </label>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="radio">
+                  <label>
+                    <input type="radio" name="ques-option-<%= question.id %>" data-question_id="<%= question.id %>"
+                      value="<%= question.option2%>" aria-label="..." class="ques-option">
+                    <%= question.option2.capitalize %>
+                  </label>
+                </div>
+              </div>
             </div>
-            <div class="pull-left option-text"><%= question.option2.capitalize %></div>
-          </div>
-          <div class="row question-options">
-            <div class="pull-left option-input">
-              <input type="radio" value="<%= question.option3%>" name="ques-option-<%= question.id %>" 
-                class="ques-option" data-question_id="<%= question.id %>">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="radio">
+                  <label>
+                    <input type="radio" name="ques-option-<%= question.id %>" data-question_id="<%= question.id %>"
+                      value="<%= question.option3%>" aria-label="..." class="ques-option">
+                    <%= question.option3.capitalize %>
+                  </label>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="radio">
+                  <label>
+                    <input type="radio" name="ques-option-<%= question.id %>" data-question_id="<%= question.id %>"
+                      value="<%= question.option4%>" aria-label="..." class="ques-option">
+                    <%= question.option4.capitalize %>
+                  </label>
+                </div>
+              </div>
             </div>
-            <div class="pull-left option-text"><%= question.option3.capitalize %></div>
           </div>
-          <div class="row question-options">
-            <div class="pull-left option-input">
-              <input type="radio" value="<%= question.option4%>" name="ques-option-<%= question.id %>" 
-              class="ques-option" data-question_id="<%= question.id %>">
-            </div>
-            <div class="pull-left option-text"><%= question.option4.capitalize %></div>
-          </div>
+          <div class="col-md-1"></div>
         </div>
-      <% end %>
-      <center><%= "<br/>There is no questions".html_safe if @questions.blank? %></center>
-    </div>
-    <br/>
-    <div class="row">
-      <div class="col-md-4"></div>
-      <div class="col-md-4">
-        <button class="btn btn-primary btn-large" id="reset-quiz">Reset Quiz</button>
-        <button class="btn btn-primary btn-large" id="submit-quiz" 
-          data-href="<%= quiz_result_quiz_path(@quiz) %>" data-quiz_id="<%= @quiz.id %>">Submit Quiz</button>
       </div>
-      <div class="col-md-4"></div>
+    <% end %>
+    <center><%= "<br/>There is no questions".html_safe if @questions.blank? %></center>
+  </div>
+  <br/>
+  <div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+      <button class="btn btn-primary btn-large" id="reset-quiz">Reset Quiz</button>
+      <button class="btn btn-primary btn-large" id="submit-quiz" 
+        data-href="<%= quiz_result_quiz_path(@quiz) %>" data-quiz_id="<%= @quiz.id %>">Submit Quiz</button>
     </div>
+    <div class="col-md-4"></div>
   </div>
 </div>

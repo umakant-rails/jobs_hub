@@ -26,7 +26,7 @@ var quizFunctions = {
   resetQuiz: function(){
     $('.quiz-question-body').each(function(){
       $(this).removeClass();
-      $(this).addClass('quiz-question-body unanswered-quiz-question');
+      $(this).addClass('row quiz-question-body unanswered-quiz-question');
       $(this).find('.ques-option:checked').prop('checked',false);
     });
   }
