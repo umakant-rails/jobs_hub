@@ -3,13 +3,19 @@
   <div class="quiz-questions-hdr row">
     <%= @quiz.title.capitalize%>
   </div>
-  <div class="quiz-questions-list">
+  <div class="quiz-questions-list"><% question = @questions.first; index = 0%>
     <% @questions && @questions.each_with_index do | question, index | %>
-      <div class="row unanswered-quiz-question quiz-question-body" id="quiz-question-<%= question.id %>">
+      <div class="row unanswered-quiz-question quiz-question-body" id="quiz-question-body-<%= question.id %>">
         <div class="row-fluid">
-          <div class="col-md-11">
+          <textarea id="workplace-textarea-<%= question.id %>"
+            class="col-md-11 workplace-textarea hide" data-question_id="<%= question.id %>"
+            placeholder="Your workplace ..."></textarea>
+          <div class="col-md-11 quiz-question-expalnation hide" id="quiz-question-expalnation-<%= question.id %>"
+            data-question_id="<%= question.id %>"></div>
+          <div class="col-md-11 quiz-question" id="quiz-question-<%= question.id %>" data-question_id="<%= question.id %>">
             <div class="row">
               Q.<%= index + 1 %>: <strong><%= question.question %></strong>
+              <i class="fa" id="question-status-<%= question.id %>"></i>
             </div>
             <div class="row">
               <div class="col-md-6">
@@ -52,7 +58,13 @@
               </div>
             </div>
           </div>
-          <div class="col-md-1"></div>
+          <div class="col-md-1 workplace-action" data-question_id="<%= question.id %>">
+            <i class="fa fa-angle-double-left workplace-angle" id="workplace-angle-<%= question.id %>"
+              data-question_id="<%= question.id %>"></i>
+            <div class="rotate workplace-text"  data-question_id="<%= question.id %>">
+              Working Place
+            </div>
+          </div>
         </div>
       </div>
     <% end %>

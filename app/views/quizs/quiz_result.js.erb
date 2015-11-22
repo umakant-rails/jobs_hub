@@ -1,26 +1,48 @@
 var question_id;
+var answerDesc ;
 var correctAnswerCount = 0;
-var correctAnswer = [];
-var unCorrectAnswer = [];
-var totalNumberQuestion = <%= @questions.length %>;
+var unAnsweredQuestion = 0;
+var totalNumberOfQuestions = <%= @questions.length %>;
 
 var visitorAnswer;
 var questionAnswer;
-  
+
 <% @questions.each do | question |  %>
   question_id = '<%= question.id %>';
-  
-  visitorAnswer = $("#quiz-question-" + question_id).find('.ques-option:checked').val().toLowerCase();
-  questionAnswer = '<%= question.answer %>';
-  
-  if( questionAnswer === visitorAnswer) {
+  answerDesc = '<%= question.description %>';
+  visitorAnswer = $("#quiz-question-body-" + question_id).find('.ques-option:checked').val();
+  questionAnswer = '<%= question.answer.capitalize %>';
+
+  if(visitorAnswer == undefined) {
+    unAnsweredQuestion += 1;
+    $("#question-status-" + question_id).removeClass();
+    $("#question-status-" + question_id).addClass('fa wrong-question').html('Un-answered');
+  } else if( questionAnswer.toLowerCase() === visitorAnswer.toLowerCase()) {
     correctAnswerCount = correctAnswerCount + 1;
-    $("#quiz-question-" + question_id).removeClass();
-    $("#quiz-question-" + question_id).addClass('row quiz-question-body correct-answered-quiz-question');
+    $("#quiz-question-body-" + question_id).removeClass();
+    $("#quiz-question-body-" + question_id).addClass('row quiz-question-body correct-answered-quiz-question');
+    $("#question-status-" + question_id).removeClass();
+    $("#question-status-" + question_id).addClass('fa fa-check right-question').html('');
   } else {
-    $("#quiz-question-" + question_id).removeClass();
-    $("#quiz-question-" + question_id).addClass('row quiz-question-body wrong-answered-quiz-question');
+    $("#quiz-question-body-" + question_id).removeClass();
+    $("#quiz-question-body-" + question_id).addClass('row quiz-question-body wrong-answered-quiz-question');
+    $("#question-status-" + question_id).removeClass();
+    $("#question-status-" + question_id).addClass('fa fa-times wrong-question').html('');
   }
+
+  $("#quiz-question-expalnation-" + question_id).html(
+    '<strong>Answer : </strong> ' + questionAnswer + '<br/>' +
+    '<strong>Description : </strong>' + (answerDesc.length == 0 ? ' None' :  answerDesc)
+  )
 <% end %>
 
-appFunction.showMessage('success', 'Quiz Result: correct answer is : ' + correctAnswerCount + ' Wrong answer is : ' + (totalNumberQuestion - correctAnswerCount));
+$(".workplace-text").html('');
+$(".workplace-text").html('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Answer');
+
+appFunction.showMessage('success',
+    'Quiz Result: ' +
+    '<br/> Total Number of Questions : ' + totalNumberOfQuestions +
+    '<br/> Unanswered Questions : ' + unAnsweredQuestion +
+    '<br/> correct answer is : ' + correctAnswerCount +
+    '<br/> Wrong answer is : ' + (totalNumberOfQuestions - correctAnswerCount - unAnsweredQuestion)
+  );
