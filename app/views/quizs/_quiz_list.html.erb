@@ -1,0 +1,13 @@
+<% quizs && quizs.each do |quiz| %>
+  <div class="quiz">
+    <div class="quiz-hdr"><a href="<%= quiz_path(quiz) %>"><%= quiz.title.capitalize %></a></div>
+    <div class="quiz-details row-fluid">
+      <div class="row">
+        <div class="col-md-4">Number of Questions: <%= quiz.number_of_question%></div>
+        <div class="col-md-4">Alloted Time: <%= quiz.alloted_time %> minuts</div>
+        <div class="col-md-4">Posted Date: <%= quiz.date.to_date.strftime("%d") + " " + quiz.date.to_date.strftime("%B") + " " + quiz.date.to_date.strftime("%Y") %></div>
+      </div>
+    </div>
+  </div>
+<% end %>
+<%= "<br/><center>There is no data.</center>".html_safe if quizs.blank? %>

@@ -5,10 +5,12 @@ module QuizsHelper
   end
 
   def get_quiz_categories_list
-    cat_str1 = ""
-    cat_str2 = ""
-    cat_str3 = ""
+    cat_str1, cat_str2, cat_str3 = "", "", ""
     devider_str = "<li class='divider'></li>"
+
+    crt_affr_header = '<li class="dropdown-header" role="presentation">Current Affairs Quiz</li>'
+    exam_quiz_header = '<li class="dropdown-header" role="presentation">Exams Quiz</li>'
+    subject_quiz_header  = '<li class="dropdown-header" role="presentation">Subjects Quiz</li>'
 
     @quiz_categories.each do | category |
       if ["current affairs"].include?(category.name.downcase)
@@ -20,7 +22,8 @@ module QuizsHelper
       end
     end
 
-    return (cat_str1 + devider_str + cat_str2 + devider_str + cat_str3).html_safe
+    return (crt_affr_header + cat_str1 + devider_str + exam_quiz_header  + cat_str2 +
+      devider_str + subject_quiz_header + cat_str3).html_safe
   end
 
 end

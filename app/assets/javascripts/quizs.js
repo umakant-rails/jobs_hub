@@ -111,7 +111,10 @@ var quizFunctions = function() {
       showQuizQuestion(questionID);
       showLeftSideAngle(questionID);
     }
-  }
+  };
+  var getQuizByDate = function(date){
+    window.location = '/quizs/quizs_by_date/' + date;
+  };
 
   return {
     markAnsweredQuestion: function(self){ markAnsweredQuestion(self); },
@@ -132,7 +135,8 @@ var quizFunctions = function() {
     },
     toggleWorkPlaceAndAnswer: function(questionID, workplaceBtnText, isLeftAngle) {
       toggleWorkPlaceAndAnswer(questionID, workplaceBtnText, isLeftAngle);
-    }
+    },
+    getQuizByDate: function(date){ getQuizByDate(date); }
   };
 }();
 
@@ -154,6 +158,11 @@ $(document).ready(function(){
     var workplaceBtnText = $(this).find('.workplace-text').text().trim();
     var isLeftAngle = $(this).find('.workplace-angle').hasClass('fa-angle-double-left');
     quizFunctions.toggleWorkPlaceAndAnswer(questionID, workplaceBtnText, isLeftAngle);
+  });
+
+  $("#quiz-date-input").on('change', function(){
+    var date = $("#quiz-date-input").val();
+    if(date.length != 0){ quizFunctions.getQuizByDate(date); }
   });
 
   $('html').click(function(e) {

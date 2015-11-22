@@ -34,6 +34,7 @@ Rails.application.routes.draw do
       post :quiz_result
     end
     get 'category/:category_id' => "quizs#quizs_by_category", as: :quizs_by_category, on: :collection
+    get 'quizs_by_date/:date' => "quizs#quizs_by_date", as: :quizs_by_date, on: :collection
   end
 
   namespace :admin do
