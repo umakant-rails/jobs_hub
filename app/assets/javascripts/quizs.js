@@ -34,26 +34,26 @@ var quizFunctions = function() {
     var height = $("#quiz-question-" + questionID).height();
     var txtAreaStyle = {height: height, 'max-height': height, 'max-width': '91.6667%'};
     $("#workplace-textarea-" + questionID).css(txtAreaStyle);
-    $("#workplace-textarea-" + questionID).removeClass('hide');
+    $("#workplace-textarea-" + questionID).show( "blind", {direction: "horizontal"}, 400 );
   };
   var hideWorkPlace = function(questionID){
-    $("#workplace-textarea-" + questionID).addClass('hide');
+     $("#workplace-textarea-" + questionID).hide();
   };
   var showAnswer = function(questionID){
     var width = $("#quiz-question-" + questionID).width();
     var height = $("#quiz-question-" + questionID).height();
     var txtAreaStyle = {height: height, 'max-height': height, 'max-width': '91.6667%'};
-    $("#quiz-question-expalnation-" + questionID).removeClass('hide');
     $("#quiz-question-expalnation-" + questionID).css(txtAreaStyle);
+    $("#quiz-question-expalnation-" + questionID).show( "blind", {direction: "horizontal"}, 400 );
   };
   var hideAnswer = function(questionID){
-    $("#quiz-question-expalnation-" + questionID).addClass('hide');
+    $("#quiz-question-expalnation-" + questionID).hide();
   };
   var showQuizQuestion = function(questionID){
-    $("#quiz-question-" + questionID).removeClass('hide');
+    $("#quiz-question-" + questionID).show( "blind", {direction: "horizontal"}, 400 );
   };
   var hideQuizQuestion = function(questionID){
-    $("#quiz-question-" + questionID).addClass('hide');
+    $("#quiz-question-" + questionID).hide();
   };
   var showLeftSideAngle = function(questionID){
     $("#workplace-angle-" + questionID).removeClass('fa-angle-double-right');
@@ -84,8 +84,8 @@ var quizFunctions = function() {
       var $workplaceAngle = $(this).find('.workplace-angle');
       var displayStatus = $element.css('display');
       if(displayStatus == 'block'){
-        $element.addClass('hide');
-        $quizQuestion.removeClass('hide');
+        $element.hide();
+        $quizQuestion.show( "blind", {direction: "horizontal"}, 400 )
         $workplaceAngle.removeClass('fa-angle-double-right');
         $workplaceAngle.addClass('fa-angle-double-left');
       }
