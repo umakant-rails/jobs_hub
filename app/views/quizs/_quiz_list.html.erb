@@ -1,13 +1,38 @@
 <% quizs && quizs.each do |quiz| %>
-  <div class="quiz">
-    <div class="quiz-hdr"><a href="<%= quiz_path(quiz) %>"><%= quiz.title.capitalize %></a></div>
-    <div class="quiz-details row-fluid">
-      <div class="row">
+  <div class="row quiz">
+    <div class="col-md-12">
+      <div class="row quiz-hdr">
+        <div class="quiz-hdr-text">
+          <a href="<%= quiz_path(quiz) %>"><%= quiz.title.capitalize %></a>
+        </div>
+      </div>
+      <div class="quiz-details row">
         <div class="col-md-4">Number of Questions: <%= quiz.number_of_question%></div>
         <div class="col-md-4">Alloted Time: <%= quiz.alloted_time %> minuts</div>
         <div class="col-md-4">Posted Date: <%= quiz.date.to_date.strftime("%d") + " " + quiz.date.to_date.strftime("%B") + " " + quiz.date.to_date.strftime("%Y") %></div>
       </div>
     </div>
+<!--
+    <div class="col-md-3" style="border-left: 1px solid lightgray;">
+      <div class="row-fluid" style="border-bottom: 1px solid lightgray; padding:2px 0px;margin-bottom:2px;">
+        <i class="fa fa-group quiz-attandent-status" title="Number of quiz attendants" >&nbsp;&nbsp;:</i>540
+      </div>
+      <div class="row-fluid">
+        <div class="col-md-6 no-padding">
+          <i class="fa fa-group quiz-attandent-status gold-clr" title="86-100% mark Scorer">&nbsp;&nbsp;:</i> 43
+        </div>
+        <div class="col-md-6 no-padding">
+          <i class="fa fa-group quiz-attandent-status silver-clr" title="71-85% mark Scorer">&nbsp;&nbsp;:</i> 54
+        </div>
+        <div class="col-md-6 no-padding">
+          <i class="fa fa-group quiz-attandent-status bronze-clr" title="50-70% mark Scorer">&nbsp;&nbsp;:</i>78
+        </div>
+        <div class="col-md-6 no-padding">
+          <i class="fa fa-group quiz-attandent-status danger-clr" title="<=50% mark Scorer">&nbsp;&nbsp;:</i>124
+        </div>
+      </div>
+    </div>
+-->
   </div>
 <% end %>
 <%= "<br/><center>There is no data.</center>".html_safe if quizs.blank? %>
