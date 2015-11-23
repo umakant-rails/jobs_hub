@@ -10,6 +10,17 @@ Rails.application.routes.draw do
     #omniauth_callbacks: "users/omniauth_callbacks"
   }
   
+  namespace :admin do
+     resources :jobs do 
+      resources :job_posts
+     end
+     resources :dashboards
+     resources :announcements
+     resources :current_affairs do
+      post 'filter_current_affair', on: :collection
+     end
+  end
+  
   resources :jobs do
     get '/category/:job_category_id' => "jobs#jobs_by_category", as: :jobs_by_category, on: :collection
     get '/category/:job_category_id/state/:state_id' => "jobs#jobs_by_state_category", as: :jobs_by_state_category, on: :collection
@@ -36,16 +47,10 @@ Rails.application.routes.draw do
     get 'category/:category_id' => "quizs#quizs_by_category", as: :quizs_by_category, on: :collection
     get 'quizs_by_date/:date' => "quizs#quizs_by_date", as: :quizs_by_date, on: :collection
   end
-
-  namespace :admin do
-     resources :jobs do 
-      resources :job_posts
-     end
-     resources :dashboards
-     resources :announcements
-     resources :current_affairs do
-      post 'filter_current_affair', on: :collection
-     end
+  
+  resources :chart_and_policies, only: :none do
+    get 'rbi_chart' => "chart_and_policies#rbi_chart", as: :rbi_chart, on: :collection
+    get 'cabinet_secreteries' => "chart_and_policies#cabinet_secreteries", as: :cabinet_secreteries, on: :collection
   end
   
   # Example of regular route:
