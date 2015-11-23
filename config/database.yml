@@ -25,7 +25,10 @@ test:
   database: db/jobshub_tst	
 
 production:
-  <<: *default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  encoding: utf8
   username: root
   password: <%= ENV['APPNAME_DATABASE_PASSWORD'] %>
   database: db/jobshub_prd
