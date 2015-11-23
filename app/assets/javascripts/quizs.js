@@ -172,9 +172,10 @@ $(document).ready(function(){
       && !$(e.target).hasClass('workplace-text')
       && !$(e.target).hasClass('workplace-action')
     ){
-      var $quizQuestion = $(".quiz-question.hide");
+      var $quizQuestion = $(".quiz-question:hidden");
       var questionID = $($quizQuestion).data('question_id');
       var angleText = $("#workplace-angle-"+questionID).parent().text().trim();
+
       if(angleText == "Working Place"){
         quizFunctions.hideWorkPlace(questionID);
       } else {
