@@ -23,11 +23,13 @@ var questionAnswer;
     $("#quiz-question-body-" + question_id).addClass('row quiz-question-body correct-answered-quiz-question');
     $("#question-status-" + question_id).removeClass();
     $("#question-status-" + question_id).addClass('fa fa-check right-question').html('');
+    $("#workplace-angle-" + question_id).addClass('angle-green');
   } else {
     $("#quiz-question-body-" + question_id).removeClass();
     $("#quiz-question-body-" + question_id).addClass('row quiz-question-body wrong-answered-quiz-question');
     $("#question-status-" + question_id).removeClass();
     $("#question-status-" + question_id).addClass('fa fa-times wrong-question').html('');
+    $("#workplace-angle-" + question_id).addClass('angle-red');
   }
 
   $("#quiz-question-expalnation-" + question_id).html(

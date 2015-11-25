@@ -41,16 +41,16 @@ State.create!(name: "Asam") if State.where(name: "Asam").blank?
 State.create!(name: "Goa") if State.where(name: "Goa").blank?
 
 CurrentAffairCategory.create(name: 'Appointments, Resigns & Deaths') if CurrentAffairCategory.where(name: 'Appointments, Resigns & Deaths').blank?
-CurrentAffairCategory.create(name: 'Abbreviations') if CurrentAffairCategory.create(name: 'Abbreviations').blank?
+CurrentAffairCategory.create(name: 'Abbreviations') if CurrentAffairCategory.where(name: 'Abbreviations').blank?
 CurrentAffairCategory.create(name: 'Awards & Honours') if CurrentAffairCategory.where(name: 'Awards & Honours').blank?
-CurrentAffairCategory.create(name: 'Books') if CurrentAffairCategory.create(name: 'Books').blank?
-CurrentAffairCategory.create(name: 'Committees') if CurrentAffairCategory.create(name: 'Committees').blank?
+CurrentAffairCategory.create(name: 'Books') if CurrentAffairCategory.where(name: 'Books').blank?
+CurrentAffairCategory.create(name: 'Committees') if CurrentAffairCategory.where(name: 'Committees').blank?
 CurrentAffairCategory.create(name: 'Conferences') if CurrentAffairCategory.where(name: 'Conferences').blank?
-CurrentAffairCategory.create(name: 'Days & Dates') if CurrentAffairCategory.create(name: 'Days & Dates').blank?
+CurrentAffairCategory.create(name: 'Days & Dates') if CurrentAffairCategory.where(name: 'Days & Dates').blank?
 CurrentAffairCategory.create(name: 'Economy') if CurrentAffairCategory.where(name: 'Economy').blank?
-CurrentAffairCategory.create(name: 'Places') if CurrentAffairCategory.create(name: 'Places').blank?
-CurrentAffairCategory.create(name: 'Politics') if CurrentAffairCategory.create(name: 'Politics').blank?
-CurrentAffairCategory.create(name: 'Science & Technology') if CurrentAffairCategory.create(name: 'Science & Technology').blank?
+CurrentAffairCategory.create(name: 'Places') if CurrentAffairCategory.where(name: 'Places').blank?
+CurrentAffairCategory.create(name: 'Politics') if CurrentAffairCategory.where(name: 'Politics').blank?
+CurrentAffairCategory.create(name: 'Science & Technology') if CurrentAffairCategory.where(name: 'Science & Technology').blank?
 CurrentAffairCategory.create(name: 'Sports & Games') if CurrentAffairCategory.where(name: 'Sports & Games').blank? 
 CurrentAffairCategory.create(name: 'New Program/Scheme') if CurrentAffairCategory.where(name: 'New Program/Scheme').blank? 
 

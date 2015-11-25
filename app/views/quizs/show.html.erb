@@ -5,7 +5,8 @@
   </div>
   <div class="quiz-questions-list"><% question = @questions.first; index = 0%>
     <% @questions && @questions.each_with_index do | question, index | %>
-      <div class="row unanswered-quiz-question quiz-question-body" id="quiz-question-body-<%= question.id %>">
+      <div class="row unanswered-quiz-question quiz-question-body" id="quiz-question-body-<%= question.id %>"
+        data-question_id="<%= question.id %>">
         <div class="row-fluid">
           <div class="col-md-1 workplace-action pull-right" data-question_id="<%= question.id %>">
             <i class="fa fa-angle-double-left workplace-angle" id="workplace-angle-<%= question.id %>"

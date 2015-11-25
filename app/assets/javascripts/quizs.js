@@ -67,12 +67,16 @@ var quizFunctions = function() {
   var resetQuiz = function(){
     $(".workplace-textarea").hide();
     $('.quiz-question-body').each(function(){
+      var questionID = $(this).data('question_id');
       $(this).removeClass();
       $(this).addClass('row quiz-question-body unanswered-quiz-question');
       $(this).find('.ques-option:checked').prop('checked',false);
       $(this).find('.fa-check').removeClass();
       $(this).find('.fa-times').removeClass();
+      $("#question-status-" + questionID).html("")
       $(".workplace-text").html('Working  Place');
+      $(".workplace-angle").removeClass('angle-green');
+      $(".workplace-angle").removeClass('angle-red');
       location.hash = '';
     });
   };
