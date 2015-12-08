@@ -73,9 +73,36 @@
     <div class="chart-bullets row-fluid">
       <div class="policy-bx-hdr">Banking Governers</div>
       <div class="policy-bx-body row">
-        RBI Governers : Raghuram Rajan
+       <div class="col-md-2"><strong>RBI Governer</strong></div>
+       <div class="col-md-6">:&nbsp;&nbsp;Raghuram Rajan</div>
+      </div>
+      <div class="policy-bx-body row">
+       <div class="col-md-2"><strong>Dipty Governers</strong></div>
+       <div class="col-md-6">
+          <div>:&nbsp;&nbsp;Raghuram Rajan1</div>
+          <div class="clear"></div>
+          <div>:&nbsp;&nbsp;Raghuram Rajan1</div>
+          <div class="clear"></div>
+          <div>:&nbsp;&nbsp;Raghuram Rajan1</div>
+          <div class="clear"></div>
+          <div>:&nbsp;&nbsp;Raghuram Rajan1</div>
+          <div class="clear"></div>
+        </div>
       </div>
     </div>
-    
+    <div class="chart-bullets row-fluid">
+      <div class="policy-bx-hdr">Economic News Updates</div>
+      <div class="policy-bx-body crt-affr-bullets row">
+        <% @current_affairs.each do | crt_affr | %>
+          <div class="crt-affr-bullet-index">
+            <strong><i class="fa fa-caret-right crt-affr-caret"></i></strong>
+          </div>
+          <div class="crt-affr-description">
+            <%= crt_affr.description %>
+          </div>
+          <div class="clear"></div>
+        <% end %>
+      </div>
+    </div>
   </div>
 </div>

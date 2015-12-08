@@ -34,6 +34,7 @@ Rails.application.routes.draw do
       post :create_daily_update_comment
       get :get_daily_updates
       get :current_affair_quiz
+      get :generate_pdf
     end
     get '/get_weekly_updates/:date' => "current_affairs#get_weekly_updates", as: :get_weekly_updates, on: :collection
     get '/get_monthly_updates/:year/:month' => "current_affairs#get_monthly_updates", as: :get_monthly_updates, on: :collection
