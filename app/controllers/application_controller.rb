@@ -11,8 +11,8 @@ class ApplicationController < ActionController::Base
     @railway_jobs = @jobs.where(:job_category_id => 4)
     @teacher_jobs = @jobs.where(:job_category_id => 6)
 
-    @ft_announcements = Announcement.where("announcement_type_id in (?) and date > ?", [1,2,3], Date.today).select("announcement_type_id, count(*) as count").group("announcement_type_id")  
-    @pst_announcements = Announcement.where("announcement_type_id in (?) and (date >= ? and date <= ?)", [4], Date.today - 7.days, Date.today).select("announcement_type_id, count(*) as count").group("announcement_type_id").first
+    @ft_announcements = Announcement.where("announcement_type_id in (?) and date > ?", [1,2,3], Date.today).select("announcement_type_id, count(*) as count").group("announcement_type_id")  rescue []
+    @pst_announcements = Announcement.where("announcement_type_id in (?) and (date >= ? and date <= ?)", [4], Date.today - 7.days, Date.today).select("announcement_type_id, count(*) as count").group("announcement_type_id").first rescue nil
   end
   
   private
